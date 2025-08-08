@@ -11,7 +11,7 @@
             "description": "localhost"
         },
         {
-            "url": "https://008cad88-3ab2-405b-b546-33dbe0eeb5e6.mock.pstmn.io/",
+            "url": "https://a93fcb39-d85b-44de-8aa3-e293a59d532e.mock.pstmn.io/",
             "description": "postman-mock-api"
         }
     ],
@@ -21,7 +21,7 @@
             "post": {
                 "tags": ["Authentication"],
                 "summary": "register user",
-                "description": "register user",
+                "description": "# Register User \nKirim permintaan `POST` dengan format JSON berisi `Request Body` seperti dibawah. `role` akah ditentukan secara otomatis oleh server melalui endpoint ini, endpoint ini akan menjadikannya sebagai `user` secara default",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -32,7 +32,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "__✅ SUCCESS REGISTER__",
                         "content": {
                             "application/json": {
@@ -91,11 +91,10 @@
             }
         },
         "/login": {
-            "description": "login user",
             "post": {
                 "tags": ["Authentication"],
                 "summary": "login user",
-                "description": "login user",
+                "description": "# Login User \nKirim permintaan `POST` dengan format JSON berisi `username` dan `password` yang valid.\nJika berhasil, server akan mengembalikan token akses (JWT) yang digunakan untuk mengakses endpoint lain yang memerlukan otorisasi. Perlu diperhatikan sebagai berikut:<br><br>__1. Simpan `access_token` Pada Cookie Browser__<br>__2. Gunakan `access_token` untuk request ke setiap endpoint yang terkunci, termasuk ke dokumentasi ini__<br>",
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -152,17 +151,18 @@
             }
         },
         "/users": {
-            "description": "list all users",
+            "description": "list users",
             "get": {
                 "tags": ["User API"],
-                "summary": "list all users",
-                "description": "list all users",
+                "summary": "list users",
+                "description": "# List Users\nKirim permintaan `GET` dengan membawa `access_token` yang valid untuk endpoint ini, dan akan mendapatkan seluruh data users yang ada di database",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -217,13 +217,14 @@
             "post": {
                 "tags": ["User API"],
                 "summary": "create user",
-                "description": "create user",
+                "description": "# Create User\nKirim permintaan `POST` dengan membawa `access_token` yang valid untuk endpoint ini",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -238,7 +239,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "__✅ SUCCESS__",
                         "content": {
                             "application/json": {
@@ -297,13 +298,14 @@
             "get": {
                 "tags": ["User API"],
                 "summary": "get user by id",
-                "description": "get user by id",
+                "description": "# Get User by id\nKirim permintaan `GET` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan mendapatkan detail tentang data diri pengguna itu sendiri.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -356,13 +358,14 @@
             "put": {
                 "tags": ["User API"],
                 "summary": "update user",
-                "description": "update user",
+                "description": "# Update User\nKirim permintaan `PUT` dengan membawa `access_token` yang valid untuk endpoint ini",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -444,13 +447,14 @@
             "delete": {
                 "tags": ["User API"],
                 "summary": "delete user",
-                "description": "delete user",
+                "description": "# Delete User\nKirim permintaan `DELETE` dengan membawa `access_token` yang valid untuk endpoint ini.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -524,13 +528,14 @@
             "post": {
                 "tags": ["Bookmarks API"],
                 "summary": "create bookmark",
-                "description": "create bookmark",
+                "description": "# Create Bookmark\nKirim permintaan `POST` dengan membawa `access_token` yang valid untuk endpoint ini",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -545,7 +550,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "__✅ SUCCESS__",
                         "content": {
                             "application/json": {
@@ -604,13 +609,14 @@
             "get": {
                 "tags": ["Bookmarks API"],
                 "summary": "get bookmark by id",
-                "description": "get bookmark by id",
+                "description": "# Get Bookmark by id\nKirim permintaan `GET` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan mendapatkan detail bookmark beserta comic terkait",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -663,13 +669,14 @@
             "delete": {
                 "tags": ["Bookmarks API"],
                 "summary": "delete bookmark",
-                "description": "delete bookmark",
+                "description": "# Delete Bookmark\nKirim permintaan `DELETE` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan membatalkan bookmark yang pernah dilakukan user",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -743,13 +750,14 @@
             "get": {
                 "tags": ["Bookmarks API"],
                 "summary": "list all bookmark by userId",
-                "description": "list all bookmark by userId",
+                "description": "# List Bookmark by userId\nKirim permintaan `GET` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan mendapatkan seluruh bookmark yang pernah dilakukan oleh user.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -806,7 +814,7 @@
             "get": {
                 "tags": ["Comics API"],
                 "summary": "list all comics",
-                "description": "list all comics",
+                "description": "# List Comics\nKirim permintaan `GET`. Endpoint ini akan mendapatkan seluruh comics beserta attribute dasar, seperti `favorite`, `status`, `type`, dan `genre`",
                 "responses": {
                     "200": {
                         "description": "success get all comics",
@@ -857,13 +865,14 @@
             "post": {
                 "tags": ["Comics API"],
                 "summary": "create comic",
-                "description": "create comic",
+                "description": "# Create Comic\nKirim permintaan `POST` dengan membawa `access_token` yang valid untuk endpoint ini.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -878,7 +887,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "__✅ SUCCESS__",
                         "content": {
                             "application/json": {
@@ -927,7 +936,7 @@
             "get": {
                 "tags": ["Comics API"],
                 "summary": "get comic by id",
-                "description": "get comic by id",
+                "description": "# Get Comic by id\nKirim permintaan `GET`. Endpoint ini akan mendapatkan detail comic beserta dengan attribute pendukung lainnya.<br><br>__⚠️Note:__ untuk mendapatkan chapter bisa dilakukan dengan fetch / request terpisah",
                 "responses": {
                     "200": {
                         "description": "success get comic by id",
@@ -976,13 +985,14 @@
             "put": {
                 "tags": ["Comics API"],
                 "summary": "update comic",
-                "description": "update comic",
+                "description": "# Update Comic\nKirim permintaan `PUT` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan mengubah salah satu comic berdasarkan id.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -1064,13 +1074,14 @@
             "delete": {
                 "tags": ["Comics API"],
                 "summary": "delete comic",
-                "description": "delete comic",
+                "description": "# Delete Comic\nKirim permintaan `DELETE` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan menghapus 1 comic beserta dengan seluruh chapter dan episode yang berkaitan dengan comic tersebut",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -1144,13 +1155,14 @@
             "post": {
                 "tags": ["Chapters API"],
                 "summary": "create chapter",
-                "description": "create chapter",
+                "description": "# Create Chapter\nKirim permintaan `POST` dengan membawa `access_token` yang valid untuk endpoint ini.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -1165,7 +1177,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "__✅ SUCCESS__",
                         "content": {
                             "application/json": {
@@ -1224,13 +1236,14 @@
             "put": {
                 "tags": ["Chapters API"],
                 "summary": "update chapter",
-                "description": "update chapter",
+                "description": "# Update Chapter\nKirim permintaan `PUT` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan mengubah salah satu chapter.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -1312,13 +1325,14 @@
             "delete": {
                 "tags": ["Chapters API"],
                 "summary": "delete chapter",
-                "description": "delete chapter",
+                "description": "# Delete Chapter\nKirim permintaan `DELETE` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan menghapus 1 chapter beserta dengan seluruh episode yang berkaitan dengan chapter tersebut",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -1392,7 +1406,7 @@
             "get": {
                 "tags": ["Chapters API"],
                 "summary": "list all chapter",
-                "description": "list all chapter",
+                "description": "# List Chapter\nKirim permintaan `GET`. Endpoint ini akan mendapatkan seluruh chapter dalam 1 comic",
                 "responses": {
                     "200": {
                         "description": "success get all chapter",
@@ -1445,7 +1459,7 @@
             "get": {
                 "tags": ["Chapters API"],
                 "summary": "get chapter by id",
-                "description": "get chapter by id",
+                "description": "# Get Chapter by id\nKirim permintaan `GET`. Endpoint ini akan mendapatkan detail chapter dalam 1 comic",
                 "responses": {
                     "200": {
                         "description": "success get chapters by id",
@@ -1496,13 +1510,14 @@
             "post": {
                 "tags": ["Epsiode API"],
                 "summary": "create episode",
-                "description": "create episode",
+                "description": "# Create Episode\nKirim permintaan `POST` dengan membawa `access_token` yang valid untuk endpoint ini.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -1517,7 +1532,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "__✅ SUCCESS__",
                         "content": {
                             "application/json": {
@@ -1576,13 +1591,14 @@
             "put": {
                 "tags": ["Epsiode API"],
                 "summary": "update episode",
-                "description": "update episode",
+                "description": "# Update Episode\nKirim permintaan `PUT` dengan membawa `access_token` yang valid untuk endpoint ini.Endpoint ini akan mengubah 1 gambar (dari seluruh gambar dalam 1 epsiode, pada 1 chapter)",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -1664,13 +1680,14 @@
             "delete": {
                 "tags": ["Epsiode API"],
                 "summary": "delete episode",
-                "description": "delete episode",
+                "description": "# Delete Episode\nKirim permintaan `DELETE` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan delete 1 gambar (dari seluruh gambar dalam 1 epsiode, pada 1 chapter).",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -1744,7 +1761,7 @@
             "get": {
                 "tags": ["Epsiode API"],
                 "summary": "list all epsiode",
-                "description": "list all epsiode",
+                "description": "# List Epsiode\nKirim permintaan `GET`. Endpoint ini akan mendapatkan seluruh epsiode (gambar) dalam 1 chapter",
                 "responses": {
                     "200": {
                         "description": "success get all epsiode",
@@ -1797,7 +1814,7 @@
             "get": {
                 "tags": ["Epsiode API"],
                 "summary": "get epsiode by id",
-                "description": "get epsiode by id",
+                "description": "# Get Epsiode by id\nKirim permintaan `GET`. Endpoint ini akan mendapatkan detail episode (salah satu gambar, dari seluruh gambar dalam 1 chapter. ",
                 "responses": {
                     "200": {
                         "description": "success get epsiode by id",
@@ -1848,13 +1865,14 @@
             "post": {
                 "tags": ["Creator API"],
                 "summary": "create creator",
-                "description": "create creator",
+                "description": "# Create Creator\nKirim permintaan `POST` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan membuat biodata creator dengan type berbagai macam seperti illustrator, story, dll.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -1869,7 +1887,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "__✅ SUCCESS__",
                         "content": {
                             "application/json": {
@@ -1916,7 +1934,7 @@
             "get": {
                 "tags": ["Creator API"],
                 "summary": "list all creator",
-                "description": "list all creator",
+                "description": "# List Creator\nKirim permintaan `GET`. Endpoint ini akan mendapatkan seluruh daftar creator, dari berbagai macam type (illustrator, story, dll). ",
                 "responses": {
                     "200": {
                         "description": "success get all creator",
@@ -1969,7 +1987,7 @@
             "get": {
                 "tags": ["Creator API"],
                 "summary": "get creator by id",
-                "description": "get creator by id",
+                "description": "# Get Creator by id\nKirim permintaan `GET`. Endpoint ini akan mendapatkan detail comic yang pernah digarap / dibuat oleh creator ini. ",
                 "responses": {
                     "200": {
                         "description": "success get creator by id",
@@ -2018,13 +2036,14 @@
             "put": {
                 "tags": ["Creator API"],
                 "summary": "update creator",
-                "description": "update creator",
+                "description": "# Update Creator\nKirim permintaan `PUT` dengan membawa `access_token` yang valid untuk endpoint ini.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -2106,13 +2125,14 @@
             "delete": {
                 "tags": ["Creator API"],
                 "summary": "delete creator",
-                "description": "delete creator",
+                "description": "# Delete Creator\nKirim permintaan `DELETE` dengan membawa `access_token` yang valid untuk endpoint ini.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -2186,13 +2206,14 @@
             "post": {
                 "tags": ["Genre API"],
                 "summary": "create genre",
-                "description": "create genre",
+                "description": "# Create Genre",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -2207,7 +2228,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "__✅ SUCCESS__",
                         "content": {
                             "application/json": {
@@ -2254,7 +2275,7 @@
             "get": {
                 "tags": ["Genre API"],
                 "summary": "list all genre",
-                "description": "list all genre",
+                "description": "# List Genre\nKirim permintaan `GET`. Endpoint ini akan mendapatkan seluruh genre. ",
                 "responses": {
                     "200": {
                         "description": "success get all genre",
@@ -2306,8 +2327,8 @@
         "/genre/{id}": {
             "get": {
                 "tags": ["Genre API"],
-                "summary": "get genreby id",
-                "description": "get genreby id",
+                "summary": "get genre by id",
+                "description": "# Get Genre by id\nKirim permintaan `GET`. Endpoint ini akan mendapatkan detail genre. <br><br>__⚠️ Note:__ untuk mendapatkan Comic, bisa dilakukan fetch / request api terpisah dari endpoint ini, `(logikanya, user akan klik salah satu genre, dan akan mendapatkan comic berdasarkan genre secara terpisah 🤔❓)`.",
                 "responses": {
                     "200": {
                         "description": "success get genre by id",
@@ -2363,6 +2384,7 @@
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -2451,6 +2473,7 @@
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -2524,13 +2547,14 @@
             "get": {
                 "tags": ["Favorite API"],
                 "summary": "list all favorite",
-                "description": "list all favorite",
+                "description": "# List Favorite\nKirim permintaan `GET` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan mendapatkan seluruh comic yang pernah disukai user",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -2585,13 +2609,14 @@
             "post": {
                 "tags": ["Favorite API"],
                 "summary": "create favorite",
-                "description": "create favorite",
+                "description": "# Create Favorite\nKirim permintaan `POST` dengan membawa `access_token` yang valid untuk endpoint ini",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -2606,7 +2631,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "__✅ SUCCESS__",
                         "content": {
                             "application/json": {
@@ -2655,13 +2680,14 @@
             "get": {
                 "tags": ["Favorite API"],
                 "summary": "get favorite by id",
-                "description": "get favorite by id",
+                "description": "# Get Favorite by id\nKirim permintaan `GET` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan mendapatkan salah satu comic yang pernah disukai user",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -2714,13 +2740,14 @@
             "put": {
                 "tags": ["Favorite API"],
                 "summary": "update favorite",
-                "description": "update favorite",
+                "description": "# Update Favorite\nKirim permintaan `PUT` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini sepertinya tidak begitu penting 🤔",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -2802,13 +2829,14 @@
             "delete": {
                 "tags": ["Favorite API"],
                 "summary": "delete favorite",
-                "description": "delete favorite",
+                "description": "# Delete Favorite\nKirim permintaan `DELETE` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan membatalkan suatu comic yang pernah disukai user.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -2882,13 +2910,14 @@
             "post": {
                 "tags": ["Rating API"],
                 "summary": "create rating",
-                "description": "create rating",
+                "description": "# Create Rating\nKirim permintaan `POST` dengan membawa `access_token` yang valid untuk endpoint ini",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -2903,7 +2932,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "__✅ SUCCESS__",
                         "content": {
                             "application/json": {
@@ -2950,13 +2979,14 @@
             "get": {
                 "tags": ["Rating API"],
                 "summary": "list all rating",
-                "description": "list all rating",
+                "description": "# List Rating\nKirim permintaan `GET` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan menampilkan seluruh rating yang pernah dibuat salah satu user yang sudah login.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -3013,13 +3043,14 @@
             "put": {
                 "tags": ["Rating API"],
                 "summary": "update rating",
-                "description": "update rating",
+                "description": "# Update Rating\nKirim permintaan `PUT` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan menghapus rating yang pernah dibuat user, dan ini akan berdampak terhadap rating comic (tergantung jumlah user yang membuat rating pada comic tersebut)",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -3101,13 +3132,14 @@
             "delete": {
                 "tags": ["Rating API"],
                 "summary": "delete rating",
-                "description": "delete rating",
+                "description": "# Delete Rating\nKirim permintaan `DELETE` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan menghapus rating yang pernah dibuat user, dan ini akan berdampak terhadap rating comic (tergantung jumlah user yang membuat rating pada comic tersebut)",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -3181,13 +3213,14 @@
             "post": {
                 "tags": ["Subscription API"],
                 "summary": "create subscription",
-                "description": "create subscription",
+                "description": "# Create Subscription\nKirim permintaan `POST` dengan membawa `access_token` yang valid untuk endpoint ini, user akan mengikuti perkembangan comic ini",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -3202,7 +3235,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "__✅ SUCCESS__",
                         "content": {
                             "application/json": {
@@ -3249,13 +3282,14 @@
             "get": {
                 "tags": ["Subscription API"],
                 "summary": "list all subscription",
-                "description": "list all subscription",
+                "description": "# List Subscription\nKirim permintaan `GET` dengan membawa `access_token` yang valid untuk endpoint ini, ini akan mendapatkan seluruh `subscription` yang pernah dilakukan oleh users terhadap suatu comic",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -3312,13 +3346,14 @@
             "delete": {
                 "tags": ["Subscription API"],
                 "summary": "delete subscription",
-                "description": "delete subscription",
+                "description": "# Delete Subscription\nKirim permintaan `DELETE` dengan membawa `access_token` yang valid untuk endpoint ini. Endpoint ini akan __unsubscribe__ comic yang sudah pernah diikuti user",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -3392,13 +3427,14 @@
             "post": {
                 "tags": ["History API"],
                 "summary": "create history",
-                "description": "create history",
+                "description": "# Create History\n⚠️ ini dilakukan di backend, ketika user mengunjungi salah satu chapter, ini akan di create",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -3413,7 +3449,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "__✅ SUCCESS__",
                         "content": {
                             "application/json": {
@@ -3459,14 +3495,15 @@
             },
             "get": {
                 "tags": ["History API"],
-                "summary": "list all history",
-                "description": "list all history",
+                "summary": "list history",
+                "description": "# List History\n\nKirim permintaan `GET` dengan membawa `access_token` yang valid untuk endpoint ini, ini akan mendapatkan seluruh comic/chapter yang pernah dibuka oleh users.<br><br>__⚠️ Note:__ Jika field `chapter_id` kosong, berarti user hanya membuka halaman comic, jika terisi semua maka user membuka sampai membaca chapter, `comic_id` wajib terisi",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -3523,13 +3560,14 @@
             "delete": {
                 "tags": ["History API"],
                 "summary": "delete history",
-                "description": "delete history",
+                "description": "# Delete History\n⚠️ ini dilakukan di backend, ketika user tidak mengunjungi chapter ini dalam waktu 1 tahun, ini akan di hapus",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -3603,13 +3641,14 @@
             "post": {
                 "tags": ["Comment API"],
                 "summary": "create comment",
-                "description": "create comment",
+                "description": "# Create Comment",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -3624,7 +3663,7 @@
                     }
                 },
                 "responses": {
-                    "200": {
+                    "201": {
                         "description": "__✅ SUCCESS__",
                         "content": {
                             "application/json": {
@@ -3673,7 +3712,7 @@
             "get": {
                 "tags": ["Comment API"],
                 "summary": "list all comment by chapterId",
-                "description": "list all comment by chapterId",
+                "description": "# List Comment by chapterId\nKirim permintaan `GET` untuk mendapatkan seluruh komentar yang ada di setiap chapter",
                 "responses": {
                     "200": {
                         "description": "success get all comment by chapterId",
@@ -3691,7 +3730,7 @@
                                         "data": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/components/schemas/CommentWithChapterPayload"
+                                                "$ref": "#/components/schemas/CommentResponse"
                                             }
                                         }
                                     }
@@ -3726,13 +3765,14 @@
             "get": {
                 "tags": ["Comment API"],
                 "summary": "list all comment by userId",
-                "description": "list all comment by userId",
+                "description": "# List comment by userId\nKirim permintaan `GET` dengan membawa `access_token` yang valid untuk endpoint ini, endpoint ini akan mendapatkan semua komentar yang pernah dilakukan user di semua chapter",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -3789,13 +3829,14 @@
             "put": {
                 "tags": ["Comment API"],
                 "summary": "update comment",
-                "description": "update comment",
+                "description": "# Update Comment\nKirim permintaan `PUT` dengan membawa `access_token` yang valid untuk endpoint ini, `Request Body` bisa memilih beberapa field yang kosong, tanpa mengisi keseluruhan field json.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
@@ -3877,13 +3918,14 @@
             "delete": {
                 "tags": ["Comment API"],
                 "summary": "delete comment",
-                "description": "delete comment",
+                "description": "# Delete Comment\nKirim permintaan `DELETE` dengan membawa `access_token` yang valid untuk endpoint ini.",
                 "security": [{
                     "UserAuth": []
                 }],
                 "parameters": [
                     {
                         "name": "TOKEN",
+                        "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
                         "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
                     }
