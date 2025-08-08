@@ -1,0 +1,12 @@
+# Documentation
+
+- [Documentation API](./openapi.html)
+
+## Github Pages
+Penggunaan github pages kebutuhan openapi.json agar lebih mudah diakses dan dapat menghindari `cors` https dari mockapi `https://beeceptor.com`
+
+- Masuk ke Settings repo → Pages
+- Source → Deploy from branch
+- Pilih main branch, lalu folder /docs
+- Klik Save
+- Tunggu 1 sampai 2 menit dan akses [shioriapi](https://dhino12.github.io/ahioriapi/)
