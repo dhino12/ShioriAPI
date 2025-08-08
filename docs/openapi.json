@@ -11,8 +11,8 @@
             "description": "localhost"
         },
         {
-            "url": "https://shioriapi.free.beeceptor.com",
-            "description": "mock-api"
+            "url": "https://008cad88-3ab2-405b-b546-33dbe0eeb5e6.mock.pstmn.io/",
+            "description": "postman-mock-api"
         }
     ],
     "paths": {

@@ -1,0 +1,27 @@
+{
+  "name": "webtoon-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhino12/shioriapi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhino12/shioriapi/issues"
+  },
+  "homepage": "https://github.com/dhino12/shioriapi#readme",
+  "dependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "uuid": "^11.1.0"
+  }
+}
