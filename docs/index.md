@@ -4,7 +4,7 @@
 - [Detail Documentation API](https://github.com/dhino12/shioriapi)
 
 ## Github Pages
-Penggunaan github pages kebutuhan openapi.json agar lebih mudah diakses dan dapat menghindari `cors` https dari mockapi `https://beeceptor.com`
+Penggunaan github pages kebutuhan openapi.json agar lebih mudah diakses dan dapat menghindari `cors` https dari mockapi `postman mock`
 
 - Masuk ke Settings repo → Pages
 - Source → Deploy from branch
