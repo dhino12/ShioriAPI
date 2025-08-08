@@ -1,0 +1,4715 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Shiori RESTAPI",
+        "description": "a collection of manga, manhwa, manhua in various languages that have been translated",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000/api/v1",
+            "description": "localhost"
+        },
+        {
+            "url": "https://shioriapi.free.beeceptor.com",
+            "description": "mock-api"
+        }
+    ],
+    "paths": {
+        "/register": {
+            "description": "register user",
+            "post": {
+                "tags": ["Authentication"],
+                "summary": "register user",
+                "description": "register user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RegisterPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS REGISTER__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code":{
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "email": {
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "role": {
+                                                    "type": "string"
+                                                },
+                                                "created_at": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/login": {
+            "description": "login user",
+            "post": {
+                "tags": ["Authentication"],
+                "summary": "login user",
+                "description": "login user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS REGISTER__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code":{
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/LoginResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users": {
+            "description": "list all users",
+            "get": {
+                "tags": ["User API"],
+                "summary": "list all users",
+                "description": "list all users",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success get all users",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/UsersResponse"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": ["User API"],
+                "summary": "create user",
+                "description": "create user",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/UsersResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{id}": {
+            "get": {
+                "tags": ["User API"],
+                "summary": "get user by id",
+                "description": "get user by id",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success get users by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/UsersResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": ["User API"],
+                "summary": "update user",
+                "description": "update user",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/UsersResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["User API"],
+                "summary": "delete user",
+                "description": "delete user",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/bookmarks": {
+            "post": {
+                "tags": ["Bookmarks API"],
+                "summary": "create bookmark",
+                "description": "create bookmark",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BookmarkPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/BookmarkResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/bookmarks/{id}": {
+            "get": {
+                "tags": ["Bookmarks API"],
+                "summary": "get bookmark by id",
+                "description": "get bookmark by id",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success get bookmark by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/BookmarkResponseWithComic"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Bookmarks API"],
+                "summary": "delete bookmark",
+                "description": "delete bookmark",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{userId}/bookmarks": {
+            "get": {
+                "tags": ["Bookmarks API"],
+                "summary": "list all bookmark by userId",
+                "description": "list all bookmark by userId",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success get all bookmark by userId",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/BookmarkResponseWithComics"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/comics": {
+            "get": {
+                "tags": ["Comics API"],
+                "summary": "list all comics",
+                "description": "list all comics",
+                "responses": {
+                    "200": {
+                        "description": "success get all comics",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/ComicResponseWithGenre"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": ["Comics API"],
+                "summary": "create comic",
+                "description": "create comic",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ComicPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code":{
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/ComicResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/comics/{id}": {
+            "get": {
+                "tags": ["Comics API"],
+                "summary": "get comic by id",
+                "description": "get comic by id",
+                "responses": {
+                    "200": {
+                        "description": "success get comic by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/ComicDetailResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Comics API"],
+                "summary": "update comic",
+                "description": "update comic",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ComicPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/ComicResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Comics API"],
+                "summary": "delete comic",
+                "description": "delete comic",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/chapters": {
+            "post": {
+                "tags": ["Chapters API"],
+                "summary": "create chapter",
+                "description": "create chapter",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ChapterPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/ChapterResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/chapters/{id}": {
+            "put": {
+                "tags": ["Chapters API"],
+                "summary": "update chapter",
+                "description": "update chapter",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ChapterPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/ChapterResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Chapters API"],
+                "summary": "delete chapter",
+                "description": "delete chapter",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/comics/{id}/chapters": {
+            "get": {
+                "tags": ["Chapters API"],
+                "summary": "list all chapter",
+                "description": "list all chapter",
+                "responses": {
+                    "200": {
+                        "description": "success get all chapter",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/ChapterResponse"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/comics/{id}/chapters/{chapterId}": {
+            "get": {
+                "tags": ["Chapters API"],
+                "summary": "get chapter by id",
+                "description": "get chapter by id",
+                "responses": {
+                    "200": {
+                        "description": "success get chapters by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/ChapterDetailResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/episode": {
+            "post": {
+                "tags": ["Epsiode API"],
+                "summary": "create episode",
+                "description": "create episode",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EpisodePagePayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/EpisodePageResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/episode/{id}": {
+            "put": {
+                "tags": ["Epsiode API"],
+                "summary": "update episode",
+                "description": "update episode",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EpisodePagePayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/EpisodePageResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Epsiode API"],
+                "summary": "delete episode",
+                "description": "delete episode",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/comics/{id}/chapters/{chapterId}/epsiode": {
+            "get": {
+                "tags": ["Epsiode API"],
+                "summary": "list all epsiode",
+                "description": "list all epsiode",
+                "responses": {
+                    "200": {
+                        "description": "success get all epsiode",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/EpisodePagePayload"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/comics/{id}/chapters/{chapterId}/epsiode/{episodeId}": {
+            "get": {
+                "tags": ["Epsiode API"],
+                "summary": "get epsiode by id",
+                "description": "get epsiode by id",
+                "responses": {
+                    "200": {
+                        "description": "success get epsiode by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/EpisodePageResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/creator": {
+            "post": {
+                "tags": ["Creator API"],
+                "summary": "create creator",
+                "description": "create creator",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreatorPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code":{
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/CreatorResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Creator API"],
+                "summary": "list all creator",
+                "description": "list all creator",
+                "responses": {
+                    "200": {
+                        "description": "success get all creator",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/CreatorResponse"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/creator/{id}": {
+            "get": {
+                "tags": ["Creator API"],
+                "summary": "get creator by id",
+                "description": "get creator by id",
+                "responses": {
+                    "200": {
+                        "description": "success get creator by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/CreatorWithCreationResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Creator API"],
+                "summary": "update creator",
+                "description": "update creator",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreatorPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/CreatorResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Creator API"],
+                "summary": "delete creator",
+                "description": "delete creator",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/genre": {
+            "post": {
+                "tags": ["Genre API"],
+                "summary": "create genre",
+                "description": "create genre",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GenrePayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code":{
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/GenreResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Genre API"],
+                "summary": "list all genre",
+                "description": "list all genre",
+                "responses": {
+                    "200": {
+                        "description": "success get all genre",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/GenreResponse"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/genre/{id}": {
+            "get": {
+                "tags": ["Genre API"],
+                "summary": "get genreby id",
+                "description": "get genreby id",
+                "responses": {
+                    "200": {
+                        "description": "success get genre by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/GenreResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Genre API"],
+                "summary": "update genre",
+                "description": "update genre",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GenrePayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/GenreResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Genre API"],
+                "summary": "delete genre",
+                "description": "delete genre",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/favorite": {
+            "get": {
+                "tags": ["Favorite API"],
+                "summary": "list all favorite",
+                "description": "list all favorite",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success get all favorite",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/FavoriteWithComicResponse"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": ["Favorite API"],
+                "summary": "create favorite",
+                "description": "create favorite",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FavoritePayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code":{
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/FavoriteResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/favorite/{id}": {
+            "get": {
+                "tags": ["Favorite API"],
+                "summary": "get favorite by id",
+                "description": "get favorite by id",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success get favorite by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/FavoriteWithComicResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Favorite API"],
+                "summary": "update favorite",
+                "description": "update favorite",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FavoritePayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/FavoriteResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Favorite API"],
+                "summary": "delete favorite",
+                "description": "delete favorite",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rating": {
+            "post": {
+                "tags": ["Rating API"],
+                "summary": "create rating",
+                "description": "create rating",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RatingPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code":{
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/RatingResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Rating API"],
+                "summary": "list all rating",
+                "description": "list all rating",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success get all rating",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/RatingWithComicResponse"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rating/{id}": {
+            "put": {
+                "tags": ["Rating API"],
+                "summary": "update rating",
+                "description": "update rating",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RatingPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/RatingResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Rating API"],
+                "summary": "delete rating",
+                "description": "delete rating",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/subscription": {
+            "post": {
+                "tags": ["Subscription API"],
+                "summary": "create subscription",
+                "description": "create subscription",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SubscriptionPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code":{
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/SubscriptionResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Subscription API"],
+                "summary": "list all subscription",
+                "description": "list all subscription",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success get all subscription",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/SubscriptionWithComicResponse"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/subscription/{id}": {
+            "delete": {
+                "tags": ["Subscription API"],
+                "summary": "delete subscription",
+                "description": "delete subscription",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/history": {
+            "post": {
+                "tags": ["History API"],
+                "summary": "create history",
+                "description": "create history",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/HistoryPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code":{
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/HistoryResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["History API"],
+                "summary": "list all history",
+                "description": "list all history",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success get all history",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/HistoryWithComicResponse"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/history/{id}": {
+            "delete": {
+                "tags": ["History API"],
+                "summary": "delete history",
+                "description": "delete history",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/comment": {
+            "post": {
+                "tags": ["Comment API"],
+                "summary": "create comment",
+                "description": "create comment",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CommentPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code":{
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/CommentResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/chapters/{id}/comment": {
+            "get": {
+                "tags": ["Comment API"],
+                "summary": "list all comment by chapterId",
+                "description": "list all comment by chapterId",
+                "responses": {
+                    "200": {
+                        "description": "success get all comment by chapterId",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/CommentWithChapterPayload"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{id}/comment": {
+            "get": {
+                "tags": ["Comment API"],
+                "summary": "list all comment by userId",
+                "description": "list all comment by userId",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success get all comment by userId",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/CommentWithChapterPayload"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/comment/{id}": {
+            "put": {
+                "tags": ["Comment API"],
+                "summary": "update comment",
+                "description": "update comment",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CommentPayload"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/CommentResponse"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Comment API"],
+                "summary": "delete comment",
+                "description": "delete comment",
+                "security": [{
+                    "UserAuth": []
+                }],
+                "parameters": [
+                    {
+                        "name": "TOKEN",
+                        "in": "header",
+                        "description": "__🔐 JWT TOKEN AS ACCESS_TOKEN__"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "__✅ SUCCESS__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "code": {
+                                            "type": "number"
+                                        },
+                                        "status": {
+                                            "type": "string"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "__⚠️ 🟡 Bad Request (validation failed)__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "__⚠️ 🟡 Not Found__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "__⚠️ 🟡 Unauthorized__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "__⛔❌🛑 INTERNAL SERVER ERROR__",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "UserAuth": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "TOKEN",
+                "description": "Authentication for users API"
+            }
+        },
+        "schemas": {
+            "RegisterPayload": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "LoginPayload": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UserPayload": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "role": {
+                        "type": "string"
+                    }
+                }
+            },
+            "RatingPayload": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "score": {
+                        "type": "number",
+                        "maximum": 10
+                    },
+                    "created_at": {
+                        "type": "string"
+                    }
+                }
+            },
+            "SubscriptionPayload": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "subscribed_at": {
+                        "type": "number",
+                        "maximum": 10
+                    }
+                }
+            },
+            "FavoritePayload": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GenrePayload": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CreatorPayload": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                }
+            },
+            "BookmarkPayload": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "EpisodePagePayload": {
+                "type": "object",
+                "properties": {
+                    "chapter_id": {
+                        "type": "string"
+                    },
+                    "image_url": {
+                        "type": "string"
+                    },
+                    "page_number": {
+                        "type": "number"
+                    }
+                }
+            },
+            "ComicPayload": {
+                "type": "object",
+                "properties": {
+                    "type_id": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "thumbnail_url": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ChapterPayload": {
+                "type": "object",
+                "properties": {
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "number_chapter": {
+                        "type": "string"
+                    },
+                    "thumbnail_url": {
+                        "type": "string"
+                    },
+                    "published_at": {
+                        "type": "string",
+                        "description": "optional",
+                        "nullable": true
+                    }
+                }
+            },
+            "CommentPayload": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "chapter_id": {
+                        "type": "string"
+                    },
+                    "content": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "number"
+                    }
+                }
+            },
+            "HistoryPayload": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "chapter_id": {
+                        "type": "string"
+                    },
+                    "read_at": {
+                        "type": "number",
+                        "maximum": 10
+                    }
+                }
+            },
+            "LoginResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "access_token": {
+                        "type": "string"
+                    },
+                    "refresh_token": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UsersResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CommentResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "chapter_id": {
+                        "type": "string"
+                    },
+                    "content": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "number"
+                    }
+                }
+            },
+            "CommentWithChapterPayload": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "chapter_id": {
+                        "type": "string"
+                    },
+                    "content": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "number"
+                    },
+                    "chapter": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/ChapterResponse"
+                    }
+                }
+            },
+            "HistoryResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "chapter_id": {
+                        "type": "string"
+                    },
+                    "read_at": {
+                        "type": "number",
+                        "maximum": 10
+                    }
+                }
+            },
+            "HistoryWithComicResponse": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "chapter_id": {
+                        "type": "string"
+                    },
+                    "read_at": {
+                        "type": "number",
+                        "maximum": 10
+                    },
+                    "comic": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/ComicResponse"
+                    },
+                    "chapter": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/ChapterResponse"
+                    }
+                }
+            },
+            "SubscriptionResponse": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "subscribed_at": {
+                        "type": "number",
+                        "maximum": 10
+                    }
+                }
+            },
+            "SubscriptionWithComicResponse": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "subscribed_at": {
+                        "type": "number",
+                        "maximum": 10
+                    },
+                    "comic": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/ComicResponseWithGenre"
+                    }
+                }
+            },
+            "FavoriteWithComicResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "comic": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/ComicResponseWithGenre"
+                    }
+                }
+            },
+            "FavoriteResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    }
+                }
+            },
+            "RatingWithComicResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "score": {
+                        "type": "number"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "comic": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/ComicResponse"
+                    }
+                }
+            },
+            "RatingResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "score": {
+                        "type": "number"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GenreResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "TypeResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CreatorWithCreationResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "comics": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ComicResponseWithGenre"
+                        }
+                    }
+                }
+            },
+            "CreatorResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                }
+            },
+            "EpisodePageResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "chapter_id": {
+                        "type": "string"
+                    },
+                    "image_url": {
+                        "type": "string"
+                    },
+                    "page_number": {
+                        "type": "number"
+                    }
+                }
+            },
+            "ChapterDetailResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "number_chapter": {
+                        "type": "string"
+                    },
+                    "thumbnail_url": {
+                        "type": "string"
+                    },
+                    "published_at": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "episode_page": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/EpisodePageResponse"
+                        }
+                    }
+                }
+            },
+            "ChapterResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "number_chapter": {
+                        "type": "string"
+                    },
+                    "thumbnail_url": {
+                        "type": "string"
+                    },
+                    "published_at": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ComicDetailResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "type_id": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "thumbnail_url": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "favorite": {
+                        "type": "number"
+                    },
+                    "rating": {
+                        "type": "number"
+                    },
+                    "type": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/TypeResponse"
+                    },
+                    "creator": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CreatorResponse"
+                        }
+                    },
+                    "genre": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GenreResponse"
+                        }
+                    }
+                }
+            },
+            "ComicResponseWithGenre": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "type_id": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "thumbnail_url": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "favorite": {
+                        "type": "number"
+                    },
+                    "genre": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/GenreResponse"
+                        }
+                    }
+                }
+            },
+            "ComicResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "type_id": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    }
+                }
+            },
+            "BookmarkResponse": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    }
+                }
+            },
+            "BookmarkResponseWithComic": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "comics": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/ComicResponse"
+                    }
+                }
+            },
+            "BookmarkResponseWithComics": {
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "type": "string"
+                    },
+                    "comic_id": {
+                        "type": "string"
+                    },
+                    "comics": {
+                        "type": "array",
+                        "$ref": "#/components/schemas/ComicResponse"
+                    }
+                }
+            },
+            "ErrorResponse": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "number"
+                    },
+                    "data": {
+                        "type": "object"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

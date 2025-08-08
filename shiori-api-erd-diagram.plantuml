@@ -1,0 +1,162 @@
+@startuml
+skinparam linetype ortho
+
+entity User {
+  *id : UUID
+  --
+  email : string
+  name : string
+  password : string
+  role : enum
+  created_at : timestamp
+  updated_at : timestamp
+  deleted_at : timestamp
+}
+
+entity WebtoonType {
+  *id : UUID
+  --
+  name : string
+}
+
+entity Webtoon {
+  *id : UUID
+  --
+  title : string
+  description : text
+  type_id : UUID
+  thumbnail_url : string
+  status : enum
+  created_at : timestamp
+  updated_at : timestamp
+  deleted_at : timestamp
+}
+
+entity Genre {
+  *id : UUID
+  --
+  name : string
+}
+
+entity WebtoonGenre {
+  *id : UUID
+  --
+  webtoon_id : UUID
+  genre_id : UUID
+}
+
+entity Chapter {
+  *id : UUID
+  --
+  webtoon_id : UUID
+  title : string
+  number : int
+  thumbnail_url : string
+  published_at : datetime
+  created_at : timestamp
+  updated_at : timestamp
+  deleted_at : timestamp
+}
+
+entity EpisodePage {
+  *id : UUID
+  --
+  chapter_id : UUID
+  image_url : string
+  page_number : int
+}
+
+entity Comment {
+  *id : UUID
+  --
+  chapter_id : UUID
+  user_id : UUID
+  content : text
+  created_at : timestamp
+}
+
+entity Favorite {
+  *id : UUID
+  --
+  user_id : UUID
+  webtoon_id : UUID
+  created_at : timestamp
+}
+
+entity Bookmark {
+  *id : UUID
+  --
+  user_id : UUID
+  webtoon_id : UUID
+  chapter_id : UUID
+  created_at : timestamp
+}
+
+entity UserHistory {
+  *id : UUID
+  --
+  user_id : UUID
+  chapter_id : UUID
+  read_at : timestamp
+}
+
+entity Rating {
+  *id : UUID
+  --
+  user_id : UUID
+  webtoon_id : UUID
+  score : int
+  created_at : timestamp
+}
+
+entity Subscription {
+  *id : UUID
+  --
+  user_id : UUID
+  webtoon_id : UUID
+  subscribed_at : timestamp
+}
+
+entity Creator {
+  *id : UUID
+  --
+  name : string
+  type : enum
+}
+
+entity WebtoonCreator {
+  *id : UUID
+  --
+  webtoon_id : UUID
+  creator_id : UUID
+  role : enum
+}
+
+' === Relationships ===
+
+User ||--o{ Favorite : favorites
+User ||--o{ Bookmark : bookmarks
+User ||--o{ Rating : rates
+User ||--o{ Subscription : follows
+User ||--o{ Comment : writes
+User ||--o{ UserHistory : reads
+
+Webtoon ||--o{ Chapter : has
+Chapter ||--o{ EpisodePage : pages
+Chapter ||--o{ Comment : receives
+Chapter ||--o{ Bookmark : bookmarked
+Chapter ||--o{ UserHistory : viewed
+
+Webtoon ||--o{ Favorite : liked_by
+Webtoon ||--o{ Bookmark : has_bookmark
+Webtoon ||--o{ Rating : rated_by
+Webtoon ||--o{ Subscription : subscribed
+Webtoon ||--o{ WebtoonGenre
+Webtoon ||--o{ WebtoonCreator
+WebtoonType ||--o{ Webtoon : typed_as
+
+Genre ||--o{ WebtoonGenre
+
+Creator ||--o{ WebtoonCreator : contributes
+
+@enduml
