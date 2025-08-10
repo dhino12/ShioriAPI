@@ -88,7 +88,6 @@ entity Bookmark {
   --
   user_id : UUID
   webtoon_id : UUID
-  chapter_id : UUID
   created_at : timestamp
 }
 
@@ -144,7 +143,6 @@ User ||--o{ UserHistory : reads
 Webtoon ||--o{ Chapter : has
 Chapter ||--o{ EpisodePage : pages
 Chapter ||--o{ Comment : receives
-Chapter ||--o{ Bookmark : bookmarked
 Chapter ||--o{ UserHistory : viewed
 
 Webtoon ||--o{ Favorite : liked_by

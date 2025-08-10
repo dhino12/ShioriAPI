@@ -53,3 +53,49 @@ Jika kita sudah memiliki file migration atau model di `schema.prisma`, lakukan p
 ```sh
 npx prisma generate
 ```
+
+## CommonJS vs ESNEXT
+Saat development (misal `ts-node` atau `editor`) kamu bisa import dengan `.ts` atau tanpa ekstensi <br>
+TypeScript dan `ts-node` memahami ekstensi `.ts` dan akan resolve modul secara otomatis. Jadi, ini bisa jalan:
+
+```ts
+import { logger } from "./app/logging";
+
+// atau
+import { logger } from "./app/logging.ts";
+```
+dan ini masih oke karena tooling (`tsc`, `ts-node`) bisa resolve file `.ts` dengan mudah, dengan catatan pada tsconfig.json, kita harus menambahkan code ini. __Tapi ini hanya ⚠️ versi Typescript 5.0, keatas__
+```json
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": true, // ini
+  }
+}
+```
+
+Kalau target module adalah ES Module ("module": "esnext" atau "es6"), kamu harus pastikan di runtime import pakai ekstensi .js.
+Jadi setelah build, kamu harus mengganti import jadi pakai `.js` — ini bisa dilakukan dengan:
+- Bundler (`webpack`, `esbuild`, `rollup`) yang otomatis ubah ekstensi
+- Atau tool transformasi post-build (contoh `tsc-alias`)
+- Atau menggunakan plugin babel transformasi extensi dari .ts ke .js
+- Atau manual import `.js` (tapi susah maintain)
+
+Contoh konfigurasi di .bablerc:
+```sh
+npm i babel-plugin-transform-import-extension
+```
+```json
+{
+  "plugins": [
+    ["transform-import-extension", { "extensions": [".ts", ".tsx"], "replace": ".js" }]
+  ]
+}
+```
+lalu jalankan build.
+```sh
+npm run build:tsc
+```
+
+Kalau mau praktis, __opsi populer__:
+- Pakai `"module": "commonjs"` di `tsconfig` → di runtime Node.js cukup import tanpa ekstensi, karena commonjs resolve otomatis.
+- Di development dan build, `import { ... } from './app/logging'` bisa jalan tanpa masalah.

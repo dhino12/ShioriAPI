@@ -14,3 +14,169 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Roles {
+  user
+  admin
+}
+
+enum ProgressComic {
+  completed
+  ongoing
+}
+
+model User {
+  id            String      @id @db.VarChar(100) 
+  email         String      @db.VarChar(100)
+  password      String      @db.VarChar(100)
+  name          String?     @db.VarChar(255)
+  role          Roles       @default(user)
+  refresh_token String?     @db.VarChar(255)
+  created_at    DateTime    @default(now())
+  updated_at    DateTime?   @updatedAt
+  deleted_at    DateTime?   @updatedAt
+  bookmark      Bookmark[]
+  rating        Rating[]
+  subscription  Subscription[]
+  history       History[]
+  comment       Comment[]
+
+  @@map("users")
+}
+
+model Comic {
+  id                String        @id @db.VarChar(100) @unique
+  type_id           Int
+  title             String        @db.VarChar(255)
+  description       String        @db.Text
+  thumbnail_url     String        @db.VarChar(255)
+  status            ProgressComic @default(ongoing)
+  created_at        DateTime      @default(now())
+  updated_at        DateTime?     @updatedAt
+  deleted           Boolean       @default(false) // softdelete (false) berarti data blm dihapus, ktika dihapus berubah mnjdi true
+  creator           Creator[]     // implicit many-to-many
+  genre             Genre[]       // implicit many-to-many
+  type              Type          @relation(fields: [type_id], references: [id]) // manga, manhwa, manhua
+  bookmark          Bookmark[]
+  favorite          Favorite[]
+  rating            Rating[]
+  subscription      Subscription[]
+
+  @@map("comics")
+}
+
+model Type {
+  id            Int     @id @default(autoincrement())
+  name          String  @db.VarChar(100)
+  comic         Comic[]
+
+  @@map("types")
+}
+
+model Creator {
+  id                Int        @id @default(autoincrement())
+  name              String     @db.VarChar(255)
+  comics            Comic[]    // implicit many-to-many
+
+  @@map("creators")
+}
+
+model Genre {
+  id                Int        @id @default(autoincrement())
+  name              String     @db.VarChar(100)
+  comics            Comic[]    // implicit many-to-many
+
+  @@map("genres")
+}
+
+model Chapter {
+  id                String      @id @db.VarChar(100) @unique
+  comic_id          String      @db.VarChar(100)
+  title             String      @db.VarChar(255)
+  number            Int         @db.Int
+  thumbnail_url     String      @db.VarChar(255)
+  published_at      DateTime    @db.Timestamp() @default(now())
+  created_at        DateTime    @default(now())
+  updated_at        DateTime?   @updatedAt
+  episode_page      EpisodePage[]
+  history           History[]
+  comment       Comment[]
+
+  @@map("chapters")
+}
+
+model EpisodePage {
+  id               Int       @id @default(autoincrement()) @unique
+  chapter_id       String    @db.VarChar(100)
+  image_url        String    @db.VarChar(255)
+  page_number      Int       @db.Int
+  chapter          Chapter   @relation(fields: [chapter_id], references: [id])
+
+  @@map("episode_pages")
+}
+
+model Bookmark {
+  id                String     @id @db.VarChar(255)
+  user_id           String     @db.VarChar(255)
+  comic_id          String     @db.VarChar(100)
+  created_at        DateTime   @default(now())
+  comic             Comic      @relation(fields: [comic_id], references: [id])
+  user              User       @relation(fields: [user_id], references: [id])
+
+  @@map("bookmarks")
+}
+
+model Favorite {
+  id                Int     @id @default(autoincrement())
+  user_id           String  @db.VarChar(100)
+  comic_id          String  @db.VarChar(100)
+  created_at        DateTime @default(now())
+  Comics            Comic    @relation(fields: [comic_id], references: [id])
+
+  @@map("favorites")
+}
+
+model Rating {
+  id                Int       @id @default(autoincrement())
+  user_id           String    @db.VarChar(100)
+  comic_id          String    @db.VarChar(100)
+  score             Int       @db.Int
+  created_at        DateTime  @default(now())
+  comic             Comic     @relation(fields: [comic_id], references: [id])
+  user              User     @relation(fields: [user_id], references: [id])
+
+  @@map("ratings")
+}
+
+model Subscription {
+  id               String     @id @db.VarChar(100) @unique
+  user_id          String     @db.VarChar(100)
+  comic_id         String     @db.VarChar(100)
+  subscribed_at    DateTime   @db.Timestamp() @default(now())
+  user             User       @relation(fields: [user_id], references: [id])
+  comic            Comic      @relation(fields: [comic_id], references: [id])
+
+  @@map("subscriptions")
+}
+
+model History {
+  id              Int       @id @default(autoincrement())
+  user_id         String    @db.VarChar(100)
+  chapter_id      String    @db.VarChar(100)
+  read_at         DateTime  @db.Timestamp() @default(now())
+  chapter         Chapter     @relation(fields: [chapter_id], references: [id])
+  user            User      @relation(fields: [user_id], references: [id])
+
+  @@map("historys")
+}
+
+model Comment {
+  id             Int      @id @default(autoincrement())
+  chapter_id     String   @db.VarChar(100)
+  user_id        String   @db.VarChar(100)
+  content        String   @db.Text
+  created_at     DateTime @default(now())
+  chapter        Chapter  @relation(fields: [chapter_id], references: [id])
+  user           User     @relation(fields: [user_id], references: [id])
+
+  @@map("comments")
+}
