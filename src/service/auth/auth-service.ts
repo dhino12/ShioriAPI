@@ -26,10 +26,10 @@ export class AuthService implements IAuthService {
         
         const findEmail = await this.repo.findByEmail(loginRequest.email);
         if (!findEmail) throw new ResponseError(400, "email/password wrong");
-
+        
         const ok = await bcrypt.compare(loginRequest.password, findEmail.password);
         if (!ok) throw new ResponseError(400, "email/password wrong");
-
+        
         const accessToken = signAccess({sub: findEmail.id, email: findEmail.email, id: findEmail.id});
         const refreshToken = signRefresh({sub: findEmail.id})
 

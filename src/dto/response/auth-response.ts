@@ -11,7 +11,7 @@ export type AuthResponse = {
 }
 
 export function toAuthResponse(user: UserModel | null): AuthResponse {
-    if (user == null) throw new ResponseError(500, "user something error from database")
+    if (user == null) throw new ResponseError(500, "auth_error, something error from database")
     return removeNulls({
         id: user.id,
         email: user.email,

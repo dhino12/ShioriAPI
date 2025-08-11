@@ -1,3 +1,5 @@
+import { ResponseError } from "../error/response-error";
+import { BookmarkModel } from "../model/bookmark";
 import { UserModel } from "../model/user";
 
 export const toUserModel = (data: any): UserModel => {
@@ -10,6 +12,17 @@ export const toUserModel = (data: any): UserModel => {
         data.refresh_token,
         data.name ?? "",
         data.updated_at ?? null
+    );
+};
+
+export const toBookmarkModel = (data: any): BookmarkModel|null => {
+    if (data == null) return null
+    return new BookmarkModel(
+        data.id,
+        data.user_id,
+        data.comic_id,
+        data.created_at,
+        data.comic ?? {}
     );
 };
 

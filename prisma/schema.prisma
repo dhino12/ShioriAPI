@@ -56,7 +56,7 @@ model Comic {
   creator           Creator[]     // implicit many-to-many
   genre             Genre[]       // implicit many-to-many
   type              Type          @relation(fields: [type_id], references: [id]) // manga, manhwa, manhua
-  bookmark          Bookmark[]
+  // bookmark          Bookmark[]
   favorite          Favorite[]
   rating            Rating[]
   subscription      Subscription[]
@@ -119,7 +119,7 @@ model Bookmark {
   user_id           String     @db.VarChar(255)
   comic_id          String     @db.VarChar(100)
   created_at        DateTime   @default(now())
-  comic             Comic      @relation(fields: [comic_id], references: [id])
+  // comic             Comic      @relation(fields: [comic_id], references: [id])
   user              User       @relation(fields: [user_id], references: [id])
 
   @@map("bookmarks")

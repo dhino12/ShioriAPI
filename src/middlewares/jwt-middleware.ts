@@ -23,6 +23,7 @@ export function jwtAuthMiddleware(req:AuthenticatedRequest, res: Response, next:
             id: payload.id,
             email: payload.email
         };
+        
         next()
     } catch (error) {
         next(new ResponseError(401, "unauthorized"))
