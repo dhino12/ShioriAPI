@@ -1,6 +1,6 @@
-import { prismaClient } from "../../app/database";
-import { toUserModel } from "../../helpers/mappers";
-import { UserModel } from "../../model/user";
+import { prismaClient } from "../../../app/database";
+import { toUserModel } from "../../../helpers/mappers";
+import { UserModel } from "../../../model/user";
 import type { IUserRepository } from "./iuser-repository";
 
 export class UserRepository implements IUserRepository {

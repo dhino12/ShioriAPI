@@ -1,5 +1,6 @@
 import { ResponseError } from "../error/response-error";
 import { BookmarkModel } from "../model/bookmark";
+import { ComicModel, ComicProperties } from "../model/comic";
 import { UserModel } from "../model/user";
 
 export const toUserModel = (data: any): UserModel => {
@@ -25,6 +26,23 @@ export const toBookmarkModel = (data: any): BookmarkModel|null => {
         data.comic ?? {}
     );
 };
+
+export const toComicModel = (dataScraper: any): ComicModel|null => {
+    if (dataScraper == null) return null
+    const {data} = dataScraper
+    const dataComicModel = new ComicModel({
+        id: data.id ?? "",
+        type: data.type ?? "",
+        title: data.title ?? "",
+        description: data.description ?? "",
+        thumbnail_url: data.thumbnail_url ?? "",
+        status: data.status ?? "",
+        genres: data.genres,
+        created_at: data.created_at ?? "",
+    } as ComicProperties)
+    
+    return dataComicModel
+}
 
 export function removeNulls<T extends object>(obj: T): Partial<T> {
     return Object.fromEntries(

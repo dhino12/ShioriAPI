@@ -53,6 +53,53 @@ Jika kita sudah memiliki file migration atau model di `schema.prisma`, lakukan p
 ```sh
 npx prisma generate
 ```
+### Project Structure
+
+```sh
+├───dist
+│   ├───app
+│   ├───controller
+│   │   └───auth
+│   ├───dto
+│   │   ├───request
+│   │   └───response
+│   ├───error
+│   ├───helpers
+│   ├───middlewares
+│   ├───model
+│   ├───repository
+│   │   └───user
+│   ├───service
+│   │   └───auth
+│   └───validation
+├───docs
+├───faker
+├───prisma
+│   └───migrations
+│       ├───20250809081909_create_users_table
+│       ├───20250809110551_create_all_table
+│       └───20250811054707_remove_constraint_bookmark_comic
+├───src
+│   ├───app
+│   ├───controller
+│   │   ├───auth
+│   │   └───bookmark
+│   ├───dto
+│   │   ├───request
+│   │   └───response
+│   ├───error
+│   ├───helpers
+│   ├───middlewares
+│   ├───model
+│   ├───repository
+│   │   ├───bookmark
+│   │   └───user
+│   ├───service
+│   │   ├───auth
+│   │   └───bookmark
+│   └───validation
+└───tests
+```
 
 ## CommonJS vs ESNEXT
 Saat development (misal `ts-node` atau `editor`) kamu bisa import dengan `.ts` atau tanpa ekstensi <br>

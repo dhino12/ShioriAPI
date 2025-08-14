@@ -1,7 +1,7 @@
 import type { AuthRequest } from "../../dto/request/auth-request";
 import { toAuthResponse, type AuthResponse } from "../../dto/response/auth-response";
 import { toUserModel } from "../../helpers/mappers";
-import type { IUserRepository } from "../../repository/user/iuser-repository";
+import type { IUserRepository } from "../../repository/db/user/iuser-repository";
 import { AuthSchemaValidation } from "../../validation/auth-schema";
 import { Validation } from "../../validation/validation";
 import * as bcrypt from 'bcrypt'
