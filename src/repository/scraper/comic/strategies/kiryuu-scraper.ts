@@ -24,13 +24,13 @@ export class KiryuuScraper extends RootScraper implements IComicScraper {
                 const title = container.querySelector('.bixbox h4')?.textContent?.trim() ?? "";
                 const thumbnailUrl = container.querySelector(".imgu img")?.getAttribute("src")?.trim() ?? "";
                 const type = container.querySelector('.luf ul')?.getAttribute("class")
-                // const sareaElement = searchDocument.querySelector('[id^="sarea"]');
-                // const malId = sareaElement?.id.replace(/\D/g, "") ?? null;
+                const id = container.querySelector('imgu a')?.getAttribute("rel");
                 // console.log(title, thumbnailUrl, " < ================== >", type);
                 // const scrapeFromMyanimelistSearch = await this.scrapeFromMyanimelistSearch(title)
 
                 return toComicModel({
                     data: {
+                        id,
                         title,
                         thumbnail_url: thumbnailUrl,
                         type,
