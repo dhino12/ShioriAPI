@@ -2,6 +2,7 @@ import { httpClient } from "../../../../app/http-client";
 import { parseHTML } from "../../../../app/scraper";
 import { ResponseError } from "../../../../error/response-error";
 import { toComicModel } from "../../../../helpers/mappers";
+import { ChapterSimple } from "../../../../model/chapters";
 import { ComicModel } from "../../../../model/comic";
 import { IComicScraper } from "../icomic-scraper";
 import { RootScraper } from "../root-scraper";
@@ -28,13 +29,13 @@ export class KiryuuScraper extends RootScraper implements IComicScraper {
                 const slug = container.querySelector(".luf a")?.getAttribute("href")?.split("/")[4] ?? "";
                 const chaptersElement = container.querySelectorAll('.luf ul li')
                 let updatedAt: string = ''
-                const chapters:any[] = []
+                const chapters:ChapterSimple[] = []
                 chaptersElement.forEach((chapterElement, index) => {
                     chapters.push({
-                        title: chapterElement.querySelector('a')?.textContent,
+                        title: chapterElement.querySelector('a')?.textContent ?? "",
                         slug: chapterElement.querySelector("a")?.getAttribute("href")?.split("/")[3] ?? "",
                         link: chapterElement.querySelector("a")?.getAttribute("href") ?? "",
-                        created_at: chapterElement.querySelector("span")?.textContent
+                        created_at: chapterElement.querySelector("span")?.textContent ?? ""
                     })
                     if (index == 0) {
                         updatedAt = chapterElement.querySelector("span")?.textContent ?? ""

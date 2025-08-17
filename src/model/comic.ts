@@ -1,3 +1,5 @@
+import { ChapterSimple } from "./chapters";
+
 export type ComicProperties = {
     id?: string;
     type?: string;
@@ -7,7 +9,7 @@ export type ComicProperties = {
     thumbnail_url?: string;
     status?: string;
     genres?: [];
-    chapters?: [],
+    chapters?: ChapterSimple[],
     created_at?: string;
     updated_at?: string;
 };
