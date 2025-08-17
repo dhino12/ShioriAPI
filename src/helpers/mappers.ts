@@ -33,12 +33,16 @@ export const toComicModel = (dataScraper: any): ComicModel|null => {
     const dataComicModel = new ComicModel({
         id: data.id ?? "",
         type: data.type ?? "",
+        slug: data.slug ?? "",
         title: data.title ?? "",
         description: data.description ?? "",
         thumbnail_url: data.thumbnail_url ?? "",
         status: data.status ?? "",
         genres: data.genres,
+        chapters: data.chapters,
+        three_new_chapters: data.chapters,
         created_at: data.created_at ?? "",
+        updated_at: data.updated_at ?? "",
     } as ComicProperties)
     
     return dataComicModel
@@ -46,6 +50,6 @@ export const toComicModel = (dataScraper: any): ComicModel|null => {
 
 export function removeNulls<T extends object>(obj: T): Partial<T> {
     return Object.fromEntries(
-        Object.entries(obj).filter(([_, v]) => v != null) // filter null & undefined
+        Object.entries(obj).filter(([_, v]) => v != null || v == "") // filter null & undefined
     ) as Partial<T>;
 }

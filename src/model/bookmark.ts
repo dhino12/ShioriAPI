@@ -1,5 +1,5 @@
 import {v4 as uuid} from 'uuid'
-import { Comic } from './comic'
+import { ComicModel } from './comic'
 
 export class BookmarkModel {
     constructor(
@@ -7,7 +7,7 @@ export class BookmarkModel {
         public user_id: string,
         public comic_id: string,
         public created_at: Date,
-        public comic?: Comic
+        public comic?: ComicModel
     ) {}
     setId() {
         this.id = uuid().substring(0,10)
