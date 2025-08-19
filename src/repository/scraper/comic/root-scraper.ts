@@ -5,10 +5,10 @@ import { ComicModel } from "../../../model/comic";
 import { IComicScraper } from "./icomic-scraper";
 
 export abstract class RootScraper implements IComicScraper {
-    getComicLatest(): Promise<ComicModel[]> {
+    getComicLatest(pages: string): Promise<ComicModel[]> {
         throw new Error("Method not implemented.");
     }
-    getComicDetail(slug: string): Promise<ComicModel> {
+    getComicBySlug(slug: string): Promise<ComicModel> {
         throw new Error("Method not implemented.");
     }
     protected async scrapeMangaSearchHover(id: string) {

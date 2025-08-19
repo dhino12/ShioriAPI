@@ -27,7 +27,7 @@ export const toBookmarkModel = (data: any): BookmarkModel|null => {
     );
 };
 
-export const toComicModel = (dataScraper: any): ComicModel|null => {
+export const toComicModel = (dataScraper: {data: ComicProperties}): ComicModel|null => {
     if (dataScraper == null) return null
     const {data} = dataScraper
     const dataComicModel = new ComicModel({
@@ -35,9 +35,15 @@ export const toComicModel = (dataScraper: any): ComicModel|null => {
         type: data.type ?? "",
         slug: data.slug ?? "",
         title: data.title ?? "",
+        title_alternative: data.title_alternative ?? "",
         description: data.description ?? "",
         thumbnail_url: data.thumbnail_url ?? "",
         status: data.status ?? "",
+        rating: data.rating ?? "",
+        author: data.author ?? "",
+        artist: data.artist ?? "",
+        views: data.views ?? "",
+        followedCount: data.followedCount ?? "",
         genres: data.genres,
         chapters: data.chapters,
         three_new_chapters: data.chapters,

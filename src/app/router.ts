@@ -28,6 +28,7 @@ export const publicRouter = express.Router();
 publicRouter.post("/register", authController.register.bind(authController));
 publicRouter.post("/login", authController.login.bind(authController));
 publicRouter.get("/comics/:domain/latest", comicController.findAllLatest.bind(comicController))
+publicRouter.get("/comics/:domain/:slug", comicController.findBySlug.bind(comicController))
 
 // private routes (butuh JWT)
 export const privateRouter = express.Router();

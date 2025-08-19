@@ -1,4 +1,4 @@
-import type { UserModel } from "../../model/user";
+import { UserModel } from "../../../model/user"
 
 export interface IUserRepository {
     create(user: UserModel): Promise<UserModel | null>
