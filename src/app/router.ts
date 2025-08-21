@@ -1,4 +1,5 @@
 import express from "express";
+import { NextFunction, Response, Request } from "express";
 import { jwtAuthMiddleware } from "../middlewares/jwt-middleware";
 import { errorMiddleware } from "../middlewares/error-middleware";
 import { UserRepository } from "../repository/db/user/user-repository";
@@ -24,6 +25,15 @@ const comicController = new ComicController(comicService);
 
 // public routes (tidak butuh JWT)
 export const publicRouter = express.Router();
+publicRouter.get("/", (req: Request, res: Response, next: NextFunction) => {
+    res.status(200).json({
+        code: 200,
+        status: "success",
+        data: {
+            message: "Hello World"
+        }
+    })
+});
 publicRouter.post("/register", authController.register.bind(authController));
 publicRouter.post("/login", authController.login.bind(authController));
 publicRouter.get("/:domain/comics/list-mode",comicController.findTextListComics.bind(comicController));
