@@ -5,7 +5,6 @@
 ```sh
 npm init -y
 ```
-
 ```sh
 npm install zod
 npm install express
