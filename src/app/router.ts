@@ -8,8 +8,8 @@ import cookieParser from "cookie-parser";
 import { BookmarkRepository } from "../repository/db/bookmark/bookmark-repository";
 import { BookmarkService } from "../service/bookmark/bookmark-service";
 import { BookmarkController } from "../controller/bookmark/bookmark-controller";
-import { ComicService } from "../service/comic/comic-service";
 import { ComicController } from "../controller/comic/comic-controller";
+import { ScraperService } from "../service/scraper/scraper-service";
 
 const userRepo = new UserRepository();
 const authService = new AuthService(userRepo);
@@ -19,16 +19,22 @@ const bookmarkRepo = new BookmarkRepository();
 const bookmarkService = new BookmarkService(bookmarkRepo);
 const bookmarkController = new BookmarkController(bookmarkService);
 
-
-const comicService = new ComicService(null);
+const comicService = new ScraperService(null);
 const comicController = new ComicController(comicService);
 
 // public routes (tidak butuh JWT)
 export const publicRouter = express.Router();
 publicRouter.post("/register", authController.register.bind(authController));
 publicRouter.post("/login", authController.login.bind(authController));
-publicRouter.get("/comics/:domain/latest", comicController.findAllLatest.bind(comicController))
-publicRouter.get("/comics/:domain/:slug", comicController.findBySlug.bind(comicController))
+publicRouter.get("/:domain/comics/list-mode",comicController.findTextListComics.bind(comicController));
+publicRouter.get("/:domain/comics", comicController.findComics.bind(comicController))
+publicRouter.get("/:domain/comics/latest",comicController.findAllLatest.bind(comicController));
+publicRouter.get("/:domain/comics/:slug",comicController.findBySlug.bind(comicController));
+publicRouter.get("/:domain/genres", comicController.findAllGenres.bind(comicController))
+publicRouter.get("/:domain/genres/:slug/comics", comicController.findComicsByGenreSlug.bind(comicController))
+publicRouter.get("/:domain/comics/:slug/chapters", comicController.findChaptersByComicSlug.bind(comicController))
+publicRouter.get("/:domain/comics/:slug/chapters/:slugchapter", comicController.findChapterBySlug.bind(comicController))
+publicRouter.get("/:domain/comics/:slug/chapters/:slugchapter/episodes", comicController.findEpisodesByChapterSlug.bind(comicController))
 
 // private routes (butuh JWT)
 export const privateRouter = express.Router();
@@ -39,7 +45,6 @@ privateRouter.post("/bookmark",bookmarkController.create.bind(bookmarkController
 privateRouter.delete("/bookmark/:id",bookmarkController.delete.bind(bookmarkController));
 privateRouter.get("/bookmark/:id",bookmarkController.findById.bind(bookmarkController));
 privateRouter.get("/bookmark",bookmarkController.findAllByUserId.bind(bookmarkController));
-
 
 const router = express();
 router.use(express.json()); // parsing json

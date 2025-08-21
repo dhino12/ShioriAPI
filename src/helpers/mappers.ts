@@ -1,6 +1,8 @@
 import { ResponseError } from "../error/response-error";
+import { ParsedQs } from "qs";
 import { BookmarkModel } from "../model/bookmark";
 import { ComicModel, ComicProperties } from "../model/comic";
+import { GenreModel, GenreProperties } from "../model/genre";
 import { UserModel } from "../model/user";
 
 export const toUserModel = (data: any): UserModel => {
@@ -26,7 +28,17 @@ export const toBookmarkModel = (data: any): BookmarkModel|null => {
         data.comic ?? {}
     );
 };
-
+export const toGenreModel = (dataScraper: {data: GenreProperties}): GenreModel|null => {
+    if (dataScraper == null) return null
+    const {data} = dataScraper;
+    const dataGenreModel = new GenreModel({
+        id: data.id,
+        title: data.title,
+        slug: data.slug,
+        comics: data.comics,
+    })
+    return dataGenreModel
+}
 export const toComicModel = (dataScraper: {data: ComicProperties}): ComicModel|null => {
     if (dataScraper == null) return null
     const {data} = dataScraper
@@ -47,6 +59,7 @@ export const toComicModel = (dataScraper: {data: ComicProperties}): ComicModel|n
         genres: data.genres,
         chapters: data.chapters,
         three_new_chapters: data.chapters,
+        related_comic: data.related_comic,
         created_at: data.created_at ?? "",
         updated_at: data.updated_at ?? "",
     } as ComicProperties)
@@ -56,6 +69,14 @@ export const toComicModel = (dataScraper: {data: ComicProperties}): ComicModel|n
 
 export function removeNulls<T extends object>(obj: T): Partial<T> {
     return Object.fromEntries(
-        Object.entries(obj).filter(([_, v]) => v != null || v == "") // filter null & undefined
+        Object.entries(obj).filter(([_, v]) => v != null || v != "" || v.length != 0) // filter null & undefined
     ) as Partial<T>;
+}
+
+export function normalizeQuery(q: string | string[] | ParsedQs | ParsedQs[] | undefined, def = ""): string {
+    if (Array.isArray(q)) {
+        return q.map(v => String(v)).join(",");
+    }
+    if (q === undefined) return def;
+    return String(q);
 }

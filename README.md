@@ -24,6 +24,7 @@ npm install uuid
 npm install --save-dev @types/uuid # autocomplete
 npm install jsonwebtoken 
 npm install @types/jsonwebtoken # autocomplete
+npm i cheerio
 
 npx tsc --init
 ```
@@ -121,13 +122,13 @@ dan ini masih oke karena tooling (`tsc`, `ts-node`) bisa resolve file `.ts` deng
 ```
 
 Kalau target module adalah ES Module ("module": "esnext" atau "es6"), kamu harus pastikan di runtime import pakai ekstensi .js.
-Jadi setelah build, kamu harus mengganti import jadi pakai `.js` — ini bisa dilakukan dengan:
+Jadi setelah build, kamu harus mengganti import jadi pakai `.js` pada folder `dist/ (karena stlh build)` — ini bisa dilakukan dengan:
 - Bundler (`webpack`, `esbuild`, `rollup`) yang otomatis ubah ekstensi
 - Atau tool transformasi post-build (contoh `tsc-alias`)
 - Atau menggunakan plugin babel transformasi extensi dari .ts ke .js
 - Atau manual import `.js` (tapi susah maintain)
 
-Contoh konfigurasi di .bablerc:
+Contoh konfigurasi di .bablerc untuk opsi no 3 (`menggunakan plugin babel transformasi extensi dari .ts ke .js`):
 ```sh
 npm i babel-plugin-transform-import-extension
 ```
@@ -146,3 +147,31 @@ npm run build:tsc
 Kalau mau praktis, __opsi populer__:
 - Pakai `"module": "commonjs"` di `tsconfig` → di runtime Node.js cukup import tanpa ekstensi, karena commonjs resolve otomatis.
 - Di development dan build, `import { ... } from './app/logging'` bisa jalan tanpa masalah.
+
+## JSDOM vs Cheerio
+`JSDOM` memang lambat untuk load string html ribuan elemen. Kalau tujuanmu hanya scraping tanpa menjalankan JS didalamnya, lebih baik pakai `Cheerio` (lebih ringan karena hanya parse HTML, bukan full DOM API). Namun jika kamu ingin menjalankan JS juga didalamnya maka opsi terbaik adalah `JSDOM`. Perbandingan dari kedua tools scraping diatas sudah pernah dibahas di artikel ini [JSDOM vs CheerIO](https://www.zenrows.com/blog/jsdom-vs-cheerio)
+
+- jsdom
+  - Menyediakan environment DOM penuh, menyerupai browser sungguhan dengan dukungan untuk eksekusi JavaScript, manipulasi DOM, event handling, dan sebagainya.
+  - Cocok untuk testing aplikasi frontend atau kebutuhan scraping yang memerlukan render JS.
+  - Versatile, tapi berat dan lebih resource-intensive. Kenapa? Karena mensimulasikan lingkungan browser nyata.
+
+- Cheerio
+  - Library parsing HTML yang super ringan dan cepat, menggunakan sintaks ala jQuery.
+  - Hanya untuk parsing HTML statis—tidak bisa menjalankan JavaScript atau rendering DOM kompleks.
+  - Pilihan ideal kalau kamu hanya perlu mengektrak data cepat dari halaman statis.
+
+![](https://static.zenrows.com/content/medium_jsdom_cheerio_benchmark_59efe1928d.png?format=webp)
+
+| Tool    | Kelebihan                                                                | Kekurangan                                      |
+| ------- | ------------------------------------------------------------------------ | ----------------------------------------------- |
+| jsdom   | Full DOM support, jalankan JS, cocok untuk dynamic DOM                   | Heavy, resource-intensive, lebih lambat         |
+| Cheerio | Sangat cepat, ringan, jQuery-like API, efisien untuk HTML parsing statis | Tidak support JavaScript atau full DOM behavior |
+
+### Kapan Pilih Mana?
+
+- Pilih Cheerio jika:
+Kamu hanya perlu scraping halaman statis tanpa JS, mengutamakan kecepatan dan efisiensi—misalnya scraping list manga, judul, link, dsb.
+
+- Pilih jsdom jika:
+Halaman yang kamu scrape butuh eksekusi JavaScript, misalnya untuk menampilkan konten lazy-loaded atau yang dipasang melalui script. Ideal juga untuk testing component React/Vue di Node.js tanpa browser sungguhan.

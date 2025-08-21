@@ -1,6 +1,8 @@
 import { ResponseError } from "../../error/response-error";
 import { removeNulls } from "../../helpers/mappers";
 import { ComicModel } from "../../model/comic";
+import { GenreResponse } from "./genre-response";
+import { RelatedComicResponse } from "./related-response";
 
 export type ComicResponse = {
     id: string;
@@ -17,7 +19,8 @@ export type ComicResponse = {
     author?: string;
     views?: string;
     followedCount?: string;
-    genres?: [];
+    genres?: GenreResponse[];
+    related_comic?: RelatedComicResponse[];
     created_at: string;
     updated_at: string;
 };
@@ -40,22 +43,24 @@ export function toComicResponseDetail(comic: ComicModel | null): ComicResponse {
         genres: comic.genres,
         rating: comic.rating,
         views: comic.views,
+        related_comic: comic.related_comic,
         created_at: comic.created_at,
         updated_at: comic.updated_at,
     }) as ComicResponse;
 }
 
 export function toComicResponse(comic: ComicModel | null): ComicResponse {
-    if (comic == null)
-        throw new ResponseError(500,"bookmark_error, something error from database");
+    if (comic == null) throw new ResponseError(500,"bookmark_error, something error from database");
     return removeNulls({
         id: comic.id,
         title: comic.title,
+        title_alternative: comic.title_alternative,
         slug: comic.slug,
         chapters: comic.chapters,
         type: comic.type,
         thumbnail_url: comic.thumbnail_url,
         status: comic.status,
+        genres: comic.genres,
         rating: comic.rating,
         updated_at: comic.updated_at,
     }) as ComicResponse;
