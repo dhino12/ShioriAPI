@@ -9,7 +9,6 @@
   "scripts": {
     "test": "jest --runInBand",
     "build": "tsc",
-    "postinstall": "prisma generate",
     "build:tsc": "tsc && npm run build:babel",
     "build:babel": "babel dist --out-dir dist --extensions \".js\" --source-maps inline",
     "start": "node dist/main.js"
