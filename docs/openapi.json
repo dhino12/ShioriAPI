@@ -8,11 +8,15 @@
     "servers": [
         {
             "url": "http://localhost:3000/api/v1",
-            "description": "localhost"
+            "description": "development"
         },
         {
-            "url": "https://c958e0cf-8f63-44c1-8d8d-2171e132d4bf.mock.pstmn.io/",
+            "url": "https://98ef1d39-388f-4dba-a5aa-4f0d6b8433db.mock.pstmn.io",
             "description": "postman-mock-api"
+        },
+        {
+            "url": "https://shioriapi.vercel.app/api/v1",
+            "description": "production"
         }
     ],
     "paths": {

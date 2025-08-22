@@ -18,9 +18,9 @@ function generateFake(schema, statusCode = 200) {
 
     switch (schema.type) {
         case "string":
-        if (schema.format === "date-time") return faker.date.recent().toISOString();
-        if (schema.format === "email") return faker.internet.email();
-        return faker.word.sample();
+            if (schema.format === "date-time") return faker.date.recent().toISOString();
+            if (schema.format === "email") return faker.internet.email();
+            return faker.word.sample();
 
         case "integer":
         case "number":
@@ -34,15 +34,15 @@ function generateFake(schema, statusCode = 200) {
             const result = {};
             for (const [key, value] of Object.entries(schema.properties || {})) {
                 if (key === "code") {
-                    result.code = parseInt(statusCode); // fixed from status code
+                    result.code = parseInt(statusCode);
                 } else if (key === "status") {
-                if (statusCode == 200) result.status = "success";
-                else if (statusCode == 201) result.status = "created";
-                else if (statusCode == 400) result.status = "bad request";
-                else if (statusCode == 401) result.status = "unauthorized";
-                else if (statusCode == 404) result.status = "not found";
-                else if (statusCode == 500) result.status = "internal server error";
-                else result.status = "error";
+                    if (statusCode == 200) result.status = "success";
+                    else if (statusCode == 201) result.status = "created";
+                    else if (statusCode == 400) result.status = "bad request";
+                    else if (statusCode == 401) result.status = "unauthorized";
+                    else if (statusCode == 404) result.status = "not found";
+                    else if (statusCode == 500) result.status = "internal server error";
+                    else result.status = "error";
                 } else if (key === "id" || key.endsWith("_id")) {
                     result[key] = faker.number.int({ min: 1, max: 9999 }).toString();
                 } else if (key === "created_at") {
@@ -57,7 +57,7 @@ function generateFake(schema, statusCode = 200) {
         }
 
         default:
-        return null;
+            return null;
     }
 }
 
@@ -88,6 +88,10 @@ function generateCollection() {
                         code: parseInt(code),
                         _postman_previewlanguage: "json",
                         body: JSON.stringify(fake, null, 2),
+                        originalRequest: {   // <- tambahan method & url
+                            method: method.toUpperCase(),
+                            url: `{{baseUrl}}${path}`,
+                        },
                     });
                 }
             }

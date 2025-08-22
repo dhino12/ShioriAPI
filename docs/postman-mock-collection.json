@@ -16,19 +16,31 @@
           "name": "201 Mock",
           "code": 201,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"email\": \"phew\",\n    \"name\": \"except\",\n    \"role\": \"synthesise\",\n    \"created_at\": \"2025-03-30T14:32:40.816Z\"\n  }\n}"
+          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"email\": \"ferociously\",\n    \"name\": \"despite\",\n    \"role\": \"mild\",\n    \"created_at\": \"2025-05-30T23:37:39.323Z\"\n  }\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/register"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/register"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/register"
+          }
         }
       ]
     },
@@ -43,19 +55,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"3392\",\n    \"email\": \"ah\",\n    \"access_token\": \"lyre\",\n    \"refresh_token\": \"off\"\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"1344\",\n    \"email\": \"curiously\",\n    \"access_token\": \"gratefully\",\n    \"refresh_token\": \"bah\"\n  }\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/login"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/login"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/login"
+          }
         }
       ]
     },
@@ -70,19 +94,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"8664\",\n      \"email\": \"though\",\n      \"name\": \"readjust\",\n      \"created_at\": \"2025-05-20T04:31:37.718Z\"\n    },\n    {\n      \"id\": \"2306\",\n      \"email\": \"hateful\",\n      \"name\": \"severe\",\n      \"created_at\": \"2025-01-01T20:00:43.268Z\"\n    }\n  ]\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"8883\",\n      \"email\": \"outflank\",\n      \"name\": \"funny\",\n      \"created_at\": \"2024-11-18T05:01:37.238Z\"\n    },\n    {\n      \"id\": \"1020\",\n      \"email\": \"yum\",\n      \"name\": \"scarcely\",\n      \"created_at\": \"2024-12-16T23:55:13.284Z\"\n    }\n  ]\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/users"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/users"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/users"
+          }
         }
       ]
     },
@@ -97,25 +133,41 @@
           "name": "201 Mock",
           "code": 201,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"9891\",\n    \"email\": \"quarrel\",\n    \"name\": \"battle\",\n    \"created_at\": \"2025-06-06T11:24:30.792Z\"\n  }\n}"
+          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"3108\",\n    \"email\": \"as\",\n    \"name\": \"apparatus\",\n    \"created_at\": \"2025-04-23T05:08:11.940Z\"\n  }\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/users"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/users"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/users"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/users"
+          }
         }
       ]
     },
@@ -130,19 +182,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"7088\",\n    \"email\": \"meanwhile\",\n    \"name\": \"noisily\",\n    \"created_at\": \"2025-05-27T02:01:35.588Z\"\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"1037\",\n    \"email\": \"preside\",\n    \"name\": \"vice\",\n    \"created_at\": \"2025-05-31T18:19:05.590Z\"\n  }\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/users/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/users/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/users/{id}"
+          }
         }
       ]
     },
@@ -157,31 +221,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"2246\",\n    \"email\": \"lavish\",\n    \"name\": \"excitedly\",\n    \"created_at\": \"2024-10-12T23:54:37.749Z\"\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"6504\",\n    \"email\": \"golden\",\n    \"name\": \"since\",\n    \"created_at\": \"2025-03-27T17:44:01.836Z\"\n  }\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/users/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/users/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/users/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/users/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/users/{id}"
+          }
         }
       ]
     },
@@ -196,31 +280,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/users/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/users/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/users/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/users/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/users/{id}"
+          }
         }
       ]
     },
@@ -235,25 +339,41 @@
           "name": "201 Mock",
           "code": 201,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"user_id\": \"2536\",\n    \"comic_id\": \"8559\",\n    \"created_at\": \"2025-03-08T09:12:54.186Z\"\n  }\n}"
+          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"user_id\": \"9032\",\n    \"comic_id\": \"7507\",\n    \"created_at\": \"2024-10-06T18:32:22.700Z\"\n  }\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/bookmarks"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/bookmarks"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/bookmarks"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/bookmarks"
+          }
         }
       ]
     },
@@ -268,19 +388,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"user_id\": \"2563\",\n    \"comic_id\": \"6578\",\n    \"comics\": {\n      \"id\": \"4210\",\n      \"type\": \"neatly\",\n      \"title\": \"crocodile\",\n      \"status\": \"success\",\n      \"slug\": \"times\",\n      \"rating\": \"key\",\n      \"created_at\": \"2025-01-31T08:21:52.966Z\",\n      \"updated_at\": \"2025-08-22T07:17:05.452Z\",\n      \"chapters\": [\n        {\n          \"id\": \"7791\",\n          \"comic_id\": \"466\",\n          \"title\": \"elver\",\n          \"slug\": \"since\",\n          \"number_chapter\": \"majority\",\n          \"thumbnail_url\": \"hence\",\n          \"published_at\": \"apparatus\",\n          \"created_at\": \"2025-01-19T22:04:32.018Z\",\n          \"updated_at\": \"2025-08-21T23:02:40.873Z\"\n        },\n        {\n          \"id\": \"5543\",\n          \"comic_id\": \"7072\",\n          \"title\": \"corral\",\n          \"slug\": \"yippee\",\n          \"number_chapter\": \"quarrelsomely\",\n          \"thumbnail_url\": \"per\",\n          \"published_at\": \"beret\",\n          \"created_at\": \"2025-06-20T20:17:27.639Z\",\n          \"updated_at\": \"2025-08-21T17:07:54.239Z\"\n        }\n      ]\n    }\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"user_id\": \"3618\",\n    \"comic_id\": \"1725\",\n    \"comics\": {\n      \"id\": \"6668\",\n      \"type\": \"gray\",\n      \"title\": \"besides\",\n      \"status\": \"success\",\n      \"slug\": \"hm\",\n      \"rating\": \"upbeat\",\n      \"created_at\": \"2024-09-09T22:51:32.425Z\",\n      \"updated_at\": \"2025-08-22T07:10:56.316Z\",\n      \"chapters\": [\n        {\n          \"id\": \"9197\",\n          \"comic_id\": \"6646\",\n          \"title\": \"task\",\n          \"slug\": \"afore\",\n          \"number_chapter\": \"carpool\",\n          \"thumbnail_url\": \"short-term\",\n          \"published_at\": \"a\",\n          \"created_at\": \"2024-11-28T17:34:39.117Z\",\n          \"updated_at\": \"2025-08-22T04:40:27.571Z\"\n        },\n        {\n          \"id\": \"5942\",\n          \"comic_id\": \"5664\",\n          \"title\": \"amused\",\n          \"slug\": \"throughout\",\n          \"number_chapter\": \"for\",\n          \"thumbnail_url\": \"crushing\",\n          \"published_at\": \"marksman\",\n          \"created_at\": \"2025-04-20T05:41:37.813Z\",\n          \"updated_at\": \"2025-08-21T15:44:41.142Z\"\n        }\n      ]\n    }\n  }\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/bookmarks/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/bookmarks/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/bookmarks/{id}"
+          }
         }
       ]
     },
@@ -295,31 +427,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/bookmarks/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/bookmarks/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/bookmarks/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/bookmarks/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/bookmarks/{id}"
+          }
         }
       ]
     },
@@ -334,19 +486,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"user_id\": \"2639\",\n      \"comic_id\": \"8856\",\n      \"comics\": {\n        \"id\": \"9408\",\n        \"type\": \"doodle\",\n        \"title\": \"ugh\",\n        \"status\": \"success\",\n        \"slug\": \"because\",\n        \"rating\": \"formamide\",\n        \"created_at\": \"2025-08-17T12:45:47.560Z\",\n        \"updated_at\": \"2025-08-21T11:35:45.832Z\",\n        \"chapters\": [\n          {\n            \"id\": \"8331\",\n            \"comic_id\": \"2749\",\n            \"title\": \"um\",\n            \"slug\": \"heavy\",\n            \"number_chapter\": \"quixotic\",\n            \"thumbnail_url\": \"pish\",\n            \"published_at\": \"aw\",\n            \"created_at\": \"2025-03-26T18:40:38.346Z\",\n            \"updated_at\": \"2025-08-22T00:31:59.756Z\"\n          },\n          {\n            \"id\": \"354\",\n            \"comic_id\": \"8825\",\n            \"title\": \"um\",\n            \"slug\": \"intensely\",\n            \"number_chapter\": \"nor\",\n            \"thumbnail_url\": \"obediently\",\n            \"published_at\": \"unless\",\n            \"created_at\": \"2025-02-24T12:26:07.089Z\",\n            \"updated_at\": \"2025-08-22T06:02:07.072Z\"\n          }\n        ]\n      }\n    },\n    {\n      \"user_id\": \"8594\",\n      \"comic_id\": \"3876\",\n      \"comics\": {\n        \"id\": \"4198\",\n        \"type\": \"sermon\",\n        \"title\": \"elevation\",\n        \"status\": \"success\",\n        \"slug\": \"bog\",\n        \"rating\": \"lock\",\n        \"created_at\": \"2024-12-01T15:14:14.685Z\",\n        \"updated_at\": \"2025-08-21T22:47:17.788Z\",\n        \"chapters\": [\n          {\n            \"id\": \"8674\",\n            \"comic_id\": \"5025\",\n            \"title\": \"fumigate\",\n            \"slug\": \"ugh\",\n            \"number_chapter\": \"dispense\",\n            \"thumbnail_url\": \"after\",\n            \"published_at\": \"lest\",\n            \"created_at\": \"2025-02-26T17:14:26.673Z\",\n            \"updated_at\": \"2025-08-21T14:02:47.305Z\"\n          },\n          {\n            \"id\": \"4014\",\n            \"comic_id\": \"7707\",\n            \"title\": \"after\",\n            \"slug\": \"across\",\n            \"number_chapter\": \"lost\",\n            \"thumbnail_url\": \"anti\",\n            \"published_at\": \"along\",\n            \"created_at\": \"2025-06-13T01:58:57.303Z\",\n            \"updated_at\": \"2025-08-21T12:28:11.545Z\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"user_id\": \"5880\",\n      \"comic_id\": \"438\",\n      \"comics\": {\n        \"id\": \"5208\",\n        \"type\": \"sparse\",\n        \"title\": \"outsource\",\n        \"status\": \"success\",\n        \"slug\": \"if\",\n        \"rating\": \"wisely\",\n        \"created_at\": \"2025-03-20T13:10:03.547Z\",\n        \"updated_at\": \"2025-08-21T09:56:11.082Z\",\n        \"chapters\": [\n          {\n            \"id\": \"4440\",\n            \"comic_id\": \"8837\",\n            \"title\": \"knowledgeably\",\n            \"slug\": \"anti\",\n            \"number_chapter\": \"gadzooks\",\n            \"thumbnail_url\": \"rejigger\",\n            \"published_at\": \"the\",\n            \"created_at\": \"2024-11-02T05:01:23.414Z\",\n            \"updated_at\": \"2025-08-21T20:34:56.391Z\"\n          },\n          {\n            \"id\": \"3120\",\n            \"comic_id\": \"626\",\n            \"title\": \"zowie\",\n            \"slug\": \"considering\",\n            \"number_chapter\": \"upright\",\n            \"thumbnail_url\": \"whether\",\n            \"published_at\": \"synergy\",\n            \"created_at\": \"2025-08-05T10:02:37.253Z\",\n            \"updated_at\": \"2025-08-21T20:19:51.884Z\"\n          }\n        ]\n      }\n    },\n    {\n      \"user_id\": \"2865\",\n      \"comic_id\": \"5638\",\n      \"comics\": {\n        \"id\": \"6033\",\n        \"type\": \"glum\",\n        \"title\": \"zealous\",\n        \"status\": \"success\",\n        \"slug\": \"seafood\",\n        \"rating\": \"what\",\n        \"created_at\": \"2024-11-11T10:20:19.752Z\",\n        \"updated_at\": \"2025-08-21T12:53:05.364Z\",\n        \"chapters\": [\n          {\n            \"id\": \"9756\",\n            \"comic_id\": \"3214\",\n            \"title\": \"between\",\n            \"slug\": \"gently\",\n            \"number_chapter\": \"neck\",\n            \"thumbnail_url\": \"beneath\",\n            \"published_at\": \"tomorrow\",\n            \"created_at\": \"2024-11-18T18:59:04.131Z\",\n            \"updated_at\": \"2025-08-21T08:53:27.598Z\"\n          },\n          {\n            \"id\": \"6655\",\n            \"comic_id\": \"4006\",\n            \"title\": \"wherever\",\n            \"slug\": \"deduct\",\n            \"number_chapter\": \"jealously\",\n            \"thumbnail_url\": \"pale\",\n            \"published_at\": \"indeed\",\n            \"created_at\": \"2024-10-03T16:03:59.326Z\",\n            \"updated_at\": \"2025-08-21T08:54:42.889Z\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/users/{userId}/bookmarks"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/users/{userId}/bookmarks"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/users/{userId}/bookmarks"
+          }
         }
       ]
     },
@@ -361,19 +525,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"6573\",\n      \"type\": \"um\",\n      \"title\": \"big\",\n      \"status\": \"success\",\n      \"slug\": \"yum\",\n      \"rating\": \"athletic\",\n      \"created_at\": \"2025-04-23T00:28:51.703Z\",\n      \"updated_at\": \"2025-08-21T11:04:26.652Z\",\n      \"chapters\": [\n        {\n          \"id\": \"1075\",\n          \"comic_id\": \"1378\",\n          \"title\": \"pfft\",\n          \"slug\": \"amongst\",\n          \"number_chapter\": \"nice\",\n          \"thumbnail_url\": \"wheel\",\n          \"published_at\": \"minus\",\n          \"created_at\": \"2025-05-13T12:10:50.722Z\",\n          \"updated_at\": \"2025-08-21T21:09:36.064Z\"\n        },\n        {\n          \"id\": \"9037\",\n          \"comic_id\": \"3717\",\n          \"title\": \"hence\",\n          \"slug\": \"past\",\n          \"number_chapter\": \"behind\",\n          \"thumbnail_url\": \"but\",\n          \"published_at\": \"excited\",\n          \"created_at\": \"2025-01-15T11:52:05.911Z\",\n          \"updated_at\": \"2025-08-21T22:39:10.656Z\"\n        }\n      ]\n    },\n    {\n      \"id\": \"6383\",\n      \"type\": \"palatable\",\n      \"title\": \"putrefy\",\n      \"status\": \"success\",\n      \"slug\": \"ah\",\n      \"rating\": \"always\",\n      \"created_at\": \"2025-03-18T13:13:57.214Z\",\n      \"updated_at\": \"2025-08-21T20:08:19.906Z\",\n      \"chapters\": [\n        {\n          \"id\": \"1004\",\n          \"comic_id\": \"696\",\n          \"title\": \"why\",\n          \"slug\": \"gerbil\",\n          \"number_chapter\": \"honored\",\n          \"thumbnail_url\": \"yum\",\n          \"published_at\": \"though\",\n          \"created_at\": \"2024-09-17T09:01:10.444Z\",\n          \"updated_at\": \"2025-08-21T16:45:38.681Z\"\n        },\n        {\n          \"id\": \"1825\",\n          \"comic_id\": \"6375\",\n          \"title\": \"athwart\",\n          \"slug\": \"safely\",\n          \"number_chapter\": \"raw\",\n          \"thumbnail_url\": \"times\",\n          \"published_at\": \"enormously\",\n          \"created_at\": \"2025-05-24T10:27:22.419Z\",\n          \"updated_at\": \"2025-08-21T23:39:44.509Z\"\n        }\n      ]\n    }\n  ]\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"6713\",\n      \"type\": \"pfft\",\n      \"title\": \"tense\",\n      \"status\": \"success\",\n      \"slug\": \"unless\",\n      \"rating\": \"except\",\n      \"created_at\": \"2025-06-07T13:39:43.503Z\",\n      \"updated_at\": \"2025-08-21T09:49:43.867Z\",\n      \"chapters\": [\n        {\n          \"id\": \"7473\",\n          \"comic_id\": \"6596\",\n          \"title\": \"as\",\n          \"slug\": \"fooey\",\n          \"number_chapter\": \"bus\",\n          \"thumbnail_url\": \"beep\",\n          \"published_at\": \"vacantly\",\n          \"created_at\": \"2025-01-26T14:25:20.729Z\",\n          \"updated_at\": \"2025-08-21T08:27:25.533Z\"\n        },\n        {\n          \"id\": \"6640\",\n          \"comic_id\": \"7415\",\n          \"title\": \"doting\",\n          \"slug\": \"instead\",\n          \"number_chapter\": \"while\",\n          \"thumbnail_url\": \"but\",\n          \"published_at\": \"mispronounce\",\n          \"created_at\": \"2025-07-19T19:24:52.659Z\",\n          \"updated_at\": \"2025-08-21T09:24:04.505Z\"\n        }\n      ]\n    },\n    {\n      \"id\": \"3869\",\n      \"type\": \"but\",\n      \"title\": \"candid\",\n      \"status\": \"success\",\n      \"slug\": \"furthermore\",\n      \"rating\": \"intensely\",\n      \"created_at\": \"2024-08-22T13:12:17.988Z\",\n      \"updated_at\": \"2025-08-22T04:11:50.891Z\",\n      \"chapters\": [\n        {\n          \"id\": \"2833\",\n          \"comic_id\": \"5295\",\n          \"title\": \"thigh\",\n          \"slug\": \"yippee\",\n          \"number_chapter\": \"acquire\",\n          \"thumbnail_url\": \"prickly\",\n          \"published_at\": \"boom\",\n          \"created_at\": \"2024-09-22T18:53:16.722Z\",\n          \"updated_at\": \"2025-08-21T08:37:06.915Z\"\n        },\n        {\n          \"id\": \"8512\",\n          \"comic_id\": \"7436\",\n          \"title\": \"chapel\",\n          \"slug\": \"put\",\n          \"number_chapter\": \"sign\",\n          \"thumbnail_url\": \"secularize\",\n          \"published_at\": \"made-up\",\n          \"created_at\": \"2024-10-01T10:28:07.096Z\",\n          \"updated_at\": \"2025-08-22T04:45:12.199Z\"\n        }\n      ]\n    }\n  ]\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics"
+          }
         }
       ]
     },
@@ -388,19 +564,31 @@
           "name": "201 Mock",
           "code": 201,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"4517\",\n    \"type\": \"gift\",\n    \"title\": \"ignorance\",\n    \"status\": \"created\",\n    \"slug\": \"overconfidently\",\n    \"rating\": \"often\",\n    \"created_at\": \"2025-04-01T03:59:22.677Z\",\n    \"updated_at\": \"2025-08-21T17:42:45.961Z\",\n    \"chapters\": [\n      {\n        \"id\": \"6808\",\n        \"comic_id\": \"580\",\n        \"title\": \"gah\",\n        \"slug\": \"mmm\",\n        \"number_chapter\": \"what\",\n        \"thumbnail_url\": \"bleach\",\n        \"published_at\": \"loftily\",\n        \"created_at\": \"2024-09-25T20:40:15.250Z\",\n        \"updated_at\": \"2025-08-22T01:37:57.277Z\"\n      },\n      {\n        \"id\": \"7417\",\n        \"comic_id\": \"3340\",\n        \"title\": \"psst\",\n        \"slug\": \"off\",\n        \"number_chapter\": \"hoarse\",\n        \"thumbnail_url\": \"collaborate\",\n        \"published_at\": \"confound\",\n        \"created_at\": \"2025-02-26T17:03:53.974Z\",\n        \"updated_at\": \"2025-08-21T13:14:09.565Z\"\n      }\n    ]\n  }\n}"
+          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"3140\",\n    \"type\": \"apropos\",\n    \"title\": \"siege\",\n    \"status\": \"created\",\n    \"slug\": \"petticoat\",\n    \"rating\": \"whenever\",\n    \"created_at\": \"2024-11-29T13:28:54.820Z\",\n    \"updated_at\": \"2025-08-21T11:49:54.024Z\",\n    \"chapters\": [\n      {\n        \"id\": \"7513\",\n        \"comic_id\": \"3289\",\n        \"title\": \"for\",\n        \"slug\": \"claw\",\n        \"number_chapter\": \"damp\",\n        \"thumbnail_url\": \"gee\",\n        \"published_at\": \"after\",\n        \"created_at\": \"2025-05-01T09:40:43.690Z\",\n        \"updated_at\": \"2025-08-22T06:22:04.208Z\"\n      },\n      {\n        \"id\": \"8362\",\n        \"comic_id\": \"7493\",\n        \"title\": \"till\",\n        \"slug\": \"justly\",\n        \"number_chapter\": \"majestically\",\n        \"thumbnail_url\": \"bandwidth\",\n        \"published_at\": \"why\",\n        \"created_at\": \"2024-09-18T17:27:51.512Z\",\n        \"updated_at\": \"2025-08-21T14:00:22.828Z\"\n      }\n    ]\n  }\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/comics"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/comics"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/comics"
+          }
         }
       ]
     },
@@ -415,19 +603,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"8200\",\n    \"type\": \"platter\",\n    \"title\": \"broadly\",\n    \"title_alternative\": \"blah\",\n    \"slug\": \"correctly\",\n    \"thumbnail_url\": \"spirit\",\n    \"description\": \"atop\",\n    \"status\": \"success\",\n    \"favorite\": \"618\",\n    \"rating\": \"3807\",\n    \"created_at\": \"2025-01-05T07:32:23.211Z\",\n    \"updated_at\": \"2025-08-21T18:03:31.541Z\",\n    \"chapters\": [\n      {\n        \"id\": \"5835\",\n        \"comic_id\": \"2992\",\n        \"title\": \"dense\",\n        \"slug\": \"mmm\",\n        \"number_chapter\": \"how\",\n        \"thumbnail_url\": \"circa\",\n        \"published_at\": \"taxicab\",\n        \"created_at\": \"2024-10-26T12:38:48.230Z\",\n        \"updated_at\": \"2025-08-21T13:50:14.103Z\"\n      },\n      {\n        \"id\": \"808\",\n        \"comic_id\": \"4220\",\n        \"title\": \"gee\",\n        \"slug\": \"snowplow\",\n        \"number_chapter\": \"ack\",\n        \"thumbnail_url\": \"printer\",\n        \"published_at\": \"yuck\",\n        \"created_at\": \"2024-08-28T06:21:49.081Z\",\n        \"updated_at\": \"2025-08-21T17:41:43.808Z\"\n      }\n    ],\n    \"creator\": [\n      {\n        \"name\": \"yuck\",\n        \"slug\": \"longingly\",\n        \"type\": \"ha\"\n      },\n      {\n        \"name\": \"besides\",\n        \"slug\": \"clumsy\",\n        \"type\": \"snoopy\"\n      }\n    ],\n    \"genre\": [\n      {\n        \"id\": \"9809\",\n        \"name\": \"cute\",\n        \"slug\": \"transplant\"\n      },\n      {\n        \"id\": \"1317\",\n        \"name\": \"dearly\",\n        \"slug\": \"sleepily\"\n      }\n    ],\n    \"related_comics\": [\n      {\n        \"id\": \"5403\",\n        \"type\": \"consequently\",\n        \"title\": \"softly\",\n        \"status\": \"success\",\n        \"slug\": \"uncover\",\n        \"rating\": \"astride\",\n        \"created_at\": \"2025-07-20T10:39:37.257Z\",\n        \"updated_at\": \"2025-08-21T21:56:24.010Z\",\n        \"chapters\": [\n          {\n            \"id\": \"4379\",\n            \"comic_id\": \"7752\",\n            \"title\": \"covenant\",\n            \"slug\": \"generously\",\n            \"number_chapter\": \"convoke\",\n            \"thumbnail_url\": \"confirm\",\n            \"published_at\": \"or\",\n            \"created_at\": \"2025-02-01T00:35:52.989Z\",\n            \"updated_at\": \"2025-08-21T21:53:16.673Z\"\n          },\n          {\n            \"id\": \"5999\",\n            \"comic_id\": \"9328\",\n            \"title\": \"airman\",\n            \"slug\": \"sonnet\",\n            \"number_chapter\": \"massage\",\n            \"thumbnail_url\": \"amongst\",\n            \"published_at\": \"pfft\",\n            \"created_at\": \"2025-08-08T01:13:42.236Z\",\n            \"updated_at\": \"2025-08-21T17:22:42.162Z\"\n          }\n        ]\n      },\n      {\n        \"id\": \"5426\",\n        \"type\": \"enormously\",\n        \"title\": \"modulo\",\n        \"status\": \"success\",\n        \"slug\": \"quizzically\",\n        \"rating\": \"phew\",\n        \"created_at\": \"2025-01-03T22:24:11.426Z\",\n        \"updated_at\": \"2025-08-21T18:50:10.104Z\",\n        \"chapters\": [\n          {\n            \"id\": \"3724\",\n            \"comic_id\": \"4270\",\n            \"title\": \"per\",\n            \"slug\": \"swanling\",\n            \"number_chapter\": \"smoke\",\n            \"thumbnail_url\": \"however\",\n            \"published_at\": \"next\",\n            \"created_at\": \"2025-01-22T16:06:26.548Z\",\n            \"updated_at\": \"2025-08-22T06:07:53.487Z\"\n          },\n          {\n            \"id\": \"852\",\n            \"comic_id\": \"7392\",\n            \"title\": \"gadzooks\",\n            \"slug\": \"woot\",\n            \"number_chapter\": \"now\",\n            \"thumbnail_url\": \"blissfully\",\n            \"published_at\": \"object\",\n            \"created_at\": \"2024-10-15T19:37:39.715Z\",\n            \"updated_at\": \"2025-08-21T21:55:28.844Z\"\n          }\n        ]\n      }\n    ]\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"6701\",\n    \"type\": \"probe\",\n    \"title\": \"partially\",\n    \"title_alternative\": \"exactly\",\n    \"slug\": \"although\",\n    \"thumbnail_url\": \"source\",\n    \"description\": \"whoa\",\n    \"status\": \"success\",\n    \"favorite\": \"5867\",\n    \"rating\": \"3302\",\n    \"created_at\": \"2024-12-03T04:59:43.032Z\",\n    \"updated_at\": \"2025-08-21T15:58:09.502Z\",\n    \"chapters\": [\n      {\n        \"id\": \"9389\",\n        \"comic_id\": \"8194\",\n        \"title\": \"yuck\",\n        \"slug\": \"likewise\",\n        \"number_chapter\": \"sunny\",\n        \"thumbnail_url\": \"ouch\",\n        \"published_at\": \"toward\",\n        \"created_at\": \"2025-06-29T12:48:20.515Z\",\n        \"updated_at\": \"2025-08-21T10:01:03.386Z\"\n      },\n      {\n        \"id\": \"7392\",\n        \"comic_id\": \"4548\",\n        \"title\": \"though\",\n        \"slug\": \"help\",\n        \"number_chapter\": \"because\",\n        \"thumbnail_url\": \"impish\",\n        \"published_at\": \"ick\",\n        \"created_at\": \"2025-01-16T05:29:10.294Z\",\n        \"updated_at\": \"2025-08-21T08:23:37.666Z\"\n      }\n    ],\n    \"creator\": [\n      {\n        \"name\": \"quintuple\",\n        \"slug\": \"so\",\n        \"type\": \"deck\"\n      },\n      {\n        \"name\": \"speedily\",\n        \"slug\": \"since\",\n        \"type\": \"provision\"\n      }\n    ],\n    \"genre\": [\n      {\n        \"id\": \"2461\",\n        \"name\": \"an\",\n        \"slug\": \"justly\"\n      },\n      {\n        \"id\": \"5541\",\n        \"name\": \"for\",\n        \"slug\": \"meanwhile\"\n      }\n    ],\n    \"related_comics\": [\n      {\n        \"id\": \"2479\",\n        \"type\": \"via\",\n        \"title\": \"solvency\",\n        \"status\": \"success\",\n        \"slug\": \"stock\",\n        \"rating\": \"aw\",\n        \"created_at\": \"2025-02-08T22:36:43.344Z\",\n        \"updated_at\": \"2025-08-21T10:32:56.106Z\",\n        \"chapters\": [\n          {\n            \"id\": \"1193\",\n            \"comic_id\": \"4566\",\n            \"title\": \"yahoo\",\n            \"slug\": \"taxicab\",\n            \"number_chapter\": \"wee\",\n            \"thumbnail_url\": \"lounge\",\n            \"published_at\": \"um\",\n            \"created_at\": \"2024-11-28T15:26:20.917Z\",\n            \"updated_at\": \"2025-08-21T18:41:48.010Z\"\n          },\n          {\n            \"id\": \"6375\",\n            \"comic_id\": \"5630\",\n            \"title\": \"lost\",\n            \"slug\": \"whoever\",\n            \"number_chapter\": \"likely\",\n            \"thumbnail_url\": \"woot\",\n            \"published_at\": \"from\",\n            \"created_at\": \"2025-01-19T18:16:51.410Z\",\n            \"updated_at\": \"2025-08-21T17:07:05.440Z\"\n          }\n        ]\n      },\n      {\n        \"id\": \"4342\",\n        \"type\": \"override\",\n        \"title\": \"yellow\",\n        \"status\": \"success\",\n        \"slug\": \"despite\",\n        \"rating\": \"firm\",\n        \"created_at\": \"2024-09-07T06:54:53.569Z\",\n        \"updated_at\": \"2025-08-22T06:46:11.753Z\",\n        \"chapters\": [\n          {\n            \"id\": \"5948\",\n            \"comic_id\": \"4358\",\n            \"title\": \"reckon\",\n            \"slug\": \"dulcimer\",\n            \"number_chapter\": \"perspire\",\n            \"thumbnail_url\": \"hmph\",\n            \"published_at\": \"provided\",\n            \"created_at\": \"2024-11-12T19:48:22.332Z\",\n            \"updated_at\": \"2025-08-21T22:44:56.649Z\"\n          },\n          {\n            \"id\": \"2532\",\n            \"comic_id\": \"4015\",\n            \"title\": \"oof\",\n            \"slug\": \"by\",\n            \"number_chapter\": \"opposite\",\n            \"thumbnail_url\": \"transplant\",\n            \"published_at\": \"woot\",\n            \"created_at\": \"2025-01-30T12:03:14.439Z\",\n            \"updated_at\": \"2025-08-22T00:55:36.800Z\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}"
+          }
         }
       ]
     },
@@ -442,31 +642,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"4843\",\n    \"type\": \"too\",\n    \"title\": \"undergo\",\n    \"status\": \"success\",\n    \"slug\": \"pish\",\n    \"rating\": \"aside\",\n    \"created_at\": \"2025-05-26T14:29:03.386Z\",\n    \"updated_at\": \"2025-08-22T03:29:27.512Z\",\n    \"chapters\": [\n      {\n        \"id\": \"2908\",\n        \"comic_id\": \"5553\",\n        \"title\": \"yowza\",\n        \"slug\": \"fatal\",\n        \"number_chapter\": \"fooey\",\n        \"thumbnail_url\": \"sidetrack\",\n        \"published_at\": \"roughly\",\n        \"created_at\": \"2025-08-10T05:16:03.830Z\",\n        \"updated_at\": \"2025-08-21T23:15:40.287Z\"\n      },\n      {\n        \"id\": \"4716\",\n        \"comic_id\": \"5612\",\n        \"title\": \"afore\",\n        \"slug\": \"hoot\",\n        \"number_chapter\": \"reopen\",\n        \"thumbnail_url\": \"not\",\n        \"published_at\": \"stunning\",\n        \"created_at\": \"2025-02-23T14:26:27.685Z\",\n        \"updated_at\": \"2025-08-21T10:13:42.329Z\"\n      }\n    ]\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"2890\",\n    \"type\": \"black\",\n    \"title\": \"frugal\",\n    \"status\": \"success\",\n    \"slug\": \"councilman\",\n    \"rating\": \"fooey\",\n    \"created_at\": \"2025-04-20T19:07:18.413Z\",\n    \"updated_at\": \"2025-08-21T22:49:00.058Z\",\n    \"chapters\": [\n      {\n        \"id\": \"2326\",\n        \"comic_id\": \"8774\",\n        \"title\": \"whether\",\n        \"slug\": \"resolve\",\n        \"number_chapter\": \"aha\",\n        \"thumbnail_url\": \"busily\",\n        \"published_at\": \"weary\",\n        \"created_at\": \"2024-11-30T13:07:23.878Z\",\n        \"updated_at\": \"2025-08-22T06:36:32.486Z\"\n      },\n      {\n        \"id\": \"5462\",\n        \"comic_id\": \"610\",\n        \"title\": \"gadzooks\",\n        \"slug\": \"elevation\",\n        \"number_chapter\": \"creature\",\n        \"thumbnail_url\": \"medium\",\n        \"published_at\": \"bustling\",\n        \"created_at\": \"2024-10-16T15:19:08.312Z\",\n        \"updated_at\": \"2025-08-21T19:13:44.036Z\"\n      }\n    ]\n  }\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/comics/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/comics/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/comics/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/comics/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/comics/{id}"
+          }
         }
       ]
     },
@@ -481,31 +701,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/comics/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/comics/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/comics/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/comics/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/comics/{id}"
+          }
         }
       ]
     },
@@ -520,25 +760,41 @@
           "name": "201 Mock",
           "code": 201,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"3081\",\n    \"comic_id\": \"3783\",\n    \"title\": \"cassava\",\n    \"slug\": \"astonishing\",\n    \"number_chapter\": \"during\",\n    \"thumbnail_url\": \"hyena\",\n    \"published_at\": \"towards\",\n    \"created_at\": \"2025-06-10T09:45:41.627Z\",\n    \"updated_at\": \"2025-08-22T06:40:47.617Z\"\n  }\n}"
+          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"5318\",\n    \"comic_id\": \"5230\",\n    \"title\": \"gripper\",\n    \"slug\": \"plait\",\n    \"number_chapter\": \"willfully\",\n    \"thumbnail_url\": \"emphasize\",\n    \"published_at\": \"what\",\n    \"created_at\": \"2025-04-23T15:08:18.584Z\",\n    \"updated_at\": \"2025-08-22T01:52:56.258Z\"\n  }\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/chapters"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/chapters"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/chapters"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/chapters"
+          }
         }
       ]
     },
@@ -553,31 +809,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"2357\",\n    \"comic_id\": \"9795\",\n    \"title\": \"switchboard\",\n    \"slug\": \"luck\",\n    \"number_chapter\": \"for\",\n    \"thumbnail_url\": \"nor\",\n    \"published_at\": \"dusk\",\n    \"created_at\": \"2024-10-08T06:33:30.903Z\",\n    \"updated_at\": \"2025-08-22T01:09:04.699Z\"\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"9055\",\n    \"comic_id\": \"1249\",\n    \"title\": \"before\",\n    \"slug\": \"alienated\",\n    \"number_chapter\": \"neighboring\",\n    \"thumbnail_url\": \"questioningly\",\n    \"published_at\": \"unnaturally\",\n    \"created_at\": \"2024-09-27T07:41:58.340Z\",\n    \"updated_at\": \"2025-08-22T02:23:18.412Z\"\n  }\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/chapters/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/chapters/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/chapters/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/chapters/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/chapters/{id}"
+          }
         }
       ]
     },
@@ -592,31 +868,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/chapters/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/chapters/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/chapters/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/chapters/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/chapters/{id}"
+          }
         }
       ]
     },
@@ -631,19 +927,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"9571\",\n      \"comic_id\": \"2743\",\n      \"title\": \"galvanize\",\n      \"slug\": \"creature\",\n      \"number_chapter\": \"whenever\",\n      \"thumbnail_url\": \"until\",\n      \"published_at\": \"offensively\",\n      \"created_at\": \"2025-08-07T19:36:41.940Z\",\n      \"updated_at\": \"2025-08-22T06:06:04.774Z\"\n    },\n    {\n      \"id\": \"6272\",\n      \"comic_id\": \"164\",\n      \"title\": \"peppery\",\n      \"slug\": \"propound\",\n      \"number_chapter\": \"drat\",\n      \"thumbnail_url\": \"oxidize\",\n      \"published_at\": \"coordination\",\n      \"created_at\": \"2024-09-08T09:19:18.408Z\",\n      \"updated_at\": \"2025-08-21T14:13:24.804Z\"\n    }\n  ]\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"5325\",\n      \"comic_id\": \"7247\",\n      \"title\": \"midst\",\n      \"slug\": \"up\",\n      \"number_chapter\": \"bashfully\",\n      \"thumbnail_url\": \"savour\",\n      \"published_at\": \"oof\",\n      \"created_at\": \"2025-04-09T12:44:56.382Z\",\n      \"updated_at\": \"2025-08-21T11:18:42.992Z\"\n    },\n    {\n      \"id\": \"8969\",\n      \"comic_id\": \"948\",\n      \"title\": \"plus\",\n      \"slug\": \"especially\",\n      \"number_chapter\": \"fully\",\n      \"thumbnail_url\": \"through\",\n      \"published_at\": \"ick\",\n      \"created_at\": \"2025-01-19T03:26:16.638Z\",\n      \"updated_at\": \"2025-08-21T15:39:00.299Z\"\n    }\n  ]\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}/chapters"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}/chapters"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}/chapters"
+          }
         }
       ]
     },
@@ -658,19 +966,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"2442\",\n    \"comic_id\": \"8997\",\n    \"title\": \"aboard\",\n    \"slug\": \"cheerfully\",\n    \"number_chapter\": \"who\",\n    \"thumbnail_url\": \"as\",\n    \"published_at\": \"acidly\",\n    \"created_at\": \"2024-12-28T13:25:44.438Z\",\n    \"updated_at\": \"2025-08-21T12:48:08.800Z\",\n    \"episode_page\": [\n      {\n        \"id\": \"1426\",\n        \"chapter_id\": \"5341\",\n        \"title\": \"wedge\",\n        \"slug\": \"madly\",\n        \"image_url\": \"decide\",\n        \"page_number\": \"939\"\n      },\n      {\n        \"id\": \"6813\",\n        \"chapter_id\": \"891\",\n        \"title\": \"basic\",\n        \"slug\": \"remorseful\",\n        \"image_url\": \"filter\",\n        \"page_number\": \"3509\"\n      }\n    ]\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"5782\",\n    \"comic_id\": \"6716\",\n    \"title\": \"atop\",\n    \"slug\": \"helpfully\",\n    \"number_chapter\": \"so\",\n    \"thumbnail_url\": \"than\",\n    \"published_at\": \"past\",\n    \"created_at\": \"2024-10-15T18:13:16.435Z\",\n    \"updated_at\": \"2025-08-21T21:14:07.951Z\",\n    \"episode_page\": [\n      {\n        \"id\": \"7253\",\n        \"chapter_id\": \"1336\",\n        \"title\": \"suspiciously\",\n        \"slug\": \"since\",\n        \"image_url\": \"um\",\n        \"page_number\": \"7225\"\n      },\n      {\n        \"id\": \"8279\",\n        \"chapter_id\": \"4840\",\n        \"title\": \"steep\",\n        \"slug\": \"although\",\n        \"image_url\": \"hmph\",\n        \"page_number\": \"4262\"\n      }\n    ]\n  }\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}/chapters/{chapterId}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}/chapters/{chapterId}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}/chapters/{chapterId}"
+          }
         }
       ]
     },
@@ -685,25 +1005,41 @@
           "name": "201 Mock",
           "code": 201,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"705\",\n    \"chapter_id\": \"5828\",\n    \"title\": \"overwork\",\n    \"slug\": \"willfully\",\n    \"image_url\": \"black\",\n    \"page_number\": \"8886\"\n  }\n}"
+          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"4494\",\n    \"chapter_id\": \"2456\",\n    \"title\": \"while\",\n    \"slug\": \"finally\",\n    \"image_url\": \"incidentally\",\n    \"page_number\": \"4993\"\n  }\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/episode"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/episode"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/episode"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/episode"
+          }
         }
       ]
     },
@@ -718,31 +1054,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"2536\",\n    \"chapter_id\": \"9601\",\n    \"title\": \"into\",\n    \"slug\": \"times\",\n    \"image_url\": \"chromakey\",\n    \"page_number\": \"2854\"\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"9632\",\n    \"chapter_id\": \"8627\",\n    \"title\": \"provided\",\n    \"slug\": \"wonderfully\",\n    \"image_url\": \"ultimately\",\n    \"page_number\": \"947\"\n  }\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/episode/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/episode/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/episode/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/episode/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/episode/{id}"
+          }
         }
       ]
     },
@@ -757,31 +1113,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/episode/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/episode/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/episode/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/episode/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/episode/{id}"
+          }
         }
       ]
     },
@@ -796,19 +1172,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"chapter_id\": \"2746\",\n      \"image_url\": \"yowza\",\n      \"page_number\": \"2078\"\n    },\n    {\n      \"chapter_id\": \"2010\",\n      \"image_url\": \"whenever\",\n      \"page_number\": \"3383\"\n    }\n  ]\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"chapter_id\": \"3637\",\n      \"image_url\": \"sensitize\",\n      \"page_number\": \"870\"\n    },\n    {\n      \"chapter_id\": \"6892\",\n      \"image_url\": \"that\",\n      \"page_number\": \"2417\"\n    }\n  ]\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}/chapters/{chapterId}/epsiode"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}/chapters/{chapterId}/epsiode"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}/chapters/{chapterId}/epsiode"
+          }
         }
       ]
     },
@@ -823,19 +1211,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"8450\",\n    \"chapter_id\": \"7107\",\n    \"title\": \"if\",\n    \"slug\": \"worth\",\n    \"image_url\": \"whoever\",\n    \"page_number\": \"7332\"\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"5039\",\n    \"chapter_id\": \"5102\",\n    \"title\": \"urban\",\n    \"slug\": \"atop\",\n    \"image_url\": \"obnoxiously\",\n    \"page_number\": \"1091\"\n  }\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}/chapters/{chapterId}/epsiode/{episodeId}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}/chapters/{chapterId}/epsiode/{episodeId}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/comics/{id}/chapters/{chapterId}/epsiode/{episodeId}"
+          }
         }
       ]
     },
@@ -850,19 +1250,31 @@
           "name": "201 Mock",
           "code": 201,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"name\": \"lend\",\n    \"slug\": \"gee\",\n    \"type\": \"alienated\"\n  }\n}"
+          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"name\": \"orientate\",\n    \"slug\": \"till\",\n    \"type\": \"pish\"\n  }\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/creator"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/creator"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/creator"
+          }
         }
       ]
     },
@@ -877,19 +1289,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"name\": \"which\",\n      \"slug\": \"acquire\",\n      \"type\": \"duh\"\n    },\n    {\n      \"name\": \"phew\",\n      \"slug\": \"humble\",\n      \"type\": \"square\"\n    }\n  ]\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"name\": \"deadly\",\n      \"slug\": \"gee\",\n      \"type\": \"responsible\"\n    },\n    {\n      \"name\": \"pupil\",\n      \"slug\": \"bah\",\n      \"type\": \"unabashedly\"\n    }\n  ]\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/creator"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/creator"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/creator"
+          }
         }
       ]
     },
@@ -904,19 +1328,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"1599\",\n    \"name\": \"supplier\",\n    \"type\": \"total\",\n    \"comics\": [\n      {\n        \"id\": \"2481\",\n        \"type\": \"of\",\n        \"title\": \"gurn\",\n        \"status\": \"success\",\n        \"slug\": \"coordination\",\n        \"rating\": \"alliance\",\n        \"created_at\": \"2025-02-13T20:53:41.169Z\",\n        \"updated_at\": \"2025-08-22T04:25:19.957Z\",\n        \"chapters\": [\n          {\n            \"id\": \"9701\",\n            \"comic_id\": \"6400\",\n            \"title\": \"exalt\",\n            \"slug\": \"than\",\n            \"number_chapter\": \"tremendously\",\n            \"thumbnail_url\": \"jovially\",\n            \"published_at\": \"uh-huh\",\n            \"created_at\": \"2025-05-31T06:26:22.476Z\",\n            \"updated_at\": \"2025-08-21T21:17:03.045Z\"\n          },\n          {\n            \"id\": \"8025\",\n            \"comic_id\": \"7285\",\n            \"title\": \"um\",\n            \"slug\": \"boldly\",\n            \"number_chapter\": \"sore\",\n            \"thumbnail_url\": \"self-reliant\",\n            \"published_at\": \"woot\",\n            \"created_at\": \"2024-09-01T07:04:23.199Z\",\n            \"updated_at\": \"2025-08-21T09:17:21.533Z\"\n          }\n        ]\n      },\n      {\n        \"id\": \"7186\",\n        \"type\": \"fowl\",\n        \"title\": \"amendment\",\n        \"status\": \"success\",\n        \"slug\": \"wherever\",\n        \"rating\": \"once\",\n        \"created_at\": \"2025-05-20T09:38:45.397Z\",\n        \"updated_at\": \"2025-08-21T20:49:32.866Z\",\n        \"chapters\": [\n          {\n            \"id\": \"9682\",\n            \"comic_id\": \"48\",\n            \"title\": \"gah\",\n            \"slug\": \"schematise\",\n            \"number_chapter\": \"outside\",\n            \"thumbnail_url\": \"yippee\",\n            \"published_at\": \"ha\",\n            \"created_at\": \"2024-12-01T12:03:53.747Z\",\n            \"updated_at\": \"2025-08-22T01:14:21.594Z\"\n          },\n          {\n            \"id\": \"1864\",\n            \"comic_id\": \"4728\",\n            \"title\": \"that\",\n            \"slug\": \"ew\",\n            \"number_chapter\": \"pish\",\n            \"thumbnail_url\": \"phooey\",\n            \"published_at\": \"throbbing\",\n            \"created_at\": \"2024-09-19T23:28:06.729Z\",\n            \"updated_at\": \"2025-08-21T08:35:53.795Z\"\n          }\n        ]\n      }\n    ]\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"3221\",\n    \"name\": \"greedily\",\n    \"type\": \"aha\",\n    \"comics\": [\n      {\n        \"id\": \"6238\",\n        \"type\": \"while\",\n        \"title\": \"exalt\",\n        \"status\": \"success\",\n        \"slug\": \"but\",\n        \"rating\": \"vast\",\n        \"created_at\": \"2024-11-11T08:38:52.359Z\",\n        \"updated_at\": \"2025-08-22T00:18:36.548Z\",\n        \"chapters\": [\n          {\n            \"id\": \"8976\",\n            \"comic_id\": \"7803\",\n            \"title\": \"now\",\n            \"slug\": \"out\",\n            \"number_chapter\": \"why\",\n            \"thumbnail_url\": \"next\",\n            \"published_at\": \"hmph\",\n            \"created_at\": \"2025-01-03T09:33:36.502Z\",\n            \"updated_at\": \"2025-08-22T00:07:00.318Z\"\n          },\n          {\n            \"id\": \"700\",\n            \"comic_id\": \"2232\",\n            \"title\": \"hungry\",\n            \"slug\": \"procrastinate\",\n            \"number_chapter\": \"wildly\",\n            \"thumbnail_url\": \"reconsideration\",\n            \"published_at\": \"gadzooks\",\n            \"created_at\": \"2025-02-16T10:52:51.841Z\",\n            \"updated_at\": \"2025-08-22T06:07:34.274Z\"\n          }\n        ]\n      },\n      {\n        \"id\": \"6031\",\n        \"type\": \"and\",\n        \"title\": \"while\",\n        \"status\": \"success\",\n        \"slug\": \"apricot\",\n        \"rating\": \"scrap\",\n        \"created_at\": \"2025-07-25T09:25:57.015Z\",\n        \"updated_at\": \"2025-08-21T17:48:25.334Z\",\n        \"chapters\": [\n          {\n            \"id\": \"9633\",\n            \"comic_id\": \"6881\",\n            \"title\": \"by\",\n            \"slug\": \"amongst\",\n            \"number_chapter\": \"an\",\n            \"thumbnail_url\": \"unrealistic\",\n            \"published_at\": \"towards\",\n            \"created_at\": \"2025-07-07T01:25:43.113Z\",\n            \"updated_at\": \"2025-08-21T09:59:18.726Z\"\n          },\n          {\n            \"id\": \"6675\",\n            \"comic_id\": \"8217\",\n            \"title\": \"which\",\n            \"slug\": \"towards\",\n            \"number_chapter\": \"jet\",\n            \"thumbnail_url\": \"offend\",\n            \"published_at\": \"undergo\",\n            \"created_at\": \"2025-07-12T18:55:02.168Z\",\n            \"updated_at\": \"2025-08-22T01:54:48.592Z\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/creator/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/creator/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/creator/{id}"
+          }
         }
       ]
     },
@@ -931,31 +1367,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"name\": \"whose\",\n    \"slug\": \"geez\",\n    \"type\": \"grok\"\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"name\": \"make\",\n    \"slug\": \"exaggerate\",\n    \"type\": \"supposing\"\n  }\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/creator/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/creator/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/creator/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/creator/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/creator/{id}"
+          }
         }
       ]
     },
@@ -970,31 +1426,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/creator/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/creator/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/creator/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/creator/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/creator/{id}"
+          }
         }
       ]
     },
@@ -1009,19 +1485,31 @@
           "name": "201 Mock",
           "code": 201,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"4582\",\n    \"name\": \"hydrant\",\n    \"slug\": \"justly\"\n  }\n}"
+          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"2347\",\n    \"name\": \"cavernous\",\n    \"slug\": \"impassioned\"\n  }\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/genre"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/genre"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/genre"
+          }
         }
       ]
     },
@@ -1036,19 +1524,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"5993\",\n      \"name\": \"catch\",\n      \"slug\": \"gah\"\n    },\n    {\n      \"id\": \"3191\",\n      \"name\": \"worth\",\n      \"slug\": \"gosh\"\n    }\n  ]\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"8257\",\n      \"name\": \"given\",\n      \"slug\": \"quicker\"\n    },\n    {\n      \"id\": \"7396\",\n      \"name\": \"the\",\n      \"slug\": \"busily\"\n    }\n  ]\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/genre"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/genre"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/genre"
+          }
         }
       ]
     },
@@ -1063,19 +1563,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"3453\",\n    \"name\": \"ew\",\n    \"slug\": \"finally\"\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"9548\",\n    \"name\": \"serpentine\",\n    \"slug\": \"shrilly\"\n  }\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/genre/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/genre/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/genre/{id}"
+          }
         }
       ]
     },
@@ -1090,31 +1602,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"9050\",\n    \"name\": \"on\",\n    \"slug\": \"eek\"\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"9401\",\n    \"name\": \"longingly\",\n    \"slug\": \"sunny\"\n  }\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/genre/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/genre/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/genre/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/genre/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/genre/{id}"
+          }
         }
       ]
     },
@@ -1129,31 +1661,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/genre/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/genre/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/genre/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/genre/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/genre/{id}"
+          }
         }
       ]
     },
@@ -1168,19 +1720,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"3569\",\n      \"user_id\": \"8744\",\n      \"comic_id\": \"6817\",\n      \"created_at\": \"2025-07-22T06:59:05.999Z\",\n      \"comic\": {\n        \"id\": \"3784\",\n        \"type\": \"come\",\n        \"title\": \"into\",\n        \"status\": \"success\",\n        \"slug\": \"tut\",\n        \"rating\": \"victoriously\",\n        \"created_at\": \"2025-02-04T04:23:47.047Z\",\n        \"updated_at\": \"2025-08-22T06:18:40.776Z\",\n        \"chapters\": [\n          {\n            \"id\": \"5735\",\n            \"comic_id\": \"5753\",\n            \"title\": \"powerfully\",\n            \"slug\": \"per\",\n            \"number_chapter\": \"amongst\",\n            \"thumbnail_url\": \"chasuble\",\n            \"published_at\": \"huzzah\",\n            \"created_at\": \"2025-04-21T20:41:15.648Z\",\n            \"updated_at\": \"2025-08-21T17:17:22.687Z\"\n          },\n          {\n            \"id\": \"100\",\n            \"comic_id\": \"3908\",\n            \"title\": \"repeatedly\",\n            \"slug\": \"thongs\",\n            \"number_chapter\": \"meh\",\n            \"thumbnail_url\": \"accredit\",\n            \"published_at\": \"oof\",\n            \"created_at\": \"2025-02-23T15:43:39.943Z\",\n            \"updated_at\": \"2025-08-22T03:25:45.730Z\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"8476\",\n      \"user_id\": \"9869\",\n      \"comic_id\": \"9810\",\n      \"created_at\": \"2025-05-27T14:44:26.657Z\",\n      \"comic\": {\n        \"id\": \"6781\",\n        \"type\": \"electric\",\n        \"title\": \"yowza\",\n        \"status\": \"success\",\n        \"slug\": \"spattering\",\n        \"rating\": \"huzzah\",\n        \"created_at\": \"2024-12-17T01:23:33.332Z\",\n        \"updated_at\": \"2025-08-22T01:04:16.657Z\",\n        \"chapters\": [\n          {\n            \"id\": \"7859\",\n            \"comic_id\": \"2154\",\n            \"title\": \"below\",\n            \"slug\": \"futon\",\n            \"number_chapter\": \"cavernous\",\n            \"thumbnail_url\": \"voluminous\",\n            \"published_at\": \"jubilantly\",\n            \"created_at\": \"2025-01-09T22:46:45.107Z\",\n            \"updated_at\": \"2025-08-22T00:02:49.026Z\"\n          },\n          {\n            \"id\": \"8890\",\n            \"comic_id\": \"9821\",\n            \"title\": \"stir-fry\",\n            \"slug\": \"meanwhile\",\n            \"number_chapter\": \"provided\",\n            \"thumbnail_url\": \"inside\",\n            \"published_at\": \"of\",\n            \"created_at\": \"2025-05-29T10:17:48.713Z\",\n            \"updated_at\": \"2025-08-22T05:39:24.373Z\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"5712\",\n      \"user_id\": \"4956\",\n      \"comic_id\": \"9649\",\n      \"created_at\": \"2025-07-24T20:31:52.804Z\",\n      \"comic\": {\n        \"id\": \"7694\",\n        \"type\": \"sadly\",\n        \"title\": \"designation\",\n        \"status\": \"success\",\n        \"slug\": \"hyphenation\",\n        \"rating\": \"over\",\n        \"created_at\": \"2025-07-19T17:31:57.578Z\",\n        \"updated_at\": \"2025-08-22T03:55:37.415Z\",\n        \"chapters\": [\n          {\n            \"id\": \"8563\",\n            \"comic_id\": \"448\",\n            \"title\": \"an\",\n            \"slug\": \"gladly\",\n            \"number_chapter\": \"like\",\n            \"thumbnail_url\": \"wisely\",\n            \"published_at\": \"cheetah\",\n            \"created_at\": \"2024-10-30T20:47:06.015Z\",\n            \"updated_at\": \"2025-08-21T17:36:15.824Z\"\n          },\n          {\n            \"id\": \"8388\",\n            \"comic_id\": \"9571\",\n            \"title\": \"but\",\n            \"slug\": \"psst\",\n            \"number_chapter\": \"with\",\n            \"thumbnail_url\": \"gee\",\n            \"published_at\": \"once\",\n            \"created_at\": \"2025-06-16T12:34:05.943Z\",\n            \"updated_at\": \"2025-08-22T05:40:24.727Z\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"4435\",\n      \"user_id\": \"9588\",\n      \"comic_id\": \"956\",\n      \"created_at\": \"2024-09-20T11:57:17.040Z\",\n      \"comic\": {\n        \"id\": \"7518\",\n        \"type\": \"blah\",\n        \"title\": \"annually\",\n        \"status\": \"success\",\n        \"slug\": \"reconsideration\",\n        \"rating\": \"until\",\n        \"created_at\": \"2024-12-01T18:13:21.954Z\",\n        \"updated_at\": \"2025-08-21T21:52:05.021Z\",\n        \"chapters\": [\n          {\n            \"id\": \"2088\",\n            \"comic_id\": \"4008\",\n            \"title\": \"instead\",\n            \"slug\": \"vice\",\n            \"number_chapter\": \"instead\",\n            \"thumbnail_url\": \"indeed\",\n            \"published_at\": \"disk\",\n            \"created_at\": \"2025-07-19T04:50:29.448Z\",\n            \"updated_at\": \"2025-08-22T01:15:10.282Z\"\n          },\n          {\n            \"id\": \"5291\",\n            \"comic_id\": \"1360\",\n            \"title\": \"beneath\",\n            \"slug\": \"unnecessarily\",\n            \"number_chapter\": \"meanwhile\",\n            \"thumbnail_url\": \"think\",\n            \"published_at\": \"makeover\",\n            \"created_at\": \"2024-09-14T16:11:08.866Z\",\n            \"updated_at\": \"2025-08-22T06:55:02.807Z\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/favorite"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/favorite"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/favorite"
+          }
         }
       ]
     },
@@ -1195,19 +1759,31 @@
           "name": "201 Mock",
           "code": 201,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"3924\",\n    \"user_id\": \"505\",\n    \"comic_id\": \"7383\",\n    \"created_at\": \"2024-11-05T14:29:10.226Z\"\n  }\n}"
+          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"9752\",\n    \"user_id\": \"5574\",\n    \"comic_id\": \"2389\",\n    \"created_at\": \"2024-12-25T16:22:00.485Z\"\n  }\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/favorite"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/favorite"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/favorite"
+          }
         }
       ]
     },
@@ -1222,19 +1798,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"7802\",\n    \"user_id\": \"7262\",\n    \"comic_id\": \"7337\",\n    \"created_at\": \"2024-11-04T12:59:10.515Z\",\n    \"comic\": {\n      \"id\": \"3403\",\n      \"type\": \"bliss\",\n      \"title\": \"ferociously\",\n      \"status\": \"success\",\n      \"slug\": \"bitterly\",\n      \"rating\": \"dense\",\n      \"created_at\": \"2025-02-16T07:05:58.549Z\",\n      \"updated_at\": \"2025-08-22T07:10:02.469Z\",\n      \"chapters\": [\n        {\n          \"id\": \"1274\",\n          \"comic_id\": \"4816\",\n          \"title\": \"portly\",\n          \"slug\": \"excitedly\",\n          \"number_chapter\": \"huzzah\",\n          \"thumbnail_url\": \"even\",\n          \"published_at\": \"solemnly\",\n          \"created_at\": \"2025-04-02T19:41:04.821Z\",\n          \"updated_at\": \"2025-08-21T20:49:21.134Z\"\n        },\n        {\n          \"id\": \"9411\",\n          \"comic_id\": \"3041\",\n          \"title\": \"slight\",\n          \"slug\": \"stranger\",\n          \"number_chapter\": \"pillbox\",\n          \"thumbnail_url\": \"circumference\",\n          \"published_at\": \"geez\",\n          \"created_at\": \"2025-06-04T08:17:12.524Z\",\n          \"updated_at\": \"2025-08-21T09:51:33.629Z\"\n        }\n      ]\n    }\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"8325\",\n    \"user_id\": \"1797\",\n    \"comic_id\": \"8430\",\n    \"created_at\": \"2025-06-12T01:26:03.949Z\",\n    \"comic\": {\n      \"id\": \"6053\",\n      \"type\": \"sans\",\n      \"title\": \"mobilise\",\n      \"status\": \"success\",\n      \"slug\": \"until\",\n      \"rating\": \"pant\",\n      \"created_at\": \"2024-10-15T21:07:04.625Z\",\n      \"updated_at\": \"2025-08-21T17:00:27.959Z\",\n      \"chapters\": [\n        {\n          \"id\": \"7606\",\n          \"comic_id\": \"6240\",\n          \"title\": \"ick\",\n          \"slug\": \"oof\",\n          \"number_chapter\": \"now\",\n          \"thumbnail_url\": \"drat\",\n          \"published_at\": \"so\",\n          \"created_at\": \"2025-02-19T14:30:09.506Z\",\n          \"updated_at\": \"2025-08-22T07:54:31.780Z\"\n        },\n        {\n          \"id\": \"7961\",\n          \"comic_id\": \"6411\",\n          \"title\": \"premier\",\n          \"slug\": \"till\",\n          \"number_chapter\": \"aggressive\",\n          \"thumbnail_url\": \"deer\",\n          \"published_at\": \"till\",\n          \"created_at\": \"2025-01-15T22:52:43.100Z\",\n          \"updated_at\": \"2025-08-21T22:17:58.343Z\"\n        }\n      ]\n    }\n  }\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/favorite/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/favorite/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/favorite/{id}"
+          }
         }
       ]
     },
@@ -1249,31 +1837,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"7153\",\n    \"user_id\": \"7942\",\n    \"comic_id\": \"4060\",\n    \"created_at\": \"2024-08-31T20:37:39.111Z\"\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"6964\",\n    \"user_id\": \"9984\",\n    \"comic_id\": \"4238\",\n    \"created_at\": \"2025-01-17T07:48:59.963Z\"\n  }\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/favorite/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/favorite/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/favorite/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/favorite/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/favorite/{id}"
+          }
         }
       ]
     },
@@ -1288,31 +1896,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/favorite/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/favorite/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/favorite/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/favorite/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/favorite/{id}"
+          }
         }
       ]
     },
@@ -1327,19 +1955,31 @@
           "name": "201 Mock",
           "code": 201,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"6626\",\n    \"user_id\": \"2615\",\n    \"comic_id\": \"9250\",\n    \"score\": \"6454\",\n    \"updated_at\": \"2025-08-21T10:28:22.475Z\"\n  }\n}"
+          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"926\",\n    \"user_id\": \"4682\",\n    \"comic_id\": \"9526\",\n    \"score\": \"7293\",\n    \"updated_at\": \"2025-08-21T18:21:16.091Z\"\n  }\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/rating"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/rating"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/rating"
+          }
         }
       ]
     },
@@ -1354,19 +1994,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"1007\",\n      \"user_id\": \"6792\",\n      \"comic_id\": \"5535\",\n      \"score\": \"8384\",\n      \"updated_at\": \"2025-08-22T02:32:23.130Z\",\n      \"comic\": {\n        \"id\": \"9195\",\n        \"type\": \"of\",\n        \"title\": \"upright\",\n        \"status\": \"success\",\n        \"slug\": \"bank\",\n        \"rating\": \"baa\",\n        \"created_at\": \"2024-11-03T20:33:56.812Z\",\n        \"updated_at\": \"2025-08-21T20:59:35.403Z\",\n        \"chapters\": [\n          {\n            \"id\": \"1308\",\n            \"comic_id\": \"1711\",\n            \"title\": \"haversack\",\n            \"slug\": \"book\",\n            \"number_chapter\": \"demob\",\n            \"thumbnail_url\": \"till\",\n            \"published_at\": \"downchange\",\n            \"created_at\": \"2025-04-17T14:28:01.093Z\",\n            \"updated_at\": \"2025-08-21T07:37:06.090Z\"\n          },\n          {\n            \"id\": \"5354\",\n            \"comic_id\": \"6925\",\n            \"title\": \"celebrated\",\n            \"slug\": \"inscribe\",\n            \"number_chapter\": \"frequent\",\n            \"thumbnail_url\": \"serenade\",\n            \"published_at\": \"very\",\n            \"created_at\": \"2025-07-28T17:05:27.205Z\",\n            \"updated_at\": \"2025-08-21T19:20:56.955Z\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"3673\",\n      \"user_id\": \"1917\",\n      \"comic_id\": \"3931\",\n      \"score\": \"1678\",\n      \"updated_at\": \"2025-08-21T19:16:53.482Z\",\n      \"comic\": {\n        \"id\": \"3554\",\n        \"type\": \"to\",\n        \"title\": \"culminate\",\n        \"status\": \"success\",\n        \"slug\": \"give\",\n        \"rating\": \"improbable\",\n        \"created_at\": \"2025-01-04T18:25:00.459Z\",\n        \"updated_at\": \"2025-08-22T05:13:42.836Z\",\n        \"chapters\": [\n          {\n            \"id\": \"3101\",\n            \"comic_id\": \"8524\",\n            \"title\": \"huzzah\",\n            \"slug\": \"croon\",\n            \"number_chapter\": \"readily\",\n            \"thumbnail_url\": \"jaywalk\",\n            \"published_at\": \"pish\",\n            \"created_at\": \"2024-10-04T23:44:21.183Z\",\n            \"updated_at\": \"2025-08-22T03:33:17.130Z\"\n          },\n          {\n            \"id\": \"8497\",\n            \"comic_id\": \"3372\",\n            \"title\": \"countess\",\n            \"slug\": \"linseed\",\n            \"number_chapter\": \"alert\",\n            \"thumbnail_url\": \"ack\",\n            \"published_at\": \"happily\",\n            \"created_at\": \"2024-11-13T05:13:42.832Z\",\n            \"updated_at\": \"2025-08-21T20:58:35.709Z\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"3060\",\n      \"user_id\": \"603\",\n      \"comic_id\": \"2361\",\n      \"score\": \"1402\",\n      \"updated_at\": \"2025-08-22T01:44:25.384Z\",\n      \"comic\": {\n        \"id\": \"8323\",\n        \"type\": \"fervently\",\n        \"title\": \"after\",\n        \"status\": \"success\",\n        \"slug\": \"husky\",\n        \"rating\": \"powerful\",\n        \"created_at\": \"2025-04-12T06:39:07.732Z\",\n        \"updated_at\": \"2025-08-22T00:35:06.695Z\",\n        \"chapters\": [\n          {\n            \"id\": \"3384\",\n            \"comic_id\": \"7638\",\n            \"title\": \"while\",\n            \"slug\": \"seldom\",\n            \"number_chapter\": \"underneath\",\n            \"thumbnail_url\": \"a\",\n            \"published_at\": \"on\",\n            \"created_at\": \"2025-07-05T09:59:56.421Z\",\n            \"updated_at\": \"2025-08-22T05:26:24.611Z\"\n          },\n          {\n            \"id\": \"455\",\n            \"comic_id\": \"2162\",\n            \"title\": \"overreact\",\n            \"slug\": \"which\",\n            \"number_chapter\": \"as\",\n            \"thumbnail_url\": \"forenenst\",\n            \"published_at\": \"vet\",\n            \"created_at\": \"2025-04-17T20:09:45.133Z\",\n            \"updated_at\": \"2025-08-22T01:18:52.212Z\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"5491\",\n      \"user_id\": \"5315\",\n      \"comic_id\": \"6947\",\n      \"score\": \"2630\",\n      \"updated_at\": \"2025-08-21T13:22:32.713Z\",\n      \"comic\": {\n        \"id\": \"9755\",\n        \"type\": \"flickering\",\n        \"title\": \"substantial\",\n        \"status\": \"success\",\n        \"slug\": \"blink\",\n        \"rating\": \"live\",\n        \"created_at\": \"2025-06-06T10:34:16.687Z\",\n        \"updated_at\": \"2025-08-21T11:21:09.074Z\",\n        \"chapters\": [\n          {\n            \"id\": \"7695\",\n            \"comic_id\": \"8704\",\n            \"title\": \"sideboard\",\n            \"slug\": \"tenement\",\n            \"number_chapter\": \"blah\",\n            \"thumbnail_url\": \"than\",\n            \"published_at\": \"spice\",\n            \"created_at\": \"2025-04-13T01:39:45.276Z\",\n            \"updated_at\": \"2025-08-21T19:46:49.152Z\"\n          },\n          {\n            \"id\": \"8664\",\n            \"comic_id\": \"6069\",\n            \"title\": \"probate\",\n            \"slug\": \"alongside\",\n            \"number_chapter\": \"boohoo\",\n            \"thumbnail_url\": \"alliance\",\n            \"published_at\": \"by\",\n            \"created_at\": \"2024-09-17T07:16:33.714Z\",\n            \"updated_at\": \"2025-08-21T23:09:16.661Z\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/rating"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/rating"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/rating"
+          }
         }
       ]
     },
@@ -1381,31 +2033,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"1519\",\n    \"user_id\": \"9213\",\n    \"comic_id\": \"3400\",\n    \"score\": \"2174\",\n    \"updated_at\": \"2025-08-21T17:35:30.328Z\"\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"7597\",\n    \"user_id\": \"6608\",\n    \"comic_id\": \"6380\",\n    \"score\": \"8417\",\n    \"updated_at\": \"2025-08-22T03:05:51.302Z\"\n  }\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/rating/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/rating/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/rating/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/rating/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/rating/{id}"
+          }
         }
       ]
     },
@@ -1420,31 +2092,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/rating/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/rating/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/rating/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/rating/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/rating/{id}"
+          }
         }
       ]
     },
@@ -1459,19 +2151,31 @@
           "name": "201 Mock",
           "code": 201,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"user_id\": \"8623\",\n    \"comic_id\": \"8492\",\n    \"subscribed_at\": \"2395\"\n  }\n}"
+          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"user_id\": \"7117\",\n    \"comic_id\": \"483\",\n    \"subscribed_at\": \"6488\"\n  }\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/subscription"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/subscription"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/subscription"
+          }
         }
       ]
     },
@@ -1486,19 +2190,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"user_id\": \"4003\",\n      \"comic_id\": \"6132\",\n      \"subscribed_at\": \"8448\",\n      \"comic\": {\n        \"id\": \"5100\",\n        \"type\": \"so\",\n        \"title\": \"terribly\",\n        \"status\": \"success\",\n        \"slug\": \"in\",\n        \"rating\": \"round\",\n        \"created_at\": \"2024-12-12T12:54:40.967Z\",\n        \"updated_at\": \"2025-08-21T12:07:10.142Z\",\n        \"chapters\": [\n          {\n            \"id\": \"5717\",\n            \"comic_id\": \"7689\",\n            \"title\": \"glittering\",\n            \"slug\": \"strictly\",\n            \"number_chapter\": \"authentic\",\n            \"thumbnail_url\": \"meh\",\n            \"published_at\": \"instead\",\n            \"created_at\": \"2025-02-12T13:10:09.187Z\",\n            \"updated_at\": \"2025-08-22T02:33:50.965Z\"\n          },\n          {\n            \"id\": \"6686\",\n            \"comic_id\": \"4770\",\n            \"title\": \"beyond\",\n            \"slug\": \"boo\",\n            \"number_chapter\": \"grim\",\n            \"thumbnail_url\": \"boohoo\",\n            \"published_at\": \"frizz\",\n            \"created_at\": \"2025-01-17T23:18:03.516Z\",\n            \"updated_at\": \"2025-08-21T16:36:03.805Z\"\n          }\n        ]\n      }\n    },\n    {\n      \"user_id\": \"3200\",\n      \"comic_id\": \"3042\",\n      \"subscribed_at\": \"1279\",\n      \"comic\": {\n        \"id\": \"3905\",\n        \"type\": \"more\",\n        \"title\": \"small\",\n        \"status\": \"success\",\n        \"slug\": \"wash\",\n        \"rating\": \"similar\",\n        \"created_at\": \"2024-10-16T09:15:09.208Z\",\n        \"updated_at\": \"2025-08-21T22:11:07.468Z\",\n        \"chapters\": [\n          {\n            \"id\": \"8357\",\n            \"comic_id\": \"7216\",\n            \"title\": \"bah\",\n            \"slug\": \"prickly\",\n            \"number_chapter\": \"adult\",\n            \"thumbnail_url\": \"ack\",\n            \"published_at\": \"gazebo\",\n            \"created_at\": \"2024-09-29T12:29:40.128Z\",\n            \"updated_at\": \"2025-08-22T07:10:28.022Z\"\n          },\n          {\n            \"id\": \"8513\",\n            \"comic_id\": \"9475\",\n            \"title\": \"lest\",\n            \"slug\": \"oil\",\n            \"number_chapter\": \"facilitate\",\n            \"thumbnail_url\": \"whereas\",\n            \"published_at\": \"breakable\",\n            \"created_at\": \"2024-10-03T17:42:53.354Z\",\n            \"updated_at\": \"2025-08-21T20:33:44.659Z\"\n          }\n        ]\n      }\n    }\n  ]\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"user_id\": \"2830\",\n      \"comic_id\": \"2436\",\n      \"subscribed_at\": \"6754\",\n      \"comic\": {\n        \"id\": \"4280\",\n        \"type\": \"naturally\",\n        \"title\": \"unnaturally\",\n        \"status\": \"success\",\n        \"slug\": \"icebreaker\",\n        \"rating\": \"cleaner\",\n        \"created_at\": \"2025-05-06T03:37:25.161Z\",\n        \"updated_at\": \"2025-08-21T10:26:58.019Z\",\n        \"chapters\": [\n          {\n            \"id\": \"1500\",\n            \"comic_id\": \"3616\",\n            \"title\": \"unzip\",\n            \"slug\": \"dapper\",\n            \"number_chapter\": \"with\",\n            \"thumbnail_url\": \"frankly\",\n            \"published_at\": \"the\",\n            \"created_at\": \"2025-04-13T08:38:02.875Z\",\n            \"updated_at\": \"2025-08-21T22:02:45.746Z\"\n          },\n          {\n            \"id\": \"5615\",\n            \"comic_id\": \"3622\",\n            \"title\": \"reckless\",\n            \"slug\": \"ick\",\n            \"number_chapter\": \"wilderness\",\n            \"thumbnail_url\": \"reluctantly\",\n            \"published_at\": \"provided\",\n            \"created_at\": \"2025-04-02T08:04:47.049Z\",\n            \"updated_at\": \"2025-08-22T00:40:56.515Z\"\n          }\n        ]\n      }\n    },\n    {\n      \"user_id\": \"8200\",\n      \"comic_id\": \"5535\",\n      \"subscribed_at\": \"1235\",\n      \"comic\": {\n        \"id\": \"5204\",\n        \"type\": \"beyond\",\n        \"title\": \"across\",\n        \"status\": \"success\",\n        \"slug\": \"whether\",\n        \"rating\": \"unless\",\n        \"created_at\": \"2024-11-13T07:18:15.007Z\",\n        \"updated_at\": \"2025-08-22T07:53:36.214Z\",\n        \"chapters\": [\n          {\n            \"id\": \"1012\",\n            \"comic_id\": \"9437\",\n            \"title\": \"while\",\n            \"slug\": \"consequently\",\n            \"number_chapter\": \"youthful\",\n            \"thumbnail_url\": \"ack\",\n            \"published_at\": \"officially\",\n            \"created_at\": \"2024-09-17T11:47:22.561Z\",\n            \"updated_at\": \"2025-08-21T20:30:23.140Z\"\n          },\n          {\n            \"id\": \"3844\",\n            \"comic_id\": \"840\",\n            \"title\": \"stingy\",\n            \"slug\": \"old\",\n            \"number_chapter\": \"unimpressively\",\n            \"thumbnail_url\": \"verve\",\n            \"published_at\": \"represent\",\n            \"created_at\": \"2025-04-03T06:20:31.428Z\",\n            \"updated_at\": \"2025-08-22T07:26:33.779Z\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscription"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscription"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/subscription"
+          }
         }
       ]
     },
@@ -1513,31 +2229,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/subscription/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/subscription/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/subscription/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/subscription/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/subscription/{id}"
+          }
         }
       ]
     },
@@ -1552,19 +2288,31 @@
           "name": "201 Mock",
           "code": 201,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"4019\",\n    \"user_id\": \"4923\",\n    \"comic_id\": \"4371\",\n    \"chapter_id\": \"9459\",\n    \"read_at\": \"746\"\n  }\n}"
+          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"618\",\n    \"user_id\": \"5641\",\n    \"comic_id\": \"1294\",\n    \"chapter_id\": \"4040\",\n    \"read_at\": \"1423\"\n  }\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/history"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/history"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/history"
+          }
         }
       ]
     },
@@ -1579,19 +2327,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"user_id\": \"2709\",\n      \"comic_id\": \"547\",\n      \"chapter_id\": \"3084\",\n      \"read_at\": \"7413\",\n      \"comic\": {\n        \"id\": \"9917\",\n        \"type\": \"shovel\",\n        \"title\": \"antelope\",\n        \"status\": \"success\",\n        \"slug\": \"lest\",\n        \"rating\": \"furthermore\",\n        \"created_at\": \"2024-09-22T01:28:32.908Z\",\n        \"updated_at\": \"2025-08-21T16:50:22.763Z\",\n        \"chapters\": [\n          {\n            \"id\": \"4770\",\n            \"comic_id\": \"9572\",\n            \"title\": \"bump\",\n            \"slug\": \"same\",\n            \"number_chapter\": \"ugh\",\n            \"thumbnail_url\": \"notwithstanding\",\n            \"published_at\": \"dearly\",\n            \"created_at\": \"2025-08-04T15:40:11.854Z\",\n            \"updated_at\": \"2025-08-21T18:04:49.092Z\"\n          },\n          {\n            \"id\": \"8627\",\n            \"comic_id\": \"7651\",\n            \"title\": \"oh\",\n            \"slug\": \"plagiarise\",\n            \"number_chapter\": \"lest\",\n            \"thumbnail_url\": \"consequently\",\n            \"published_at\": \"which\",\n            \"created_at\": \"2025-06-10T07:50:38.373Z\",\n            \"updated_at\": \"2025-08-21T12:58:29.552Z\"\n          }\n        ]\n      },\n      \"chapter\": {\n        \"id\": \"7010\",\n        \"comic_id\": \"6613\",\n        \"title\": \"down\",\n        \"slug\": \"despite\",\n        \"number_chapter\": \"yieldingly\",\n        \"thumbnail_url\": \"cautiously\",\n        \"published_at\": \"including\",\n        \"created_at\": \"2024-12-10T13:50:09.293Z\",\n        \"updated_at\": \"2025-08-22T04:22:55.155Z\"\n      }\n    },\n    {\n      \"user_id\": \"609\",\n      \"comic_id\": \"562\",\n      \"chapter_id\": \"6479\",\n      \"read_at\": \"3705\",\n      \"comic\": {\n        \"id\": \"2314\",\n        \"type\": \"geez\",\n        \"title\": \"sham\",\n        \"status\": \"success\",\n        \"slug\": \"eek\",\n        \"rating\": \"yowza\",\n        \"created_at\": \"2024-11-05T00:39:46.446Z\",\n        \"updated_at\": \"2025-08-22T04:55:11.481Z\",\n        \"chapters\": [\n          {\n            \"id\": \"3233\",\n            \"comic_id\": \"6442\",\n            \"title\": \"possible\",\n            \"slug\": \"about\",\n            \"number_chapter\": \"naturally\",\n            \"thumbnail_url\": \"councilman\",\n            \"published_at\": \"indeed\",\n            \"created_at\": \"2025-07-11T10:47:29.361Z\",\n            \"updated_at\": \"2025-08-21T17:22:13.206Z\"\n          },\n          {\n            \"id\": \"4917\",\n            \"comic_id\": \"8393\",\n            \"title\": \"rebound\",\n            \"slug\": \"baptise\",\n            \"number_chapter\": \"lamp\",\n            \"thumbnail_url\": \"numb\",\n            \"published_at\": \"fast\",\n            \"created_at\": \"2025-08-14T17:25:14.473Z\",\n            \"updated_at\": \"2025-08-21T16:15:56.162Z\"\n          }\n        ]\n      },\n      \"chapter\": {\n        \"id\": \"4523\",\n        \"comic_id\": \"3910\",\n        \"title\": \"ew\",\n        \"slug\": \"hypothesise\",\n        \"number_chapter\": \"mockingly\",\n        \"thumbnail_url\": \"whoever\",\n        \"published_at\": \"wallop\",\n        \"created_at\": \"2024-11-01T04:16:50.743Z\",\n        \"updated_at\": \"2025-08-22T03:13:48.016Z\"\n      }\n    }\n  ]\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"user_id\": \"3847\",\n      \"comic_id\": \"797\",\n      \"chapter_id\": \"3520\",\n      \"read_at\": \"3039\",\n      \"comic\": {\n        \"id\": \"711\",\n        \"type\": \"voluntarily\",\n        \"title\": \"like\",\n        \"status\": \"success\",\n        \"slug\": \"gosh\",\n        \"rating\": \"from\",\n        \"created_at\": \"2025-08-02T05:38:33.281Z\",\n        \"updated_at\": \"2025-08-22T05:29:50.058Z\",\n        \"chapters\": [\n          {\n            \"id\": \"26\",\n            \"comic_id\": \"5342\",\n            \"title\": \"prohibition\",\n            \"slug\": \"aha\",\n            \"number_chapter\": \"wherever\",\n            \"thumbnail_url\": \"unless\",\n            \"published_at\": \"under\",\n            \"created_at\": \"2025-03-10T20:04:07.454Z\",\n            \"updated_at\": \"2025-08-22T05:39:24.991Z\"\n          },\n          {\n            \"id\": \"1911\",\n            \"comic_id\": \"2221\",\n            \"title\": \"meanwhile\",\n            \"slug\": \"accept\",\n            \"number_chapter\": \"above\",\n            \"thumbnail_url\": \"till\",\n            \"published_at\": \"decriminalize\",\n            \"created_at\": \"2024-09-09T09:14:38.367Z\",\n            \"updated_at\": \"2025-08-22T03:49:43.735Z\"\n          }\n        ]\n      },\n      \"chapter\": {\n        \"id\": \"1932\",\n        \"comic_id\": \"5525\",\n        \"title\": \"near\",\n        \"slug\": \"whereas\",\n        \"number_chapter\": \"cone\",\n        \"thumbnail_url\": \"when\",\n        \"published_at\": \"nauseate\",\n        \"created_at\": \"2025-06-06T00:01:40.623Z\",\n        \"updated_at\": \"2025-08-22T02:03:58.812Z\"\n      }\n    },\n    {\n      \"user_id\": \"791\",\n      \"comic_id\": \"1209\",\n      \"chapter_id\": \"7171\",\n      \"read_at\": \"2145\",\n      \"comic\": {\n        \"id\": \"7764\",\n        \"type\": \"mmm\",\n        \"title\": \"ha\",\n        \"status\": \"success\",\n        \"slug\": \"venture\",\n        \"rating\": \"while\",\n        \"created_at\": \"2024-08-26T15:56:58.614Z\",\n        \"updated_at\": \"2025-08-22T07:14:24.251Z\",\n        \"chapters\": [\n          {\n            \"id\": \"4550\",\n            \"comic_id\": \"9421\",\n            \"title\": \"indeed\",\n            \"slug\": \"punctual\",\n            \"number_chapter\": \"deny\",\n            \"thumbnail_url\": \"regarding\",\n            \"published_at\": \"if\",\n            \"created_at\": \"2025-06-15T22:36:51.560Z\",\n            \"updated_at\": \"2025-08-22T00:43:33.973Z\"\n          },\n          {\n            \"id\": \"4823\",\n            \"comic_id\": \"1309\",\n            \"title\": \"neaten\",\n            \"slug\": \"across\",\n            \"number_chapter\": \"sign\",\n            \"thumbnail_url\": \"milestone\",\n            \"published_at\": \"once\",\n            \"created_at\": \"2025-06-16T14:59:08.313Z\",\n            \"updated_at\": \"2025-08-21T11:43:00.168Z\"\n          }\n        ]\n      },\n      \"chapter\": {\n        \"id\": \"2456\",\n        \"comic_id\": \"254\",\n        \"title\": \"gah\",\n        \"slug\": \"supposing\",\n        \"number_chapter\": \"or\",\n        \"thumbnail_url\": \"space\",\n        \"published_at\": \"next\",\n        \"created_at\": \"2024-09-12T21:24:58.700Z\",\n        \"updated_at\": \"2025-08-21T14:37:46.675Z\"\n      }\n    }\n  ]\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/history"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/history"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/history"
+          }
         }
       ]
     },
@@ -1606,31 +2366,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/history/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/history/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/history/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/history/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/history/{id}"
+          }
         }
       ]
     },
@@ -1645,19 +2425,31 @@
           "name": "201 Mock",
           "code": 201,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"9440\",\n    \"user_id\": \"6110\",\n    \"chapter_id\": \"6957\",\n    \"content\": \"fully\",\n    \"created_at\": \"2025-02-25T04:22:29.863Z\"\n  }\n}"
+          "body": "{\n  \"code\": 201,\n  \"status\": \"created\",\n  \"data\": {\n    \"id\": \"5781\",\n    \"user_id\": \"5985\",\n    \"chapter_id\": \"5805\",\n    \"content\": \"around\",\n    \"created_at\": \"2025-04-26T09:24:09.886Z\"\n  }\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/comment"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/comment"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "POST",
+            "url": "{{baseUrl}}/comment"
+          }
         }
       ]
     },
@@ -1672,19 +2464,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"8182\",\n      \"user_id\": \"7316\",\n      \"chapter_id\": \"9160\",\n      \"content\": \"brr\",\n      \"created_at\": \"2025-05-24T14:48:54.405Z\"\n    },\n    {\n      \"id\": \"5575\",\n      \"user_id\": \"6020\",\n      \"chapter_id\": \"5164\",\n      \"content\": \"total\",\n      \"created_at\": \"2024-09-15T22:06:47.644Z\"\n    }\n  ]\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"1684\",\n      \"user_id\": \"6327\",\n      \"chapter_id\": \"3657\",\n      \"content\": \"phooey\",\n      \"created_at\": \"2024-10-04T13:25:28.158Z\"\n    },\n    {\n      \"id\": \"4893\",\n      \"user_id\": \"2128\",\n      \"chapter_id\": \"9022\",\n      \"content\": \"glum\",\n      \"created_at\": \"2024-12-26T23:32:25.253Z\"\n    }\n  ]\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/chapters/{id}/comment"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/chapters/{id}/comment"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/chapters/{id}/comment"
+          }
         }
       ]
     },
@@ -1699,19 +2503,31 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"6005\",\n      \"user_id\": \"8117\",\n      \"chapter_id\": \"8568\",\n      \"content\": \"aw\",\n      \"created_at\": \"2025-03-28T17:00:10.151Z\",\n      \"chapter\": {\n        \"id\": \"7449\",\n        \"comic_id\": \"8876\",\n        \"title\": \"exactly\",\n        \"slug\": \"pro\",\n        \"number_chapter\": \"gulp\",\n        \"thumbnail_url\": \"whoever\",\n        \"published_at\": \"justly\",\n        \"created_at\": \"2024-11-15T11:32:32.603Z\",\n        \"updated_at\": \"2025-08-22T02:42:24.966Z\"\n      }\n    },\n    {\n      \"id\": \"9873\",\n      \"user_id\": \"8278\",\n      \"chapter_id\": \"6953\",\n      \"content\": \"hence\",\n      \"created_at\": \"2025-06-16T11:25:30.923Z\",\n      \"chapter\": {\n        \"id\": \"5625\",\n        \"comic_id\": \"3944\",\n        \"title\": \"athwart\",\n        \"slug\": \"warming\",\n        \"number_chapter\": \"huzzah\",\n        \"thumbnail_url\": \"clinking\",\n        \"published_at\": \"colorfully\",\n        \"created_at\": \"2025-05-16T23:15:04.451Z\",\n        \"updated_at\": \"2025-08-21T11:54:40.568Z\"\n      }\n    }\n  ]\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"id\": \"9397\",\n      \"user_id\": \"65\",\n      \"chapter_id\": \"4829\",\n      \"content\": \"roasted\",\n      \"created_at\": \"2025-03-26T01:21:31.408Z\",\n      \"chapter\": {\n        \"id\": \"4213\",\n        \"comic_id\": \"2383\",\n        \"title\": \"pro\",\n        \"slug\": \"round\",\n        \"number_chapter\": \"opposite\",\n        \"thumbnail_url\": \"always\",\n        \"published_at\": \"perfectly\",\n        \"created_at\": \"2024-11-24T17:35:19.680Z\",\n        \"updated_at\": \"2025-08-21T20:17:39.981Z\"\n      }\n    },\n    {\n      \"id\": \"8993\",\n      \"user_id\": \"3984\",\n      \"chapter_id\": \"2973\",\n      \"content\": \"than\",\n      \"created_at\": \"2024-11-11T20:49:05.129Z\",\n      \"chapter\": {\n        \"id\": \"5605\",\n        \"comic_id\": \"1859\",\n        \"title\": \"sweetly\",\n        \"slug\": \"serenade\",\n        \"number_chapter\": \"as\",\n        \"thumbnail_url\": \"pendant\",\n        \"published_at\": \"notwithstanding\",\n        \"created_at\": \"2025-01-10T07:09:25.181Z\",\n        \"updated_at\": \"2025-08-21T15:27:53.468Z\"\n      }\n    }\n  ]\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/users/{id}/comment"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/users/{id}/comment"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "GET",
+            "url": "{{baseUrl}}/users/{id}/comment"
+          }
         }
       ]
     },
@@ -1726,31 +2542,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"3938\",\n    \"user_id\": \"7789\",\n    \"chapter_id\": \"3892\",\n    \"content\": \"miskey\",\n    \"created_at\": \"2024-12-03T17:41:38.236Z\"\n  }\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {\n    \"id\": \"7968\",\n    \"user_id\": \"1607\",\n    \"chapter_id\": \"598\",\n    \"content\": \"own\",\n    \"created_at\": \"2024-10-28T18:24:51.525Z\"\n  }\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/comment/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/comment/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/comment/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/comment/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/comment/{id}"
+          }
         }
       ]
     },
@@ -1765,31 +2601,51 @@
           "name": "200 Mock",
           "code": 200,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}"
+          "body": "{\n  \"code\": 200,\n  \"status\": \"success\",\n  \"data\": {}\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/comment/{id}"
+          }
         },
         {
           "name": "400 Mock",
           "code": 400,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}"
+          "body": "{\n  \"code\": 400,\n  \"data\": {},\n  \"status\": \"bad request\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/comment/{id}"
+          }
         },
         {
           "name": "401 Mock",
           "code": 401,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}"
+          "body": "{\n  \"code\": 401,\n  \"data\": {},\n  \"status\": \"unauthorized\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/comment/{id}"
+          }
         },
         {
           "name": "404 Mock",
           "code": 404,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}"
+          "body": "{\n  \"code\": 404,\n  \"data\": {},\n  \"status\": \"not found\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/comment/{id}"
+          }
         },
         {
           "name": "500 Mock",
           "code": 500,
           "_postman_previewlanguage": "json",
-          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}"
+          "body": "{\n  \"code\": 500,\n  \"data\": {},\n  \"status\": \"internal server error\"\n}",
+          "originalRequest": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/comment/{id}"
+          }
         }
       ]
     }
