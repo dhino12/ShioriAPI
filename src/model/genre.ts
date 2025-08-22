@@ -2,19 +2,19 @@ import { ComicProperties } from "./comic";
 
 export type GenreProperties = {
     id?:string;
-    title?:string;
+    name?:string;
     slug?:string;
     comics?: ComicProperties[]
 }
 
 export class GenreModel {
     id;
-    title;
+    name;
     slug;
     comics
     constructor(props: Partial<GenreProperties> = {}) {
         this.id = props.id;
-        this.title = props.title;
+        this.name = props.name;
         this.slug = props.slug;
         this.comics = props.comics
     }

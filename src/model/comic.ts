@@ -1,4 +1,5 @@
 import { ChapterProperties, ChapterSimple } from "./chapters";
+import { CreatorProperties } from "./creator";
 import { GenreProperties } from "./genre";
 import { RelatedComicProperties } from "./related-comic";
 
@@ -11,14 +12,13 @@ export type ComicProperties = {
     slug?: string;
     thumbnail_url?: string;
     rating?: string;
-    artist?: string;
-    author?: string;
     status?: string;
     views?: string;
     followedCount?: string;
     genres?: GenreProperties[];
     chapters?: ChapterProperties[];
     related_comic?:RelatedComicProperties[];
+    creator?:CreatorProperties[];
     created_at?: string;
     updated_at?: string;
 };
@@ -53,6 +53,7 @@ export class ComicModel {
     views;
     followedCount;
     chapters;
+    creators;
     related_comic;
     created_at;
     updated_at;
@@ -68,8 +69,7 @@ export class ComicModel {
         this.genres = props.genres;
         this.chapters = props.chapters;
         this.rating = props.rating ?? "";
-        this.author = props.author ?? "";
-        this.artist = props.artist ?? "";
+        this.creators = props.creator ?? []
         this.views = props.views ?? "";
         this.followedCount = props.followedCount ?? "";
         this.related_comic = props.related_comic ?? "";

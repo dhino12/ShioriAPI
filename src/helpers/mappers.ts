@@ -33,7 +33,7 @@ export const toGenreModel = (dataScraper: {data: GenreProperties}): GenreModel|n
     const {data} = dataScraper;
     const dataGenreModel = new GenreModel({
         id: data.id,
-        title: data.title,
+        name: data.name,
         slug: data.slug,
         comics: data.comics,
     })
@@ -52,8 +52,7 @@ export const toComicModel = (dataScraper: {data: ComicProperties}): ComicModel|n
         thumbnail_url: data.thumbnail_url ?? "",
         status: data.status ?? "",
         rating: data.rating ?? "",
-        author: data.author ?? "",
-        artist: data.artist ?? "",
+        creator: data.creator,
         views: data.views ?? "",
         followedCount: data.followedCount ?? "",
         genres: data.genres,

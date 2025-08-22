@@ -2,9 +2,10 @@ import { httpClient } from "../../../app/http-client";
 import { parseHTML, parseHTMLCheerIO } from "../../../app/scraper";
 import { ResponseError } from "../../../error/response-error";
 import { toComicModel, toGenreModel } from "../../../helpers/mappers";
-import { capitalize } from "../../../helpers/text-formatting";
+import { capitalize, extractTxTFromUrl } from "../../../helpers/text-formatting";
 import { ChapterModel, ChapterProperties, ChapterSimple } from "../../../model/chapters";
 import { ComicModel, ComicProperties } from "../../../model/comic";
+import { CreatorProperties } from "../../../model/creator";
 import { EpisodeModel, EpisodeProperties } from "../../../model/episode";
 import { GenreModel, GenreProperties } from "../../../model/genre";
 import { RelatedComicProperties } from "../../../model/related-comic";
@@ -82,7 +83,7 @@ export class KiryuuScraper extends RootScraper implements IComicScraper {
             data: {
                 id: "",
                 slug,
-                title: capitalize(slug),
+                name: capitalize(slug),
                 comics: comicsData
             }
         }) as GenreModel
@@ -95,7 +96,7 @@ export class KiryuuScraper extends RootScraper implements IComicScraper {
             genres.push({
                 id: element.querySelector("input")?.getAttribute("value") ?? "",
                 slug: element.querySelector("label")?.textContent.toLowerCase(),
-                title: element.querySelector("label")?.textContent
+                name: element.querySelector("label")?.textContent
             })
         })
         return genres as GenreModel[]
@@ -152,7 +153,7 @@ export class KiryuuScraper extends RootScraper implements IComicScraper {
         info.views = await postViews.data.views;
         document.querySelectorAll(".seriestugenre a").forEach((element) => {
             genres.push({
-                title: element?.textContent.toLowerCase(),
+                name: element?.textContent.toLowerCase(),
                 slug: element?.getAttribute("href")?.split("/")[4]
             });
         });
@@ -175,9 +176,10 @@ export class KiryuuScraper extends RootScraper implements IComicScraper {
         });
         
         document.querySelectorAll(".listupd .bs").forEach((element) => {
-            const chapter = element.querySelector(".adds .epxs")?.textContent
+            const chapterRelatedComic = element.querySelector(".adds .epxs")?.textContent
+            const slugRelatedComic = element.querySelector(".bsx a")?.getAttribute("href")?.split("/")[4]
             reletadComic.push({
-                slug: element.querySelector(".bsx a")?.getAttribute("href")?.split("/")[4],
+                slug: slugRelatedComic,
                 title: element.querySelector(".tt")?.textContent.trim(),
                 thumbnail_url: element.querySelector(".limit img")?.getAttribute("src") ?? "",
                 rating: element.querySelector(".rating .numscore")?.textContent,
@@ -189,10 +191,10 @@ export class KiryuuScraper extends RootScraper implements IComicScraper {
                     published_at: "",
                     thumbnail_url: "",
                     updated_at: "",
-                    slug: `${slug}-${chapter?.toLowerCase()?.replace(" ", "-")}`,
-                    title: chapter ?? "",
+                    slug: `${slugRelatedComic}-${chapterRelatedComic?.toLowerCase()?.replace(" ", "-")}`,
+                    title: chapterRelatedComic ?? "",
                     created_at: "",
-                    link: `https://kiryuu02.com/${slug}-${chapter?.toLowerCase()?.replace(" ", "-")}/`,
+                    link: `https://kiryuu02.com/${slugRelatedComic}-${chapterRelatedComic?.toLowerCase()?.replace(" ", "-")}/`,
                     pagination: {
                         next: "",
                         prev: "",
@@ -200,6 +202,23 @@ export class KiryuuScraper extends RootScraper implements IComicScraper {
                 }],
             })
         })
+        const creators: CreatorProperties[] = [
+            {
+                name: info.artist,
+                slug: info.artist?.toLowerCase(),
+                type: "artist",
+            },
+            {
+                name: info.author,
+                slug: info.author?.toLowerCase(),
+                type: "author",
+            },
+            {
+                name: info.serialization,
+                slug: info.serialization?.toLowerCase(),
+                type: "serialization",
+            },
+        ]
 
         return toComicModel({
             data: {
@@ -214,12 +233,11 @@ export class KiryuuScraper extends RootScraper implements IComicScraper {
                 type: info.type,
                 genres: genres,
                 status: info.status,
-                author: info.author,
-                artist: info.artist,
+                creator: creators,
                 views: info.views,
                 followedCount: followed,
                 related_comic: reletadComic,
-                created_at: info.postedOn,
+                created_at: info.released,
                 updated_at: info.updatedOn,
             },
         }) as ComicModel;
@@ -355,13 +373,15 @@ export class KiryuuScraper extends RootScraper implements IComicScraper {
         const publishedAt = document.querySelector("time.entry-date")?.textContent
 
         document.querySelectorAll("div#readerarea img").forEach((element) => {
+            const link = element.getAttribute("src")
+            const pageNumber = extractTxTFromUrl(`${link}/test`, 'test', 1)?.replace(/\.[^/.]+$/, "") 
             episodes.push({
-                id: element.getAttribute("src")?.split("/")[8].replace(/\.[^/.]+$/, "") ?? "",
-                title: capitalize(element.getAttribute("src")?.split("/")[6].replace(/-/g, " ") ?? ""),
-                slug: element.getAttribute("src")?.replace("https://v2.yuucdn.net/uploads/manga-images/h/", "") ?? "",
-                link: element?.getAttribute("src") ?? "",
-                page_number: element.getAttribute("src")?.split("/")[8].replace(/\.[^/.]+$/, "") ?? "",
-                image_url: element.getAttribute("src") ?? "",
+                id: link?.split("/").splice(5).join('-') ?? "",
+                title: capitalize(link?.split("/").splice(5).join(' ') ?? "").replace(/-/g, " "),
+                slug: extractTxTFromUrl(`${link}/test`, 'test', 1) ?? "",
+                link: link ?? "",
+                page_number: pageNumber?? "",
+                image_url: link ?? "",
             });
         });
         

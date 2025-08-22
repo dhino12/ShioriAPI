@@ -1,6 +1,7 @@
 import { ResponseError } from "../../error/response-error";
 import { removeNulls } from "../../helpers/mappers";
 import { ComicModel } from "../../model/comic";
+import { CreatorResponse } from "./creator-response";
 import { GenreResponse } from "./genre-response";
 import { RelatedComicResponse } from "./related-response";
 
@@ -15,8 +16,7 @@ export type ComicResponse = {
     status: string;
     chapters: [];
     rating?: string;
-    artist?: string;
-    author?: string;
+    creators?: CreatorResponse[]
     views?: string;
     followedCount?: string;
     genres?: GenreResponse[];
@@ -33,19 +33,18 @@ export function toComicResponseDetail(comic: ComicModel | null): ComicResponse {
         title_alternative: comic.title_alternative,
         slug: comic.slug,
         description: comic.description,
-        chapters: comic.chapters,
         type: comic.type,
         thumbnail_url: comic.thumbnail_url,
         status: comic.status,
-        artist: comic.artist,
-        author: comic.author,
         followedCount: comic.followedCount,
         genres: comic.genres,
         rating: comic.rating,
         views: comic.views,
-        related_comic: comic.related_comic,
         created_at: comic.created_at,
         updated_at: comic.updated_at,
+        chapters: comic.chapters,
+        creators: comic.creators,
+        related_comic: comic.related_comic,
     }) as ComicResponse;
 }
 
