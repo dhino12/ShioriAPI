@@ -45,6 +45,8 @@ export class ComicController implements IComicController {
     }
     async findComics(req: Request, res: Response, next: NextFunction): Promise<void> {
         const { domain } = req.params
+        console.log(domain);
+        
         const {
             order = "",
             status = "ongoing", 

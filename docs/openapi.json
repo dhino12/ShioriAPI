@@ -849,7 +849,7 @@
                 }
             }
         },
-        "/:domain/comics": {
+        "/{domain}/comics": {
             "get": {
                 "tags": ["Comics API"],
                 "summary": "list all comics",
@@ -983,7 +983,7 @@
                 }
             }
         },
-        "/:domain/comics/{id}": {
+        "/{domain}/comics/{id}": {
             "get": {
                 "tags": ["Comics API"],
                 "summary": "get comic by id",
@@ -1234,7 +1234,7 @@
                 }
             }
         },
-        "/:domain/chapters": {
+        "/{domain}/chapters": {
             "post": {
                 "tags": ["Chapters API"],
                 "summary": "create chapter",
@@ -1320,7 +1320,7 @@
                 }
             }
         },
-        "/:domain/chapters/{id}": {
+        "/{domain}/chapters/{id}": {
             "put": {
                 "tags": ["Chapters API"],
                 "summary": "update chapter",
@@ -1510,7 +1510,7 @@
                 }
             }
         },
-        "/:domain/comics/{id}/chapters": {
+        "/{domain}/comics/{id}/chapters": {
             "get": {
                 "tags": ["Chapters API"],
                 "summary": "list all chapter",
@@ -1575,7 +1575,7 @@
                 }
             }
         },
-        "/:domain/comics/{id}/chapters/{chapterId}": {
+        "/{domain}/comics/{id}/chapters/{chapterId}": {
             "get": {
                 "tags": ["Chapters API"],
                 "summary": "get chapter by id",
@@ -1643,7 +1643,7 @@
                 }
             }
         },
-        "/:domain/episode": {
+        "/{domain}/episode": {
             "post": {
                 "tags": ["Epsiode API"],
                 "summary": "create episode",
@@ -1729,7 +1729,7 @@
                 }
             }
         },
-        "/:domain/episode/{id}": {
+        "/{domain}/episode/{id}": {
             "put": {
                 "tags": ["Epsiode API"],
                 "summary": "update episode",
@@ -1919,7 +1919,7 @@
                 }
             }
         },
-        "/:domain/comics/{id}/chapters/{chapterId}/epsiode": {
+        "/{domain}/comics/{id}/chapters/{chapterId}/epsiode": {
             "get": {
                 "tags": ["Epsiode API"],
                 "summary": "list all epsiode",
@@ -1989,7 +1989,7 @@
                 }
             }
         },
-        "/:domain/comics/{id}/chapters/{chapterId}/epsiode/{episodeId}": {
+        "/{domain}/comics/{id}/chapters/{chapterId}/epsiode/{episodeId}": {
             "get": {
                 "tags": ["Epsiode API"],
                 "summary": "get epsiode by id",
