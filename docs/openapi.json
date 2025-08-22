@@ -308,6 +308,11 @@
                 }],
                 "parameters": [
                     {
+                        "name": "id",
+                        "in": "path",
+                        "description": "masukan user id."
+                    },
+                    {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
@@ -367,6 +372,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "masukan user id."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -457,6 +467,11 @@
                 }],
                 "parameters": [
                     {
+                        "name": "id",
+                        "in": "path",
+                        "description": "masukan user id."
+                    },
+                    {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
@@ -537,6 +552,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -619,6 +639,11 @@
                 }],
                 "parameters": [
                     {
+                        "name": "id",
+                        "in": "path",
+                        "description": "masukan bookmark id."
+                    },
+                    {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
@@ -678,6 +703,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "masukan id bookmark."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -759,6 +789,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "masukan userId."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -941,6 +976,13 @@
                 "tags": ["Comics API"],
                 "summary": "get comic by id",
                 "description": "# Get Comic by id\nKirim permintaan `GET`. Endpoint ini akan mendapatkan detail comic beserta dengan attribute pendukung lainnya.<br><br>__⚠️Note:__ untuk mendapatkan chapter bisa dilakukan dengan fetch / request terpisah",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "success get comic by id",
@@ -994,6 +1036,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -1083,6 +1130,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -1246,6 +1298,11 @@
                 }],
                 "parameters": [
                     {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
+                    {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
@@ -1335,6 +1392,11 @@
                 }],
                 "parameters": [
                     {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
+                    {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
@@ -1411,6 +1473,13 @@
                 "tags": ["Chapters API"],
                 "summary": "list all chapter",
                 "description": "# List Chapter\nKirim permintaan `GET`. Endpoint ini akan mendapatkan seluruh chapter dalam 1 comic",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "success get all chapter",
@@ -1464,6 +1533,18 @@
                 "tags": ["Chapters API"],
                 "summary": "get chapter by id",
                 "description": "# Get Chapter by id\nKirim permintaan `GET`. Endpoint ini akan mendapatkan detail chapter dalam 1 comic",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
+                    {
+                        "name": "chapterId",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "success get chapters by id",
@@ -1601,6 +1682,11 @@
                 }],
                 "parameters": [
                     {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
+                    {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
@@ -1690,6 +1776,11 @@
                 }],
                 "parameters": [
                     {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
+                    {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
@@ -1766,6 +1857,18 @@
                 "tags": ["Epsiode API"],
                 "summary": "list all epsiode",
                 "description": "# List Epsiode\nKirim permintaan `GET`. Endpoint ini akan mendapatkan seluruh epsiode (gambar) dalam 1 chapter",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
+                    {
+                        "name": "chapterId",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "success get all epsiode",
@@ -1819,6 +1922,23 @@
                 "tags": ["Epsiode API"],
                 "summary": "get epsiode by id",
                 "description": "# Get Epsiode by id\nKirim permintaan `GET`. Endpoint ini akan mendapatkan detail episode (salah satu gambar, dari seluruh gambar dalam 1 chapter. ",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
+                    {
+                        "name": "chapterId",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
+                    {
+                        "name": "episodeId",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "success get epsiode by id",
@@ -1992,6 +2112,13 @@
                 "tags": ["Creator API"],
                 "summary": "get creator by id",
                 "description": "# Get Creator by id\nKirim permintaan `GET`. Endpoint ini akan mendapatkan detail comic yang pernah digarap / dibuat oleh creator ini. ",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "success get creator by id",
@@ -2045,6 +2172,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -2134,6 +2266,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -2333,6 +2470,13 @@
                 "tags": ["Genre API"],
                 "summary": "get genre by id",
                 "description": "# Get Genre by id\nKirim permintaan `GET`. Endpoint ini akan mendapatkan detail genre. <br><br>__⚠️ Note:__ untuk mendapatkan Comic, bisa dilakukan fetch / request api terpisah dari endpoint ini, `(logikanya, user akan klik salah satu genre, dan akan mendapatkan comic berdasarkan genre secara terpisah 🤔❓)`.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "success get genre by id",
@@ -2386,6 +2530,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -2475,6 +2624,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -2690,6 +2844,11 @@
                 }],
                 "parameters": [
                     {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
+                    {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
@@ -2749,6 +2908,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -2838,6 +3002,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -3053,6 +3222,11 @@
                 }],
                 "parameters": [
                     {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
+                    {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
@@ -3141,6 +3315,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -3356,6 +3535,11 @@
                 }],
                 "parameters": [
                     {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
+                    {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
@@ -3570,6 +3754,11 @@
                 }],
                 "parameters": [
                     {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
+                    {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
                         "in": "header",
@@ -3717,6 +3906,13 @@
                 "tags": ["Comment API"],
                 "summary": "list all comment by chapterId",
                 "description": "# List Comment by chapterId\nKirim permintaan `GET` untuk mendapatkan seluruh komentar yang ada di setiap chapter",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "success get all comment by chapterId",
@@ -3774,6 +3970,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -3838,6 +4039,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -3927,6 +4133,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
