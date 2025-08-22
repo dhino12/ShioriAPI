@@ -10,7 +10,6 @@ const spec = JSON.parse(fs.readFileSync("openapi.json", "utf-8"));
 function generateFake(schema, statusCode = 200) {
     if (!schema) return null;
 
-    // resolve $ref
     if (schema.$ref) {
         const ref = schema.$ref.replace("#/components/schemas/", "");
         return generateFake(spec.components.schemas[ref], statusCode);
@@ -88,9 +87,12 @@ function generateCollection() {
                         code: parseInt(code),
                         _postman_previewlanguage: "json",
                         body: JSON.stringify(fake, null, 2),
-                        originalRequest: {   // <- tambahan method & url
+                        originalRequest: {
                             method: method.toUpperCase(),
                             url: `{{baseUrl}}${path}`,
+                            header: [
+                                { key: "Content-Type", value: "application/json" }
+                            ]
                         },
                     });
                 }
