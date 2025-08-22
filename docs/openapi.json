@@ -832,7 +832,7 @@
                                         "data": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/components/schemas/ComicResponseWithGenre"
+                                                "$ref": "#/components/schemas/ComicResponse"
                                             }
                                         }
                                     }
@@ -4210,6 +4210,7 @@
                     }
                 }
             },
+            
             "LoginResponse": {
                 "type": "object",
                 "properties": {
@@ -4365,7 +4366,7 @@
                     },
                     "comic": {
                         "type": "object",
-                        "$ref": "#/components/schemas/ComicResponseWithGenre"
+                        "$ref": "#/components/schemas/ComicResponse"
                     }
                 }
             },
@@ -4386,7 +4387,7 @@
                     },
                     "comic": {
                         "type": "object",
-                        "$ref": "#/components/schemas/ComicResponseWithGenre"
+                        "$ref": "#/components/schemas/ComicResponse"
                     }
                 }
             },
@@ -4459,6 +4460,29 @@
                     },
                     "name": {
                         "type": "string"
+                    },
+                    "slug": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GenreResponseWithComics": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "slug": {
+                        "type": "string"
+                    },
+                    "comics": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ComicResponse"
+                        }
                     }
                 }
             },
@@ -4488,7 +4512,7 @@
                     "comics": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/components/schemas/ComicResponseWithGenre"
+                            "$ref": "#/components/schemas/ComicResponse"
                         }
                     }
                 }
@@ -4496,10 +4520,10 @@
             "CreatorResponse": {
                 "type": "object",
                 "properties": {
-                    "id": {
+                    "name": {
                         "type": "string"
                     },
-                    "name": {
+                    "slug": {
                         "type": "string"
                     },
                     "type": {
@@ -4514,6 +4538,12 @@
                         "type": "string"
                     },
                     "chapter_id": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "slug": {
                         "type": "string"
                     },
                     "image_url": {
@@ -4534,6 +4564,9 @@
                         "type": "string"
                     },
                     "title": {
+                        "type": "string"
+                    },
+                    "slug": {
                         "type": "string"
                     },
                     "number_chapter": {
@@ -4571,6 +4604,9 @@
                     "title": {
                         "type": "string"
                     },
+                    "slug": {
+                        "type": "string"
+                    },
                     "number_chapter": {
                         "type": "string"
                     },
@@ -4594,22 +4630,25 @@
                     "id": {
                         "type": "string"
                     },
-                    "type_id": {
+                    "type": {
                         "type": "string"
                     },
                     "title": {
                         "type": "string"
                     },
+                    "title_alternative": {
+                        "type": "string"
+                    },
+                    "slug": {
+                        "type": "string"
+                    },
                     "thumbnail_url": {
                         "type": "string"
                     },
+                    "description": {
+                        "type": "string"
+                    },
                     "status": {
-                        "type": "string"
-                    },
-                    "created_at": {
-                        "type": "string"
-                    },
-                    "updated_at": {
                         "type": "string"
                     },
                     "favorite": {
@@ -4618,9 +4657,17 @@
                     "rating": {
                         "type": "number"
                     },
-                    "type": {
-                        "type": "object",
-                        "$ref": "#/components/schemas/TypeResponse"
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
+                    },
+                    "chapters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ChapterResponse"
+                        }
                     },
                     "creator": {
                         "type": "array",
@@ -4633,25 +4680,34 @@
                         "items": {
                             "$ref": "#/components/schemas/GenreResponse"
                         }
+                    },
+                    "related_comics": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ComicResponse"
+                        }
                     }
                 }
             },
-            "ComicResponseWithGenre": {
+            "ComicResponseWithGenres": {
                 "type": "object",
                 "properties": {
                     "id": {
                         "type": "string"
                     },
-                    "type_id": {
+                    "type": {
                         "type": "string"
                     },
                     "title": {
                         "type": "string"
                     },
-                    "thumbnail_url": {
+                    "status": {
                         "type": "string"
                     },
-                    "status": {
+                    "slug": {
+                        "type": "string"
+                    },
+                    "rating": {
                         "type": "string"
                     },
                     "created_at": {
@@ -4660,10 +4716,7 @@
                     "updated_at": {
                         "type": "string"
                     },
-                    "favorite": {
-                        "type": "number"
-                    },
-                    "genre": {
+                    "genres": {
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/GenreResponse"
@@ -4677,7 +4730,7 @@
                     "id": {
                         "type": "string"
                     },
-                    "type_id": {
+                    "type": {
                         "type": "string"
                     },
                     "title": {
@@ -4686,11 +4739,23 @@
                     "status": {
                         "type": "string"
                     },
+                    "slug": {
+                        "type": "string"
+                    },
+                    "rating": {
+                        "type": "string"
+                    },
                     "created_at": {
                         "type": "string"
                     },
                     "updated_at": {
                         "type": "string"
+                    },
+                    "chapters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ChapterResponse"
+                        }
                     }
                 }
             },
