@@ -186,36 +186,27 @@ export class KiryuuScraper extends RootScraper implements IComicScraper {
                 status: element.querySelector(".limit span.status")?.getAttribute("class")?.split(" ")[1].toLowerCase() ?? "ongoing",
                 type: element.querySelector(".limit span.type")?.getAttribute("class")?.split(" ")[1] ?? "",
                 chapters: [{
-                    id: "",
-                    number_chapter: "",
-                    published_at: "",
-                    thumbnail_url: "",
-                    updated_at: "",
                     slug: `${slugRelatedComic}-${chapterRelatedComic?.toLowerCase()?.replace(" ", "-")}`,
                     title: chapterRelatedComic ?? "",
                     created_at: "",
                     link: `https://kiryuu02.com/${slugRelatedComic}-${chapterRelatedComic?.toLowerCase()?.replace(" ", "-")}/`,
-                    pagination: {
-                        next: "",
-                        prev: "",
-                    }
                 }],
             })
         })
         const creators: CreatorProperties[] = [
             {
-                name: info.artist,
-                slug: info.artist?.toLowerCase(),
+                name: info.artist ?? "unknown",
+                slug: info.artist?.toLowerCase() ?? "unknown",
                 type: "artist",
             },
             {
-                name: info.author,
-                slug: info.author?.toLowerCase(),
+                name: info.author ?? "unknown",
+                slug: info.author?.toLowerCase() ?? "unknown",
                 type: "author",
             },
             {
-                name: info.serialization,
-                slug: info.serialization?.toLowerCase(),
+                name: info.serialization ?? "unknown",
+                slug: info.serialization?.toLowerCase() ?? "unknown",
                 type: "serialization",
             },
         ]

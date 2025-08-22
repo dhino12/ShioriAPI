@@ -1,4 +1,4 @@
-import { ChapterProperties } from "./chapters";
+import { ChapterSimple } from "./chapters";
 
 export type RelatedComicProperties = {
     id?: string;
@@ -8,7 +8,7 @@ export type RelatedComicProperties = {
     thumbnail_url?: string;
     rating?: string;
     status?: string;
-    chapters?: ChapterProperties[],
+    chapters?: ChapterSimple[],
     created_at?: string;
     updated_at?: string;
 }
