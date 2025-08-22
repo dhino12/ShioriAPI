@@ -11,6 +11,7 @@ import { BookmarkService } from "../service/bookmark/bookmark-service";
 import { BookmarkController } from "../controller/bookmark/bookmark-controller";
 import { ComicController } from "../controller/comic/comic-controller";
 import { ScraperService } from "../service/scraper/scraper-service";
+import cors from "cors";
 
 const userRepo = new UserRepository();
 const authService = new AuthService(userRepo);
@@ -59,6 +60,7 @@ privateRouter.get("/bookmark",bookmarkController.findAllByUserId.bind(bookmarkCo
 const router = express();
 router.use(express.json()); // parsing json
 router.use(cookieParser()); // cookie parser
+router.use(cors())
 
 router.use("/api/v1", publicRouter); // public routes access
 

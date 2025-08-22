@@ -24,6 +24,7 @@ npm install --save-dev @types/uuid # autocomplete
 npm install jsonwebtoken 
 npm install @types/jsonwebtoken # autocomplete
 npm i cheerio
+npm i cors
 
 npx tsc --init
 ```
