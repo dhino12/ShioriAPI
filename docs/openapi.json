@@ -849,11 +849,18 @@
                 }
             }
         },
-        "/comics": {
+        "/:domain/comics": {
             "get": {
                 "tags": ["Comics API"],
                 "summary": "list all comics",
                 "description": "# List Comics\nKirim permintaan `GET`. Endpoint ini akan mendapatkan seluruh comics beserta attribute dasar, seperti `favorite`, `status`, `type`, dan `genre`",
+                "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "success get all comics",
@@ -909,6 +916,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -971,12 +983,17 @@
                 }
             }
         },
-        "/comics/{id}": {
+        "/:domain/comics/{id}": {
             "get": {
                 "tags": ["Comics API"],
                 "summary": "get comic by id",
                 "description": "# Get Comic by id\nKirim permintaan `GET`. Endpoint ini akan mendapatkan detail comic beserta dengan attribute pendukung lainnya.<br><br>__⚠️Note:__ untuk mendapatkan chapter bisa dilakukan dengan fetch / request terpisah",
                 "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -1036,6 +1053,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -1131,6 +1153,11 @@
                 }],
                 "parameters": [
                     {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
@@ -1207,7 +1234,7 @@
                 }
             }
         },
-        "/chapters": {
+        "/:domain/chapters": {
             "post": {
                 "tags": ["Chapters API"],
                 "summary": "create chapter",
@@ -1216,6 +1243,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -1288,7 +1320,7 @@
                 }
             }
         },
-        "/chapters/{id}": {
+        "/:domain/chapters/{id}": {
             "put": {
                 "tags": ["Chapters API"],
                 "summary": "update chapter",
@@ -1297,6 +1329,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -1392,6 +1429,11 @@
                 }],
                 "parameters": [
                     {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
@@ -1468,12 +1510,17 @@
                 }
             }
         },
-        "/comics/{id}/chapters": {
+        "/:domain/comics/{id}/chapters": {
             "get": {
                 "tags": ["Chapters API"],
                 "summary": "list all chapter",
                 "description": "# List Chapter\nKirim permintaan `GET`. Endpoint ini akan mendapatkan seluruh chapter dalam 1 comic",
                 "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -1528,12 +1575,17 @@
                 }
             }
         },
-        "/comics/{id}/chapters/{chapterId}": {
+        "/:domain/comics/{id}/chapters/{chapterId}": {
             "get": {
                 "tags": ["Chapters API"],
                 "summary": "get chapter by id",
                 "description": "# Get Chapter by id\nKirim permintaan `GET`. Endpoint ini akan mendapatkan detail chapter dalam 1 comic",
                 "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -1591,7 +1643,7 @@
                 }
             }
         },
-        "/episode": {
+        "/:domain/episode": {
             "post": {
                 "tags": ["Epsiode API"],
                 "summary": "create episode",
@@ -1600,6 +1652,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    },
                     {
                         "name": "TOKEN",
                         "example": "Bearer <JWT_TOKEN>",
@@ -1672,7 +1729,7 @@
                 }
             }
         },
-        "/episode/{id}": {
+        "/:domain/episode/{id}": {
             "put": {
                 "tags": ["Epsiode API"],
                 "summary": "update episode",
@@ -1681,6 +1738,11 @@
                     "UserAuth": []
                 }],
                 "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -1776,6 +1838,11 @@
                 }],
                 "parameters": [
                     {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    },
+                    {
                         "name": "id",
                         "in": "path",
                         "description": "parameter dapat di sesuaikan sesuai tipe website yang diwrapping, bisa id atau slug."
@@ -1852,12 +1919,17 @@
                 }
             }
         },
-        "/comics/{id}/chapters/{chapterId}/epsiode": {
+        "/:domain/comics/{id}/chapters/{chapterId}/epsiode": {
             "get": {
                 "tags": ["Epsiode API"],
                 "summary": "list all epsiode",
                 "description": "# List Epsiode\nKirim permintaan `GET`. Endpoint ini akan mendapatkan seluruh epsiode (gambar) dalam 1 chapter",
                 "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    },
                     {
                         "name": "id",
                         "in": "path",
@@ -1917,12 +1989,17 @@
                 }
             }
         },
-        "/comics/{id}/chapters/{chapterId}/epsiode/{episodeId}": {
+        "/:domain/comics/{id}/chapters/{chapterId}/epsiode/{episodeId}": {
             "get": {
                 "tags": ["Epsiode API"],
                 "summary": "get epsiode by id",
                 "description": "# Get Epsiode by id\nKirim permintaan `GET`. Endpoint ini akan mendapatkan detail episode (salah satu gambar, dari seluruh gambar dalam 1 chapter. ",
                 "parameters": [
+                    {
+                        "name": "domain",
+                        "in": "path",
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                    },
                     {
                         "name": "id",
                         "in": "path",

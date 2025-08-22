@@ -12,7 +12,7 @@ describe('GET /comics/latest', () => {
 
     // it("should able to get comic by slug if request domain valid", async() => {
     //     const response = await supertest(web)
-    //         .get("/api/v1/kiryuu/comics/isekai-meikyuu-no-saishinbu-o-mezasou/")
+    //         .get("/api/v1/kiryuu/comics/nade-nade-skill-de-maryoku-chuunyuu/")
     //     logger.debug(response.body, null, 2)
     //     expect(response.status).toBe(200)
     // })
