@@ -858,7 +858,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     }
                 ],
                 "responses": {
@@ -919,7 +919,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     },
                     {
                         "name": "TOKEN",
@@ -992,7 +992,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     },
                     {
                         "name": "id",
@@ -1056,7 +1056,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     },
                     {
                         "name": "id",
@@ -1155,7 +1155,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     },
                     {
                         "name": "id",
@@ -1246,7 +1246,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     },
                     {
                         "name": "TOKEN",
@@ -1332,7 +1332,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     },
                     {
                         "name": "id",
@@ -1431,7 +1431,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     },
                     {
                         "name": "id",
@@ -1519,7 +1519,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     },
                     {
                         "name": "id",
@@ -1584,7 +1584,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     },
                     {
                         "name": "id",
@@ -1655,7 +1655,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     },
                     {
                         "name": "TOKEN",
@@ -1741,7 +1741,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     },
                     {
                         "name": "id",
@@ -1840,7 +1840,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     },
                     {
                         "name": "id",
@@ -1928,7 +1928,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     },
                     {
                         "name": "id",
@@ -1998,7 +1998,7 @@
                     {
                         "name": "domain",
                         "in": "path",
-                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [dapat dilihat disini](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
+                        "description": "isikan hostname website wrapping yang sudah tersedia pada project ini, [`dapat dilihat disini`](https://github.com/dhino12/shioriapi/blob/master/src/repository/scraper/factory-scraper.ts)."
                     },
                     {
                         "name": "id",
