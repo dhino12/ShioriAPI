@@ -87,6 +87,9 @@ function generateCollection() {
                         code: parseInt(code),
                         _postman_previewlanguage: "json",
                         body: JSON.stringify(fake, null, 2),
+                        header: [
+                            { key: "Content-Type", value: "application/json" }
+                        ],
                         originalRequest: {
                             method: method.toUpperCase(),
                             url: `{{baseUrl}}${path}`,
