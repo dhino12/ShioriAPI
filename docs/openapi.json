@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
         "title": "Shiori RESTAPI",
-        "description": "a collection of manga, manhwa, manhua in various languages that have been translated",
+        "description": "A collection of manga, manhwa, manhua in various languages that have been translated, Change the servers you want to use below, if you want to test, use <b style='color:green'>localhost:3000</b>. If you have pushed to GitHub, use <b style='color:green'>shioriapi.vercel.app</b>.",
         "version": "1.0.0"
     },
     "servers": [
