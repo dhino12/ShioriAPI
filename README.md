@@ -93,8 +93,11 @@ npx prisma generate
 │   ├───middlewares
 │   ├───model
 │   ├───repository
-│   │   ├───bookmark
-│   │   └───user
+│   │   ├───db
+│   │   │   ├───bookmark
+│   │   │   └───user
+│   │   └───scraper
+│   │       └───strategies
 │   ├───service
 │   │   ├───auth
 │   │   └───bookmark

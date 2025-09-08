@@ -21,7 +21,7 @@ describe('POST /api/v1/register', () => {
             });
         logger.debug(response.body)
         expect(response.status).toBe(400)
-        expect(response.body.errors).toBeDefined()
+        expect(response.body.status).toBeDefined()
     })
 
     it("should register new user", async () => {
@@ -72,7 +72,7 @@ describe('POST /api/v1/login', () => {
             });
         logger.debug(response.body)
         expect(response.status).toBe(400)
-        expect(response.body.errors).toBeDefined();
+        expect(response.body.status).toBeDefined();
     })
 
     it("should reject login user if password is wrong", async () => {
@@ -84,7 +84,7 @@ describe('POST /api/v1/login', () => {
             });
         logger.debug(response.body)
         expect(response.status).toBe(400)
-        expect(response.body.errors).toBeDefined();
+        expect(response.body.status).toBeDefined();
     })
 })
 
@@ -104,7 +104,7 @@ describe('POST /api/v1/logout', () => {
 
         logger.debug(response)
         expect(response.status).toBe(401)
-        expect(response.body.errors).toBeDefined()
+        expect(response.body.status).toBeDefined()
     })
 
     it("should able to logout", async() => {
@@ -146,7 +146,7 @@ describe('POST /api/v1/refreshtoken ', () => {
             .set("Authorization", ``)
         logger.debug(response)
         expect(response.status).toBe(401)
-        expect(response.body.errors).toBe("unauthorized")
+        expect(response.body.status).toBe("unauthorized")
     })
 
     it("should able to refreshtoken", async() => {

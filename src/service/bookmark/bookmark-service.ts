@@ -17,18 +17,13 @@ import { IBookmarkService } from "./ibookmark-service";
 export class BookmarkService implements IBookmarkService {
     constructor(private readonly repository: IBookmarkRepository) {}
     async create(bookmark: BookmarkCreateRequest): Promise<BookmarkResponse> {
-        const bookmarkRequest = Validation.validate(
-            BookmarkSchema.CREATE,
-            bookmark
-        ) as BookmarkCreateRequest;
+        const bookmarkRequest = Validation.validate(BookmarkSchema.CREATE,bookmark) as BookmarkCreateRequest;
         // TODO: CHECK ID COMIC
         // SKIP DULU
 
         // TODO: CHECK ID USER
         // SKIP DULU
-        const data = await this.repository.create(
-            toBookmarkModel(bookmarkRequest)!
-        );
+        const data = await this.repository.create(toBookmarkModel(bookmarkRequest)!);
         return toBookmarkResponse(data);
     }
     async delete(bookmarkId: string): Promise<null> {

@@ -5,19 +5,25 @@ import { logger } from "../app/logging";
 
 export const errorMiddleware = async (error: Error, request: Request, response: Response, next: NextFunction) => {
     if (error instanceof ZodError) {
+        logger.error(error.message)
         response.status(400).json({
-            errors: `Validation Error: ${error.issues.map(issue => issue.message).join(", ")}`
+            code: 400,
+            status: `Validation Error: ${error.issues.map(issue => issue.message).join(", ")}`,
+            data: null
         });
     } else if (error instanceof ResponseError) {
-        logger.warn(error.message)
+        logger.error(error.message)
         response.status(error.status).json({
-            errors: error.message
+            code: error.status,
+            status: error.message,
+            data: null
         });
     } else {
         logger.error(error.message)
-        console.log(error, " <=============== ERROR 500");
         response.status(500).json({
-            errors: error.message
+            code: 500,
+            status: error.message,
+            data: null
         });
     }
 }

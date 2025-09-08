@@ -7,98 +7,132 @@ import { IScraperService } from "../../service/scraper/iscraper-service";
 export class ComicController implements IComicController {
     constructor(private readonly service: IScraperService) {}
     async findTextListComics(req: Request, res: Response, next: NextFunction): Promise<void> {
-        const { domain } = req.params
-        const {pages = "1"} = req.query
-        const episodes = await this.service.findTextListComics(domain, pages.toString());
-        res.status(200).json({
-            code: 200,
-            status: "success",
-            data: episodes,
-        });
+        try {
+            const { domain } = req.params
+            const {pages = "1"} = req.query
+            const episodes = await this.service.findTextListComics(domain, pages.toString());
+            res.status(200).json({
+                code: 200,
+                status: "success",
+                data: episodes,
+            });
+        } catch (error) {
+            next(error)
+        }
     }
     async findEpisodesByChapterSlug(req: Request, res: Response, next: NextFunction): Promise<void> {
-        const { domain, slugchapter } = req.params
-        const episodes = await this.service.findEpisodesByChapterSlug(domain, slugchapter);
-        res.status(200).json({
-            code: 200,
-            status: "success",
-            data: episodes,
-        });
+        try {
+            const { domain, slugchapter } = req.params
+            const episodes = await this.service.findEpisodesByChapterSlug(domain, slugchapter);
+            res.status(200).json({
+                code: 200,
+                status: "success",
+                data: episodes,
+            });
+        } catch (error) {
+            next(error)
+        }
     }
     async findChapterBySlug(req: Request, res: Response, next: NextFunction): Promise<void> {
-        const { domain, slugchapter } = req.params
-        const chapters = await this.service.findChapterBySlug(domain, slugchapter);
-        res.status(200).json({
-            code: 200,
-            status: "success",
-            data: chapters,
-        });
+        try {
+            const { domain, slugchapter } = req.params
+            const chapters = await this.service.findChapterBySlug(domain, slugchapter);
+            res.status(200).json({
+                code: 200,
+                status: "success",
+                data: chapters,
+            });
+        } catch (error) {
+            next(error)
+        }
     }
     async findChaptersByComicSlug(req: Request, res: Response, next: NextFunction): Promise<void> {
-        const { domain, slug } = req.params
-        const chapters = await this.service.findChapterByComicSlug(domain, slug);
-        res.status(200).json({
-            code: 200,
-            status: "success",
-            data: chapters,
-        });
+        try {
+            const { domain, slug } = req.params
+            const chapters = await this.service.findChapterByComicSlug(domain, slug);
+            res.status(200).json({
+                code: 200,
+                status: "success",
+                data: chapters,
+            });
+        } catch (error) {
+            next(error)
+        }
     }
     async findComics(req: Request, res: Response, next: NextFunction): Promise<void> {
-        const { domain } = req.params
-        console.log(domain);
-        
-        const {
-            order = "",
-            status = "ongoing", 
-            pages = "1",
-            type = "",
-        } = req.query
-        const genreids = req.query["genreids[]"]
-        const genreIds: string[] = Array.isArray(genreids) ? genreids.map(String) : genreids? [String(genreids)] : [];
-        const comics = await this.service.findComics(domain, genreIds, `${status}`, `${type}`, `${order}`, `${pages}`)
-        res.status(200).json({
-            code: 200,
-            status: "succes",
-            data: comics
-        })
+        try {
+            const { domain } = req.params
+            const {
+                order = "",
+                status = "ongoing", 
+                pages = "1",
+                type = "",
+            } = req.query
+            const genreids = req.query["genreids[]"]
+            const genreIds: string[] = Array.isArray(genreids) ? genreids.map(String) : genreids? [String(genreids)] : [];
+            const comics = await this.service.findComics(domain, genreIds, `${status}`, `${type}`, `${order}`, `${pages}`)
+            res.status(200).json({
+                code: 200,
+                status: "succes",
+                data: comics
+            })
+        } catch (error) {
+            next(error)
+        }
     }
     async findBySlug(req: Request,res: Response,next: NextFunction): Promise<void> {
-        const { domain, slug } = req.params;
-        const comic = await this.service.findBySlug(domain, slug);
-        res.status(200).json({
-            code: 200,
-            status: "success",
-            data: comic,
-        });
+        try {
+            const { domain, slug } = req.params;
+            const comic = await this.service.findBySlug(domain, slug);
+            res.status(200).json({
+                code: 200,
+                status: "success",
+                data: comic,
+            });
+        } catch (error) {
+            next(error)
+        }
     }
     async findAllLatest(req: Request,res: Response,next: NextFunction): Promise<void> {
-        const { domain } = req.params;
-        const { pages = 1 } = req.query;
-        const comics = await this.service.findAllLatest(domain,pages.toString());
+        try {
+            const { domain } = req.params;
+            const { pages = 1 } = req.query;
+            const comics = await this.service.findAllLatest(domain,pages.toString());
 
-        res.status(200).json({
-            code: 200,
-            status: "success",
-            data: comics,
-        });
+            res.status(200).json({
+                code: 200,
+                status: "success",
+                data: comics,
+            });
+        } catch (error) {
+            next(error)
+        }
     }
     async findComicsByGenreSlug(req: Request, res: Response, next: NextFunction): Promise<void> {
-        const {domain, slug} = req.params
-        const {pages = 1} = req.query
-        const genre = await this.service.findComicsByGenreSlug(domain, slug, pages.toString())
-        res.status(200).json({
-            code: 200,
-            status: "success",
-            data: genre
-        })
+        try {
+            const {domain, slug} = req.params
+            const {pages = 1} = req.query
+            const genre = await this.service.findComicsByGenreSlug(domain, slug, pages.toString())
+            res.status(200).json({
+                code: 200,
+                status: "success",
+                data: genre
+            })
+        } catch (error) {
+            next(error)
+        }
     }
     async findAllGenres(req: Request, res: Response, next: NextFunction): Promise<void> {
-        const {domain} = req.params
-        const genres = await this.service.findAllGenre(domain)
-        res.status(200).json({
-            code: 200,
-            status: "success",
-            data: genres
-        })
+        try {
+            const {domain} = req.params
+            const genres = await this.service.findAllGenre(domain)
+            res.status(200).json({
+                code: 200,
+                status: "success",
+                data: genres
+            })
+        } catch (error) {
+            next(error)
+        }
     }
 }

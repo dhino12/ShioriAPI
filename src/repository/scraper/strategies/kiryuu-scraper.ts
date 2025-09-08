@@ -79,14 +79,12 @@ export class KiryuuScraper extends RootScraper implements IComicScraper {
             )
         );
         
-        return toGenreModel({
-            data: {
-                id: "",
-                slug,
-                name: capitalize(slug),
-                comics: comicsData
-            }
-        }) as GenreModel
+        return {
+            id: "",
+            slug,
+            name: capitalize(slug),
+            comics: comicsData
+        } as GenreModel
     }
     async getGenres(): Promise<GenreModel[]> {
         const htmlStrng = await httpClient.get(`https://kiryuu02.com/manga`)
@@ -215,7 +213,7 @@ export class KiryuuScraper extends RootScraper implements IComicScraper {
             data: {
                 id,
                 slug,
-                title,
+                title: title ?? "",
                 title_alternative: alternativeTitle,
                 chapters,
                 rating,
@@ -314,7 +312,6 @@ export class KiryuuScraper extends RootScraper implements IComicScraper {
                         chapters: [{
                             slug: `${slugComic}-${chapter?.toLowerCase()?.replace(" ", "-")}`,
                             title: chapter ?? "",
-                            created_at: chapter ?? "",
                             link: `https://kiryuu02.com/${slugComic}-${chapter?.toLowerCase()?.replace(" ", "-")}/`
                         }],
                         genres,

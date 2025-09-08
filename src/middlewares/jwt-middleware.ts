@@ -11,8 +11,6 @@ export interface AuthenticatedRequest extends Request {
 
 export function jwtAuthMiddleware(req:AuthenticatedRequest, res: Response, next: NextFunction) {
     const authHeader = req.headers.authorization;
-    console.log(authHeader, " <=======");
-    
     if (!authHeader) throw new ResponseError(401, "unauthorized")
 
     const token = authHeader.split(" ")[1];

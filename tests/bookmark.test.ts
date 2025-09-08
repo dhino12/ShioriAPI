@@ -36,7 +36,7 @@ describe('POST /bookmark', () => {
 
         logger.debug(response)
         expect(response.status).toBe(400)
-        expect(response.body.errors).toBeDefined();
+        expect(response.body.status).toBeDefined();
     })
     
     it("should reject new bookmarks if unauthorized requests", async() => {
@@ -50,7 +50,7 @@ describe('POST /bookmark', () => {
 
         logger.debug(response)
         expect(response.status).toBe(401)
-        expect(response.body.errors).toBeDefined();
+        expect(response.body.status).toBeDefined();
     })
 
     it("should able to new bookmark ", async() => {
@@ -108,8 +108,8 @@ describe('DELETE /bookmark/{id}', () => {
         
         logger.debug(response)
         expect(response.status).toBe(404)
-        expect(response.body.errors).toBe("bookmark not found")
-        expect(response.body.errors).toBeDefined()
+        expect(response.body.status).toBe("bookmark not found")
+        expect(response.body.status).toBeDefined()
     })
     it("should reject delete bookmark if request unauthorized", async() => {
         const bookmark = await UserTest.create()
@@ -118,8 +118,8 @@ describe('DELETE /bookmark/{id}', () => {
         
         logger.debug(response)
         expect(response.status).toBe(401)
-        expect(response.body.errors).toBe("unauthorized")
-        expect(response.body.errors).toBeDefined()
+        expect(response.body.status).toBe("unauthorized")
+        expect(response.body.status).toBeDefined()
     })
     it("should able to delete bookmark", async() => {
         const responseLogin = await supertest(web)
@@ -170,7 +170,7 @@ describe('GET /bookmark/{id}', () => {
         
         logger.debug(response)
         expect(response.status).toBe(404)
-        expect(response.body.errors).toBe("bookmark not found")
+        expect(response.body.status).toBe("bookmark not found")
     })
 
     it("should reject get bookmark if request unauthorized", async() => {
@@ -179,7 +179,7 @@ describe('GET /bookmark/{id}', () => {
         
         logger.debug(response)
         expect(response.status).toBe(401)
-        expect(response.body.errors).toBe("unauthorized")
+        expect(response.body.status).toBe("unauthorized")
     })
 
     it("should able to get bookmark", async() => {
@@ -222,7 +222,7 @@ describe('GET /bookmark', () => {
         
         logger.debug(response)
         expect(response.status).toBe(401)
-        expect(response.body.errors).toBe("unauthorized")
+        expect(response.body.status).toBe("unauthorized")
     })
     it("should reject get all bookmark by userid if request unauthorized", async () => {
         const response = await supertest(web)
@@ -230,7 +230,7 @@ describe('GET /bookmark', () => {
         
         logger.debug(response)
         expect(response.status).toBe(401)
-        expect(response.body.errors).toBe("unauthorized")
+        expect(response.body.status).toBe("unauthorized")
     })
     it("should able to get all bookmark by userid", async () => {
         const responseLogin = await supertest(web)

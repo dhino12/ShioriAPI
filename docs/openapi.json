@@ -5034,6 +5034,9 @@
                     "slug": {
                         "type": "string"
                     },
+                    "thumbnail_url": {
+                        "type": "string"
+                    },
                     "rating": {
                         "type": "string"
                     },

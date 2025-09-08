@@ -6,7 +6,7 @@ import { RelatedComicProperties } from "./related-comic";
 export type ComicProperties = {
     id?: string;
     type?: string;
-    title?: string;
+    title: string;
     title_alternative?: string;
     description?: string;
     slug?: string;
