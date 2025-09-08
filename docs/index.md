@@ -42,7 +42,7 @@ Sebelum mulai berkontribusi, pahami dulu struktur proyek ini. Tujuannya agar kod
 └───tests
 ```
 
-- 👉 Fokus kontribusi kamu hanya di folder `repository/scraper/strategies`
+- 👉 Fokus kontribusi kamu hanya di folder `repository/scraper/strategies` dan file `repository/scraper/factory-scraper.ts`
 
 ## 🛠️ Cara Menambahkan File Scraper Baru
 - Buat file baru di folder `repository/scraper/strategies/` dengan format:
