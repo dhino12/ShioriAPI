@@ -187,6 +187,12 @@ describe('GET /comics/latest', () => {
 })
 ```
 
+lalu jalankan dengan perintah:
+
+```sh
+npm run test tests/comic.test.ts
+```
+
 ✅ Ringkasan Step Kontribusi
 
 1. Buat file scraper baru di repository/scraper/strategies/.

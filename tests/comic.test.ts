@@ -24,12 +24,12 @@ describe('GET /comics/latest', () => {
     //     expect(response.status).toBe(200)
     // })
 
-    // it("should able to get genres if request domain valid", async() => {
-    //     const response = await supertest(web)
-    //         .get("/api/v1/kiryuu/genres/action/comics")
-    //     logger.debug(response.body, null, 2)
-    //     expect(response.status).toBe(200)
-    // })
+    it("should able to get genres if request domain valid", async() => {
+        const response = await supertest(web)
+            .get("/api/v1/kiryuu/genres/action/comics")
+        logger.debug(response.body, null, 2)
+        expect(response.status).toBe(200)
+    })
     // it("should able to get all comics if request domain valid", async() => {
     //     const response = await supertest(web)
     //         .get("/api/v1/kiryuu/comics")
@@ -48,12 +48,12 @@ describe('GET /comics/latest', () => {
     //     logger.debug(response.body, null, 2)
     //     expect(response.status).toBe(200)
     // })
-    it("should able to get chapters by chapter slug if request domain valid", async() => {
-        const response = await supertest(web)
-            .get("/api/v1/kiryuu/comics/honyaku-no-sainou-de-ore-dake-ga-sekai-wo-kaihen-dekiru-ken/chapters/honyaku-no-sainou-de-ore-dake-ga-sekai-wo-kaihen-dekiru-ken-chapter-26-3/")
-        logger.debug(response.body, null, 2)
-        expect(response.status).toBe(200)
-    })
+    // it("should able to get chapters by chapter slug if request domain valid", async() => {
+    //     const response = await supertest(web)
+    //         .get("/api/v1/kiryuu/comics/honyaku-no-sainou-de-ore-dake-ga-sekai-wo-kaihen-dekiru-ken/chapters/honyaku-no-sainou-de-ore-dake-ga-sekai-wo-kaihen-dekiru-ken-chapter-26-3/")
+    //     logger.debug(response.body, null, 2)
+    //     expect(response.status).toBe(200)
+    // })
     // it("should able to get all episodes by chapter slug if request domain valid", async() => {
     //     const response = await supertest(web)
     //         .get("/api/v1/kiryuu/comics/honyaku-no-sainou-de-ore-dake-ga-sekai-wo-kaihen-dekiru-ken/chapters/honyaku-no-sainou-de-ore-dake-ga-sekai-wo-kaihen-dekiru-ken-chapter-26-3")
